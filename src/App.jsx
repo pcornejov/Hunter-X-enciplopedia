@@ -11,6 +11,8 @@ import NenPage from './pages/NenPage';
 import GroupsPage from './pages/GroupsPage';
 import AboutWorkPage from './pages/AboutWorkPage';
 import FavoritesPage from './pages/FavoritesPage';
+import ComparePage from './pages/ComparePage';
+import NenQuizPage from './pages/NenQuizPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { FavoritesProvider } from './hooks/useFavorites';
 
@@ -31,6 +33,8 @@ function AppRoutes() {
         <Route path="/grupos" element={<GroupsPage />} />
         <Route path="/la-obra" element={<AboutWorkPage />} />
         <Route path="/favoritos" element={<FavoritesPage />} />
+        <Route path="/comparar" element={<ComparePage />} />
+        <Route path="/quiz" element={<NenQuizPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </ErrorBoundary>

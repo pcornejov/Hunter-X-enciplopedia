@@ -9,6 +9,8 @@ const links = [
   { to: '/grupos', label: 'Grupos' },
   { to: '/la-obra', label: 'La Obra' },
   { to: '/favoritos', label: 'Favoritos' },
+  { to: '/comparar', label: 'Comparar' },
+  { to: '/quiz', label: 'Quiz' },
 ];
 
 export default function Navbar() {

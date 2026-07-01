@@ -16,6 +16,8 @@ export const arcos = [
       'menchi',
       'hanzo',
       'tonpa',
+      'ponzu',
+      'pokkle',
     ],
   },
   {
@@ -33,6 +35,8 @@ export const arcos = [
       'zeno-zoldyck',
       'milluki-zoldyck',
       'kikyo-zoldyck',
+      'canary',
+      'gotoh',
     ],
   },
   {
@@ -64,6 +68,10 @@ export const arcos = [
       'pakunoda',
       'kortopi',
       'bonolenov-ndongo',
+      'neon-nostrade',
+      'senritsu',
+      'kastro',
+      'zepile',
     ],
   },
   {
@@ -95,6 +103,10 @@ export const arcos = [
       'welfin',
       'colt',
       'palm-siberia',
+      'ikalgo',
+      'meleoron',
+      'shoot-mcmahon',
+      'beans',
     ],
   },
   {

@@ -948,6 +948,222 @@ export const characters = [
       { rival: 'Maniobras políticas de Pariston Hill', arco: 'Elección Presidencial', contexto: 'Actúa como contrapeso analítico frente a las estrategias impredecibles de Pariston durante el proceso electoral.', resultado: 'Contribuye a mantener cierto orden dentro de la caótica dinámica de la junta directiva.' },
     ],
   },
+  {
+    slug: 'neon-nostrade',
+    nombre: 'Neon Nostrade',
+    apiNames: ['neon nostrade', 'neon'],
+    malId: 17564,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Secundario',
+    historia: [
+      'Neon es la hija del jefe de la familia mafiosa Nostrade y una vidente capaz de predecir el futuro a través de un ritual que involucra escribir y luego destruir sus visiones en papel. Kurapika es contratado como su guardaespaldas principal durante los eventos de Yorknew City.',
+      'Su fascinación obsesiva por los objetos malditos y su personalidad caprichosa la convierten en una responsabilidad constante para su equipo de seguridad, aunque también en la pieza clave que desencadena buena parte del conflicto con la Brigada Fantasma en la subasta.',
+    ],
+    poderesNen: [
+      { nombre: 'Escritura Profética (Ai\'s Whisper)', descripcion: 'Ritual conjurado que le permite escribir una visión del futuro relacionada con la pregunta que se le formule, siempre que luego destruya el papel para "pagar" el precio de la habilidad.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Amenazas en la subasta de Yorknew', arco: 'Yorknew City', contexto: 'Su deseo de adquirir los ojos escarlata la pone en el centro de la disputa entre la mafia y la Brigada Fantasma.', resultado: 'Sobrevive gracias a la protección de Kurapika, aunque su curiosidad sigue generando riesgos durante todo el arco.' },
+    ],
+  },
+  {
+    slug: 'senritsu',
+    nombre: 'Senritsu',
+    apiNames: ['senritsu', 'melody'],
+    malId: 12515,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Secundario',
+    historia: [
+      'Senritsu, también conocida como Melody, es una Hunter Música con un oído extraordinariamente desarrollado, capaz de detectar mentiras y estados emocionales con solo escuchar los latidos del corazón de una persona. Forma parte del equipo que protege a los herederos durante la crisis de Yorknew City.',
+      'Su discreción y honestidad la convierten en una de las pocas personas en las que Kurapika confía plenamente durante la operación, sirviendo como una especie de detector de mentiras humano para el grupo.',
+    ],
+    poderesNen: [
+      { nombre: 'Oído absoluto', descripcion: 'Su capacidad auditiva, potenciada por Nen, le permite distinguir la sinceridad o falsedad de las palabras de alguien a partir de sutiles cambios en su pulso y respiración.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Yorknew City', contexto: 'Su rol es de apoyo e inteligencia, no de combate directo.', resultado: 'Su información resulta clave para varias decisiones estratégicas del equipo de Kurapika.' },
+    ],
+  },
+  {
+    slug: 'kastro',
+    nombre: 'Kastro',
+    apiNames: ['kastro'],
+    malId: 63099,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Kastro es un miembro de la Brigada Fantasma con un talento particular para la actuación y el combate con espadas dobles, cuya identidad real permanece oculta tras un disfraz constante durante gran parte de su aparición.',
+      'Es recordado principalmente por protagonizar, sin saberlo del todo, uno de los duelos más reveladores de la serie: un enfrentamiento con Hisoka que termina exponiendo los verdaderos límites de la habilidad Goma Bungee.',
+    ],
+    poderesNen: [
+      { nombre: 'Doble espada y actuación', descripcion: 'Combina un estilo de esgrima con dos espadas con una habilidad de Nen ligada a la actuación, usando un doble o "Copia" (Doppelgänger) para engañar a sus oponentes sobre su verdadera posición.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Hisoka Morow', arco: 'Yorknew City', contexto: 'Hisoka organiza un duelo con Kastro para poner a prueba los límites de su propia habilidad frente a un espadachín hábil.', resultado: 'Hisoka gana el combate, revelando en el proceso el verdadero funcionamiento de la Goma Bungee ante el resto de la Brigada.' },
+    ],
+  },
+  {
+    slug: 'ikalgo',
+    nombre: 'Ikalgo',
+    apiNames: ['ikalgo'],
+    malId: 29805,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Ikalgo es una Hormiga Quimera con apariencia de calamar, inusualmente reflexivo y poco interesado en la violencia gratuita en comparación con el resto de su especie. Tras un encuentro con Killua, decide desertar de la colonia y aliarse con los Hunters.',
+      'Su inteligencia y capacidad de adaptación lo convierten en un aliado valioso durante la fase final del arco, participando activamente en la localización de Komugi junto al resto del equipo de asalto.',
+    ],
+    poderesNen: [
+      { nombre: 'Control de cuerpos (Body Snatcher)', descripcion: 'Es capaz de controlar cadáveres o cuerpos inconscientes de criaturas marinas y humanoides, usándolos como marionetas de combate o vigilancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Killua Zoldyck (encuentro inicial)', arco: 'Hormiga Quimera', contexto: 'Se enfrenta brevemente a Killua antes de comprender que la resistencia es inútil y optar por la rendición y posterior alianza.', resultado: 'Se une a la causa de los Hunters, aportando su habilidad al esfuerzo final contra la colonia.' },
+    ],
+  },
+  {
+    slug: 'meleoron',
+    nombre: 'Meleoron',
+    apiNames: ['meleoron'],
+    malId: 29808,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Meleoron es una Hormiga Quimera con la capacidad única de volverse invisible, una habilidad que usó durante mucho tiempo para esconderse tanto de sus enemigos como de sus propios compañeros de colonia, marcado por una profunda soledad.',
+      'Tras aliarse con Knuckle y Shoot, encuentra por primera vez un propósito genuino y compañerismo, participando activamente en la cacería de Shaiapouf durante la fase final del arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Camuflaje Absoluto (Perfect Plan)', descripcion: 'Le permite volverse completamente invisible e indetectable, incluso para otros usuarios de Nen, siempre que seleccione correctamente sus condiciones antes de activarla.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Shaiapouf', arco: 'Hormiga Quimera', contexto: 'Se une a Knuckle y Shoot para rastrear y enfrentar a Shaiapouf aprovechando su invisibilidad.', resultado: 'Contribuye decisivamente a exponer la verdadera forma de Shaiapouf, ayudando a inclinar el combate a favor de los Hunters.' },
+    ],
+  },
+  {
+    slug: 'shoot-mcmahon',
+    nombre: 'Shoot McMahon',
+    apiNames: ['shoot mcmahon', 'shoot'],
+    malId: 29807,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Shoot es un Hunter de personalidad tranquila y colaborativa, parte del escuadrón de Morel junto a Knuckle. Su enfoque metódico complementa el carácter más impulsivo de su compañero durante toda la operación contra las Hormigas Quimera.',
+      'Su relación con Knuckle es de camaradería genuina, apoyándolo activamente durante el periodo en que este queda debilitado tras su enfrentamiento con Youpi.',
+    ],
+    poderesNen: [
+      { nombre: 'Motor Redondo (Round Trip Motor)', descripcion: 'Habilidad de Emisor que le permite atrapar objetivos dentro de un aro de aura con forma de motor giratorio, restringiendo su movimiento a distancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Fuerzas de la Guardia Real', arco: 'Hormiga Quimera', contexto: 'Participa junto a Knuckle, Meleoron e Ikalgo en la cacería final contra los miembros restantes de la Guardia Real.', resultado: 'Su habilidad resulta clave para inmovilizar objetivos durante la fase final del asalto al palacio.' },
+    ],
+  },
+  {
+    slug: 'ponzu',
+    nombre: 'Ponzu',
+    apiNames: ['ponzu'],
+    malId: 24279,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Ponzu es una candidata del Examen Hunter especializada en venenos y explosivos, con una actitud amistosa y colaborativa hacia Gon y sus amigos durante la prueba. Vuelve a aparecer años después como parte de las fuerzas enviadas a investigar NGL.',
+      'Su destino en la crisis de las Hormigas Quimera es uno de los primeros indicios claros de lo letal que resultaría el conflicto: es atacada y presumiblemente asesinada al inicio de la infiltración, un evento que marca el tono sombrío del arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Especialista en venenos y trampas', descripcion: 'Domina la preparación de sustancias tóxicas y dispositivos explosivos, útiles tanto en el Examen Hunter como en misiones de reconocimiento posteriores.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Hormigas Quimera en NGL', arco: 'Hormiga Quimera', contexto: 'Es atacada durante una misión de reconocimiento en territorio controlado por la colonia.', resultado: 'Su suerte queda incierta tras el ataque, sirviendo como una de las primeras señales del peligro real que representan las Hormigas Quimera.' },
+    ],
+  },
+  {
+    slug: 'pokkle',
+    nombre: 'Pokkle',
+    apiNames: ['pokkle'],
+    malId: 33376,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Pokkle es un candidato del Examen Hunter motivado por el sueño de capturar una especie animal legendaria, mostrando desde el inicio una actitud más despreocupada que la mayoría de los aspirantes.',
+      'Al igual que Ponzu, reaparece durante la crisis de las Hormigas Quimera como parte de las fuerzas de reconocimiento enviadas a NGL, enfrentando un nivel de peligro muy superior al que estaba preparado.',
+    ],
+    poderesNen: [
+      { nombre: 'Trampas de caza', descripcion: 'Utiliza un arsenal de trampas y dispositivos de captura diseñados originalmente para cazar animales, adaptados a situaciones de combate cuando la ocasión lo requiere.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Hormigas Quimera en NGL', arco: 'Hormiga Quimera', contexto: 'Participa en la misma misión de reconocimiento que termina mal para Ponzu y otros Hunters novatos.', resultado: 'Su suerte, como la de Ponzu, queda incierta tras el encuentro con la colonia.' },
+    ],
+  },
+  {
+    slug: 'canary',
+    nombre: 'Canary',
+    apiNames: ['canary'],
+    malId: 35894,
+    arcoPrincipal: 'zoldyck',
+    categoria: 'Secundario',
+    historia: [
+      'Canary es una de las jóvenes sirvientas de la mansión Zoldyck, entrenada en artes marciales y completamente leal a la familia, en particular a Killua, hacia quien guarda un cariño genuino más allá del deber.',
+      'Su papel como guardiana de las puertas de la mansión la convierte en uno de los primeros obstáculos que Gon debe superar para demostrar su determinación de recuperar a su amigo.',
+    ],
+    poderesNen: [
+      { nombre: 'Artes marciales de sirvienta Zoldyck', descripcion: 'Entrenada en combate cuerpo a cuerpo como parte del riguroso programa de seguridad de la mansión, capaz de plantar cara a intrusos con considerable habilidad.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Gon Freecss', arco: 'Zoldyck', contexto: 'Se enfrenta a Gon en la entrada de la mansión como parte de las pruebas de seguridad de la familia.', resultado: 'Gon demuestra suficiente determinación como para ganarse, si no la victoria, al menos el respeto de Canary.' },
+    ],
+  },
+  {
+    slug: 'gotoh',
+    nombre: 'Gotoh',
+    apiNames: ['gotoh', 'gotou'],
+    malId: 60009,
+    arcoPrincipal: 'zoldyck',
+    categoria: 'Secundario',
+    historia: [
+      'Gotoh es el mayordomo principal de la mansión Zoldyck, encargado de coordinar al resto del personal de servicio y de garantizar la seguridad y comodidad de la familia con una disciplina impecable.',
+      'Su lealtad y discreción lo convierten en una presencia constante pero silenciosa a lo largo de las apariciones de la familia Zoldyck, reflejando el nivel de profesionalismo que exige servir a una familia de asesinos de élite.',
+    ],
+    poderesNen: [
+      { nombre: 'Disciplina de mayordomo de élite', descripcion: 'Aunque rara vez exhibe combate directo, su entrenamiento como mayordomo de la familia Zoldyck implica un nivel de capacidad física y de Nen muy por encima del de un sirviente convencional.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Zoldyck', contexto: 'Su rol es principalmente administrativo dentro de la mansión.', resultado: 'Mantiene el funcionamiento de la mansión sin necesidad de mostrar su verdadero potencial de combate.' },
+    ],
+  },
+  {
+    slug: 'beans',
+    nombre: 'Beans',
+    apiNames: ['beans'],
+    malId: 53271,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Beans es el asistente personal y de máxima confianza del presidente Netero, encargado de gestionar su agenda y acompañarlo en las decisiones más importantes de la Asociación Hunter durante la crisis de las Hormigas Quimera.',
+      'Su devoción hacia Netero se extiende más allá del deber profesional, mostrando una tristeza genuina ante los eventos que marcan el final de la vida del presidente durante el arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Gestión y logística de la Asociación Hunter', descripcion: 'Su rol no es de combate sino de coordinación administrativa de alto nivel dentro de la Asociación Hunter.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Hormiga Quimera', contexto: 'Su función es de apoyo y coordinación durante toda la crisis.', resultado: 'Permanece junto a Netero hasta el desenlace final del presidente contra Meruem.' },
+    ],
+  },
+  {
+    slug: 'zepile',
+    nombre: 'Zepile',
+    apiNames: ['zepile'],
+    malId: 70621,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Secundario',
+    historia: [
+      'Zepile es un Hunter tasador que ayuda a Kurapika y su equipo a identificar y evaluar objetos de valor durante los preparativos para la subasta clandestina en Yorknew City, aportando su conocimiento experto sobre antigüedades y artefactos.',
+      'Aunque su participación en combate es nula, su experiencia resulta útil en la logística del equipo durante el arco, un recordatorio de que no todos los Hunters relevantes destacan por su fuerza física.',
+    ],
+    poderesNen: [
+      { nombre: 'Tasación experta', descripcion: 'Su verdadera habilidad es el conocimiento profundo de antigüedades, arte y objetos de valor, útil para identificar piezas genuinas en subastas y mercados clandestinos.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Yorknew City', contexto: 'Su rol es exclusivamente de apoyo logístico y asesoría.', resultado: 'Contribuye indirectamente al éxito del equipo de Kurapika durante la subasta.' },
+    ],
+  },
 ];
 
 export const findCharacterBySlug = (slug) => characters.find((c) => c.slug === slug);
