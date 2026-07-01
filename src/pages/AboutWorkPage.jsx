@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getAnimeInfo, getAnimeRelations, getMangaInfo } from '../api/jikanApi';
+import {
+  animeSinopsis,
+  mangaResumen,
+  translateStatus,
+  translateRelation,
+  translateDateRange,
+} from '../data/aboutWork';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
 
@@ -56,7 +63,9 @@ export default function AboutWorkPage() {
             <div className="arc-card">
               <h2>{anime.title}</h2>
               {anime.title_japanese && <p>{anime.title_japanese}</p>}
-              <p>{anime.synopsis}</p>
+              {animeSinopsis.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
               <table className="info-table">
                 <tbody>
                   <tr>
@@ -68,8 +77,12 @@ export default function AboutWorkPage() {
                     <td>{anime.episodes ?? 'No disponible'}</td>
                   </tr>
                   <tr>
+                    <td>Estado</td>
+                    <td>{translateStatus(anime.status) || 'No disponible'}</td>
+                  </tr>
+                  <tr>
                     <td>Emisión</td>
-                    <td>{anime.aired?.string || 'No disponible'}</td>
+                    <td>{translateDateRange(anime.aired?.string) || 'No disponible'}</td>
                   </tr>
                   <tr>
                     <td>Puntuación (MyAnimeList)</td>
@@ -93,6 +106,9 @@ export default function AboutWorkPage() {
           {manga && (
             <div className="arc-card">
               <h2>El manga</h2>
+              {mangaResumen.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
               <table className="info-table">
                 <tbody>
                   <tr>
@@ -101,11 +117,11 @@ export default function AboutWorkPage() {
                   </tr>
                   <tr>
                     <td>Estado</td>
-                    <td>{manga.status || 'No disponible'}</td>
+                    <td>{translateStatus(manga.status) || 'No disponible'}</td>
                   </tr>
                   <tr>
                     <td>Publicación</td>
-                    <td>{manga.published?.string || 'No disponible'}</td>
+                    <td>{translateDateRange(manga.published?.string) || 'No disponible'}</td>
                   </tr>
                   <tr>
                     <td>Puntuación (MyAnimeList)</td>
@@ -121,7 +137,7 @@ export default function AboutWorkPage() {
               <h2>Adaptaciones y otras versiones</h2>
               {relatedAnime.map((group) => (
                 <p key={group.relation}>
-                  <strong>{group.relation}:</strong>{' '}
+                  <strong>{translateRelation(group.relation)}:</strong>{' '}
                   {group.entries.map((e, i) => (
                     <span key={e.mal_id}>
                       {i > 0 && ', '}
