@@ -3,10 +3,8 @@
 // track record of uptime. Rate limit: ~60 requests/minute, no auth.
 const BASE_URL = 'https://api.jikan.moe/v4';
 const HXH_ANIME_ID = 11061; // Hunter x Hunter (2011)
+const HXH_MANGA_ID = 26; // Hunter x Hunter (manga)
 const TIMEOUT_MS = 15000;
-
-let animeCharactersPromise = null;
-const characterDetailPromises = new Map();
 
 async function fetchJson(path) {
   const controller = new AbortController();
@@ -26,28 +24,54 @@ async function fetchJson(path) {
   }
 }
 
+// Wraps fetchJson so repeated calls for the same key share one in-flight/resolved
+// request instead of firing duplicate network calls (e.g. multiple components
+// mounting the same page).
+function memoizedFetcher() {
+  const cache = new Map();
+  return (key, path) => {
+    if (!cache.has(key)) {
+      const promise = fetchJson(path).catch((err) => {
+        cache.delete(key);
+        throw err;
+      });
+      cache.set(key, promise);
+    }
+    return cache.get(key);
+  };
+}
+
+const getCached = memoizedFetcher();
+
 // Single request that returns every character in the HxH (2011) anime, including
 // image and role (Main/Supporting). Used to populate character cards/grids.
 export function getAnimeCharacters() {
-  if (!animeCharactersPromise) {
-    animeCharactersPromise = fetchJson(`/anime/${HXH_ANIME_ID}/characters`).catch((err) => {
-      animeCharactersPromise = null;
-      throw err;
-    });
-  }
-  return animeCharactersPromise;
+  return getCached('anime-characters', `/anime/${HXH_ANIME_ID}/characters`);
 }
 
-// Fetches full detail (including the free-text "about" bio) for a single
-// character by MyAnimeList id. Only called on the character detail page to
-// stay within Jikan's rate limit.
-export function getCharacterDetail(malId) {
-  if (!characterDetailPromises.has(malId)) {
-    const promise = fetchJson(`/characters/${malId}`).catch((err) => {
-      characterDetailPromises.delete(malId);
-      throw err;
-    });
-    characterDetailPromises.set(malId, promise);
-  }
-  return characterDetailPromises.get(malId);
+// Full detail for a single character: free-text "about" bio, voice actors
+// across languages, and anime/manga appearances. One request per character,
+// only called on the character detail page to stay within the rate limit.
+export function getCharacterFull(malId) {
+  return getCached(`character-full-${malId}`, `/characters/${malId}/full`);
+}
+
+// Extra gallery images for a single character, shown on the detail page.
+export function getCharacterPictures(malId) {
+  return getCached(`character-pictures-${malId}`, `/characters/${malId}/pictures`);
+}
+
+// General info about the HxH (2011) anime: synopsis, score, studio, trailer, etc.
+export function getAnimeInfo() {
+  return getCached('anime-info', `/anime/${HXH_ANIME_ID}`);
+}
+
+// Related entries (movies, OVAs, alternative versions, manga adaptation).
+export function getAnimeRelations() {
+  return getCached('anime-relations', `/anime/${HXH_ANIME_ID}/relations`);
+}
+
+// General info about the HxH manga: author, publication status, dates.
+export function getMangaInfo() {
+  return getCached('manga-info', `/manga/${HXH_MANGA_ID}`);
 }

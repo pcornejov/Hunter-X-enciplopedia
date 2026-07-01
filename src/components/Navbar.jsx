@@ -6,6 +6,7 @@ const links = [
   { to: '/arcos', label: 'Arcos' },
   { to: '/nen', label: 'Sistema Nen' },
   { to: '/grupos', label: 'Grupos' },
+  { to: '/la-obra', label: 'La Obra' },
 ];
 
 export default function Navbar() {

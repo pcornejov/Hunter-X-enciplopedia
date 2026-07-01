@@ -8,6 +8,7 @@ import ArcsPage from './pages/ArcsPage';
 import ArcDetailPage from './pages/ArcDetailPage';
 import NenPage from './pages/NenPage';
 import GroupsPage from './pages/GroupsPage';
+import AboutWorkPage from './pages/AboutWorkPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/arcos/:slug" element={<ArcDetailPage />} />
           <Route path="/nen" element={<NenPage />} />
           <Route path="/grupos" element={<GroupsPage />} />
+          <Route path="/la-obra" element={<AboutWorkPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

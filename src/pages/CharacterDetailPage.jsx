@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
@@ -8,6 +9,11 @@ import { grupos } from '../data/grupos';
 export default function CharacterDetailPage() {
   const { slug } = useParams();
   const { character, loading, error } = useCharacterDetail(slug);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    setSelectedImage(null);
+  }, [slug]);
 
   if (!character) {
     return (
@@ -20,24 +26,41 @@ export default function CharacterDetailPage() {
 
   const arco = findArcoBySlug(character.arcoPrincipal);
   const grupoDePersonaje = grupos.filter((g) => g.miembrosSlugs.includes(slug));
+  const galeria = [character.imagen, ...character.galeria].filter(Boolean);
+  const mainImage = selectedImage || character.imagen;
 
   return (
     <div className="container">
       {error && <ErrorBanner message={error} />}
 
       <div className="detail-header">
-        {loading ? (
-          <div className="detail-image" />
-        ) : (
-          <img
-            className="detail-image"
-            src={character.imagen || '/placeholder-character.svg'}
-            alt={character.nombre}
-            onError={(e) => {
-              e.currentTarget.src = '/placeholder-character.svg';
-            }}
-          />
-        )}
+        <div>
+          {loading ? (
+            <div className="detail-image" />
+          ) : (
+            <img
+              className="detail-image"
+              src={mainImage || '/placeholder-character.svg'}
+              alt={character.nombre}
+              onError={(e) => {
+                e.currentTarget.src = '/placeholder-character.svg';
+              }}
+            />
+          )}
+          {galeria.length > 1 && (
+            <div className="gallery-thumbs">
+              {galeria.slice(0, 6).map((url) => (
+                <img
+                  key={url}
+                  src={url}
+                  alt=""
+                  className={`gallery-thumb ${url === mainImage ? 'selected' : ''}`}
+                  onClick={() => setSelectedImage(url)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
         <div className="detail-info">
           <h1>{character.nombre}</h1>
           {character.nombreJapones && <p>{character.nombreJapones}</p>}
@@ -80,6 +103,14 @@ export default function CharacterDetailPage() {
                         <Link to="/grupos">{g.nombre}</Link>
                       </span>
                     ))}
+                  </td>
+                </tr>
+              )}
+              {character.voces.length > 0 && (
+                <tr>
+                  <td>Actores de voz</td>
+                  <td>
+                    {character.voces.map((v) => `${v.person.name} (${v.language})`).join(', ')}
                   </td>
                 </tr>
               )}
