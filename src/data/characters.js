@@ -1,13 +1,14 @@
 // Contenido curado (historia, poderes y enfrentamientos) escrito para este proyecto.
-// Los datos estructurados (imagen, tipo de Nen exacto, habilidades, profesión, estado)
-// se obtienen en tiempo real desde la API hxh-api y se combinan con este contenido
-// mediante utils/mergeCharacterData.js, usando el campo `apiNames` para el cruce.
+// La imagen y datos adicionales (edad, ocupación, tipo de Nen según el wiki) se obtienen
+// en tiempo real desde la API Jikan (MyAnimeList) usando el `malId` de cada personaje
+// dentro del anime Hunter x Hunter (2011), combinados mediante utils/mergeCharacterData.js.
 
 export const characters = [
   {
     slug: 'gon-freecss',
     nombre: 'Gon Freecss',
     apiNames: ['gon freecss', 'gon'],
+    malId: 30,
     arcoPrincipal: 'examen-hunter',
     categoria: 'Protagonista',
     historia: [
@@ -30,6 +31,7 @@ export const characters = [
     slug: 'killua-zoldyck',
     nombre: 'Killua Zoldyck',
     apiNames: ['killua zoldyck', 'killua'],
+    malId: 27,
     arcoPrincipal: 'zoldyck',
     categoria: 'Protagonista',
     historia: [
@@ -52,6 +54,7 @@ export const characters = [
     slug: 'kurapika',
     nombre: 'Kurapika',
     apiNames: ['kurapika'],
+    malId: 28,
     arcoPrincipal: 'yorknew-city',
     categoria: 'Protagonista',
     historia: [
@@ -73,7 +76,8 @@ export const characters = [
   {
     slug: 'leorio-paradinight',
     nombre: 'Leorio Paradinight',
-    apiNames: ['leorio paradinight', 'leorio'],
+    apiNames: ['leorio paradinight', 'leorio paladiknight', 'leorio'],
+    malId: 29,
     arcoPrincipal: 'examen-hunter',
     categoria: 'Protagonista',
     historia: [
@@ -94,6 +98,7 @@ export const characters = [
     slug: 'hisoka-morow',
     nombre: 'Hisoka Morow',
     apiNames: ['hisoka morow', 'hisoka'],
+    malId: 31,
     arcoPrincipal: 'heavens-arena',
     categoria: 'Antagonista recurrente',
     historia: [
@@ -116,6 +121,7 @@ export const characters = [
     slug: 'chrollo-lucilfer',
     nombre: 'Chrollo Lucilfer',
     apiNames: ['chrollo lucilfer', 'chrollo'],
+    malId: 58,
     arcoPrincipal: 'yorknew-city',
     categoria: 'Antagonista principal',
     historia: [
@@ -138,6 +144,7 @@ export const characters = [
     slug: 'illumi-zoldyck',
     nombre: 'Illumi Zoldyck',
     apiNames: ['illumi zoldyck', 'illumi'],
+    malId: 57,
     arcoPrincipal: 'zoldyck',
     categoria: 'Antagonista recurrente',
     historia: [
@@ -159,6 +166,7 @@ export const characters = [
     slug: 'silva-zoldyck',
     nombre: 'Silva Zoldyck',
     apiNames: ['silva zoldyck', 'silva'],
+    malId: 60,
     arcoPrincipal: 'zoldyck',
     categoria: 'Secundario',
     historia: [
@@ -178,6 +186,7 @@ export const characters = [
     slug: 'alluka-zoldyck',
     nombre: 'Alluka Zoldyck',
     apiNames: ['alluka zoldyck', 'alluka'],
+    malId: 52425,
     arcoPrincipal: 'eleccion-presidencial',
     categoria: 'Secundario',
     historia: [
@@ -198,6 +207,7 @@ export const characters = [
     slug: 'isaac-netero',
     nombre: 'Isaac Netero',
     apiNames: ['isaac netero', 'netero'],
+    malId: 14489,
     arcoPrincipal: 'hormiga-quimera',
     categoria: 'Secundario',
     historia: [
@@ -218,6 +228,7 @@ export const characters = [
     slug: 'meruem',
     nombre: 'Meruem',
     apiNames: ['meruem'],
+    malId: 23277,
     arcoPrincipal: 'hormiga-quimera',
     categoria: 'Antagonista principal',
     historia: [
@@ -239,6 +250,7 @@ export const characters = [
     slug: 'neferpitou',
     nombre: 'Neferpitou',
     apiNames: ['neferpitou', 'pitou'],
+    malId: 12300,
     arcoPrincipal: 'hormiga-quimera',
     categoria: 'Antagonista',
     historia: [
@@ -258,6 +270,7 @@ export const characters = [
     slug: 'shaiapouf',
     nombre: 'Shaiapouf',
     apiNames: ['shaiapouf', 'pouf'],
+    malId: 41135,
     arcoPrincipal: 'hormiga-quimera',
     categoria: 'Antagonista',
     historia: [
@@ -276,7 +289,8 @@ export const characters = [
   {
     slug: 'youpi',
     nombre: 'Youpi',
-    apiNames: ['youpi'],
+    apiNames: ['youpi', 'menthuthuyoupi'],
+    malId: 43953,
     arcoPrincipal: 'hormiga-quimera',
     categoria: 'Antagonista',
     historia: [
@@ -295,6 +309,7 @@ export const characters = [
     slug: 'biscuit-krueger',
     nombre: 'Biscuit Krueger',
     apiNames: ['biscuit krueger', 'biscuit', 'bisky'],
+    malId: 13898,
     arcoPrincipal: 'greed-island',
     categoria: 'Secundaria / Mentora',
     historia: [
@@ -313,6 +328,7 @@ export const characters = [
     slug: 'ging-freecss',
     nombre: 'Ging Freecss',
     apiNames: ['ging freecss', 'ging'],
+    malId: 26,
     arcoPrincipal: 'greed-island',
     categoria: 'Secundario',
     historia: [
@@ -331,6 +347,7 @@ export const characters = [
     slug: 'feitan-portor',
     nombre: 'Feitan Portor',
     apiNames: ['feitan portor', 'feitan'],
+    malId: 3195,
     arcoPrincipal: 'yorknew-city',
     categoria: 'Antagonista',
     historia: [
@@ -348,7 +365,8 @@ export const characters = [
   {
     slug: 'machi-komacine',
     nombre: 'Machi Komacine',
-    apiNames: ['machi komacine', 'machi'],
+    apiNames: ['machi komacine', 'machi komachine', 'machi'],
+    malId: 5830,
     arcoPrincipal: 'yorknew-city',
     categoria: 'Antagonista',
     historia: [
@@ -367,6 +385,7 @@ export const characters = [
     slug: 'shizuku-murasaki',
     nombre: 'Shizuku Murasaki',
     apiNames: ['shizuku murasaki', 'shizuku'],
+    malId: 5833,
     arcoPrincipal: 'yorknew-city',
     categoria: 'Antagonista',
     historia: [

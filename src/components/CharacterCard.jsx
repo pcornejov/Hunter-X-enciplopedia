@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function CharacterCard({ character }) {
-  const { slug, nombre, imagen, tipoNen, estado } = character;
+  const { slug, nombre, imagen, categoria, role } = character;
 
   return (
     <Link to={`/personajes/${slug}`} className="card">
@@ -17,10 +17,8 @@ export default function CharacterCard({ character }) {
       <div className="card-body">
         <h3>{nombre}</h3>
         <div className="badges">
-          {tipoNen?.[0] && <span className="badge">{tipoNen[0]}</span>}
-          {estado && (
-            <span className="badge badge-muted">{estado === 'alive' ? 'Vivo' : 'Fallecido'}</span>
-          )}
+          {categoria && <span className="badge">{categoria}</span>}
+          {role && <span className="badge badge-muted">{role === 'Main' ? 'Protagonista' : 'Secundario'}</span>}
         </div>
       </div>
     </Link>

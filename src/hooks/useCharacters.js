@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
-import { getAllCharacters } from '../api/hxhApi';
+import { getAnimeCharacters } from '../api/jikanApi';
 import { characters as curatedCharacters } from '../data/characters';
-import { mergeAllCharacters } from '../utils/mergeCharacterData';
+import { mergeAllCharactersList } from '../utils/mergeCharacterData';
 
-// Fetches the live API character list once, merges it with the curated local
-// content, and exposes loading/error state so pages can render gracefully.
+// Fetches the full HxH character list from Jikan once (single request) and
+// merges it with the curated local content, exposing loading/error state so
+// pages can render gracefully while the request is in flight or if it fails.
 export function useCharacters() {
-  const [characters, setCharacters] = useState(() => mergeAllCharacters(curatedCharacters, []));
+  const [characters, setCharacters] = useState(() => mergeAllCharactersList(curatedCharacters, []));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
 
-    getAllCharacters()
-      .then((apiCharacters) => {
+    getAnimeCharacters()
+      .then((animeCharacters) => {
         if (cancelled) return;
-        setCharacters(mergeAllCharacters(curatedCharacters, apiCharacters));
+        setCharacters(mergeAllCharactersList(curatedCharacters, animeCharacters));
       })
       .catch((err) => {
         if (cancelled) return;

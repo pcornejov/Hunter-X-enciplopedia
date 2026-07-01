@@ -9,20 +9,20 @@ import { useCharacters } from '../hooks/useCharacters';
 export default function CharactersPage() {
   const { characters, loading, error } = useCharacters();
   const [query, setQuery] = useState('');
-  const [nenType, setNenType] = useState('');
-  const [status, setStatus] = useState('');
+  const [category, setCategory] = useState('');
+  const [role, setRole] = useState('');
 
-  const nenTypeOptions = useMemo(() => {
+  const categoryOptions = useMemo(() => {
     const set = new Set();
-    characters.forEach((c) => c.tipoNen?.forEach((t) => set.add(t)));
+    characters.forEach((c) => c.categoria && set.add(c.categoria));
     return Array.from(set).sort();
   }, [characters]);
 
   const filtered = characters.filter((c) => {
     const matchesQuery = c.nombre.toLowerCase().includes(query.toLowerCase());
-    const matchesNen = !nenType || c.tipoNen?.includes(nenType);
-    const matchesStatus = !status || c.estado === status;
-    return matchesQuery && matchesNen && matchesStatus;
+    const matchesCategory = !category || c.categoria === category;
+    const matchesRole = !role || c.role === role;
+    return matchesQuery && matchesCategory && matchesRole;
   });
 
   return (
@@ -37,11 +37,11 @@ export default function CharactersPage() {
       <div className="toolbar">
         <SearchBar value={query} onChange={setQuery} />
         <FilterBar
-          nenType={nenType}
-          onNenTypeChange={setNenType}
-          nenTypeOptions={nenTypeOptions}
-          status={status}
-          onStatusChange={setStatus}
+          category={category}
+          onCategoryChange={setCategory}
+          categoryOptions={categoryOptions}
+          role={role}
+          onRoleChange={setRole}
         />
       </div>
 

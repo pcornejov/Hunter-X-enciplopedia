@@ -1,18 +1,18 @@
-export default function FilterBar({ nenType, onNenTypeChange, nenTypeOptions, status, onStatusChange }) {
+export default function FilterBar({ category, onCategoryChange, categoryOptions, role, onRoleChange }) {
   return (
     <>
-      <select className="filter-select" value={nenType} onChange={(e) => onNenTypeChange(e.target.value)}>
-        <option value="">Todos los tipos de Nen</option>
-        {nenTypeOptions.map((option) => (
+      <select className="filter-select" value={category} onChange={(e) => onCategoryChange(e.target.value)}>
+        <option value="">Todas las categorías</option>
+        {categoryOptions.map((option) => (
           <option key={option} value={option}>
             {option}
           </option>
         ))}
       </select>
-      <select className="filter-select" value={status} onChange={(e) => onStatusChange(e.target.value)}>
-        <option value="">Cualquier estado</option>
-        <option value="alive">Vivo</option>
-        <option value="deceased">Fallecido</option>
+      <select className="filter-select" value={role} onChange={(e) => onRoleChange(e.target.value)}>
+        <option value="">Cualquier rol</option>
+        <option value="Main">Protagonista</option>
+        <option value="Supporting">Secundario</option>
       </select>
     </>
   );

@@ -1,21 +1,13 @@
 import { Link, useParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
-import { useCharacters } from '../hooks/useCharacters';
+import { useCharacterDetail } from '../hooks/useCharacterDetail';
 import { findArcoBySlug } from '../data/arcos';
+import { grupos } from '../data/grupos';
 
 export default function CharacterDetailPage() {
   const { slug } = useParams();
-  const { characters, loading, error } = useCharacters();
-  const character = characters.find((c) => c.slug === slug);
-
-  if (loading) {
-    return (
-      <div className="container">
-        <LoadingSpinner />
-      </div>
-    );
-  }
+  const { character, loading, error } = useCharacterDetail(slug);
 
   if (!character) {
     return (
@@ -27,63 +19,67 @@ export default function CharacterDetailPage() {
   }
 
   const arco = findArcoBySlug(character.arcoPrincipal);
+  const grupoDePersonaje = grupos.filter((g) => g.miembrosSlugs.includes(slug));
 
   return (
     <div className="container">
       {error && <ErrorBanner message={error} />}
 
       <div className="detail-header">
-        <img
-          className="detail-image"
-          src={character.imagen || '/placeholder-character.svg'}
-          alt={character.nombre}
-          onError={(e) => {
-            e.currentTarget.src = '/placeholder-character.svg';
-          }}
-        />
+        {loading ? (
+          <div className="detail-image" />
+        ) : (
+          <img
+            className="detail-image"
+            src={character.imagen || '/placeholder-character.svg'}
+            alt={character.nombre}
+            onError={(e) => {
+              e.currentTarget.src = '/placeholder-character.svg';
+            }}
+          />
+        )}
         <div className="detail-info">
           <h1>{character.nombre}</h1>
           {character.nombreJapones && <p>{character.nombreJapones}</p>}
 
           <table className="info-table">
             <tbody>
-              {character.aliases.length > 0 && (
-                <tr>
-                  <td>Alias</td>
-                  <td>{character.aliases.join(', ')}</td>
-                </tr>
-              )}
+              <tr>
+                <td>Categoría</td>
+                <td>{character.categoria}</td>
+              </tr>
               <tr>
                 <td>Tipo de Nen</td>
-                <td>{character.tipoNen.length > 0 ? character.tipoNen.join(', ') : 'No disponible'}</td>
+                <td>{loading ? 'Cargando...' : character.tipoNenApi || 'No disponible'}</td>
               </tr>
               <tr>
-                <td>Profesión</td>
-                <td>{character.profesiones.length > 0 ? character.profesiones.join(', ') : 'No disponible'}</td>
+                <td>Ocupación</td>
+                <td>{loading ? 'Cargando...' : character.ocupacion || 'No disponible'}</td>
               </tr>
-              {character.grupos.length > 0 && (
+              {character.edad && (
                 <tr>
-                  <td>Afiliación</td>
-                  <td>{character.grupos.map((g) => g.name).join(', ')}</td>
+                  <td>Edad</td>
+                  <td>{character.edad}</td>
                 </tr>
               )}
-              <tr>
-                <td>Estado</td>
-                <td>
-                  {character.estado ? (
-                    <span className={character.estado === 'alive' ? 'status-alive' : 'status-dead'}>
-                      {character.estado === 'alive' ? 'Vivo' : 'Fallecido'}
-                    </span>
-                  ) : (
-                    'No disponible'
-                  )}
-                </td>
-              </tr>
               {arco && (
                 <tr>
                   <td>Arco principal</td>
                   <td>
                     <Link to={`/arcos/${arco.slug}`}>{arco.titulo}</Link>
+                  </td>
+                </tr>
+              )}
+              {grupoDePersonaje.length > 0 && (
+                <tr>
+                  <td>Afiliación</td>
+                  <td>
+                    {grupoDePersonaje.map((g, i) => (
+                      <span key={g.slug}>
+                        {i > 0 && ', '}
+                        <Link to="/grupos">{g.nombre}</Link>
+                      </span>
+                    ))}
                   </td>
                 </tr>
               )}
@@ -101,11 +97,6 @@ export default function CharacterDetailPage() {
 
       <section className="block">
         <h2>Poderes Nen</h2>
-        {character.habilidades.length > 0 && (
-          <p>
-            <strong>Habilidades registradas:</strong> {character.habilidades.join(', ')}
-          </p>
-        )}
         {character.poderesNen.map((poder) => (
           <div className="ability-item" key={poder.nombre}>
             <h4>{poder.nombre}</h4>

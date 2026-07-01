@@ -7,11 +7,11 @@ export default function Footer() {
           propiedad de Yoshihiro Togashi, Shueisha y sus respectivos licenciatarios.
         </p>
         <p>
-          Datos de personajes e imágenes obtenidos de la API pública{' '}
-          <a href="https://hxh-api.onrender.com" target="_blank" rel="noreferrer">
-            hxh-api
+          Imágenes y datos complementarios de personajes obtenidos de{' '}
+          <a href="https://jikan.moe" target="_blank" rel="noreferrer">
+            Jikan
           </a>
-          . Este sitio no aloja ni reclama derechos sobre esas imágenes.
+          , una API no oficial de MyAnimeList. Este sitio no aloja ni reclama derechos sobre esas imágenes.
         </p>
       </div>
     </footer>
