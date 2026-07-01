@@ -4,6 +4,7 @@ import ErrorBanner from '../components/ErrorBanner';
 import ImageLightbox from '../components/ImageLightbox';
 import { useCharacterDetail } from '../hooks/useCharacterDetail';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { useFavorites } from '../hooks/useFavorites';
 import { findArcoBySlug } from '../data/arcos';
 import { grupos } from '../data/grupos';
 
@@ -12,6 +13,7 @@ export default function CharacterDetailPage() {
   const { character, loading, error } = useCharacterDetail(slug);
   const [selectedImage, setSelectedImage] = useState(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
   useDocumentTitle(character?.nombre);
 
   useEffect(() => {
@@ -72,7 +74,17 @@ export default function CharacterDetailPage() {
           )}
         </div>
         <div className="detail-info">
-          <h1>{character.nombre}</h1>
+          <h1>
+            {character.nombre}{' '}
+            <button
+              type="button"
+              className="favorite-toggle-inline"
+              aria-label={isFavorite(slug) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+              onClick={() => toggleFavorite(slug)}
+            >
+              {isFavorite(slug) ? '★' : '☆'}
+            </button>
+          </h1>
           {character.nombreJapones && <p>{character.nombreJapones}</p>}
 
           <table className="info-table">

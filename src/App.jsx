@@ -10,7 +10,9 @@ import ArcDetailPage from './pages/ArcDetailPage';
 import NenPage from './pages/NenPage';
 import GroupsPage from './pages/GroupsPage';
 import AboutWorkPage from './pages/AboutWorkPage';
+import FavoritesPage from './pages/FavoritesPage';
 import NotFoundPage from './pages/NotFoundPage';
+import { FavoritesProvider } from './hooks/useFavorites';
 
 // Keying the boundary by pathname resets it on navigation, so an error on
 // one page doesn't permanently strand the user once they click elsewhere.
@@ -28,6 +30,7 @@ function AppRoutes() {
         <Route path="/nen" element={<NenPage />} />
         <Route path="/grupos" element={<GroupsPage />} />
         <Route path="/la-obra" element={<AboutWorkPage />} />
+        <Route path="/favoritos" element={<FavoritesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </ErrorBoundary>
@@ -37,11 +40,13 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main className="main-content">
-        <AppRoutes />
-      </main>
-      <Footer />
+      <FavoritesProvider>
+        <Navbar />
+        <main className="main-content">
+          <AppRoutes />
+        </main>
+        <Footer />
+      </FavoritesProvider>
     </BrowserRouter>
   );
 }

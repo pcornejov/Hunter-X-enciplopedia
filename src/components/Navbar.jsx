@@ -8,6 +8,7 @@ const links = [
   { to: '/nen', label: 'Sistema Nen' },
   { to: '/grupos', label: 'Grupos' },
   { to: '/la-obra', label: 'La Obra' },
+  { to: '/favoritos', label: 'Favoritos' },
 ];
 
 export default function Navbar() {

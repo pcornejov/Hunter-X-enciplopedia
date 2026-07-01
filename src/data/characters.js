@@ -696,6 +696,258 @@ export const characters = [
       { rival: 'Candidatos rivales en la elección', arco: 'Elección Presidencial', contexto: 'Compite y maniobra políticamente contra el resto de los doce candidatos a la presidencia de la Asociación Hunter.', resultado: 'Sus jugadas alteran repetidamente el curso de la elección, consolidándolo como uno de los actores más impredecibles del arco.' },
     ],
   },
+  {
+    slug: 'satotz',
+    nombre: 'Satotz',
+    apiNames: ['satotz'],
+    malId: 22519,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Satotz es el primer examinador del Examen Hunter en el arco inicial, encargado de guiar (literalmente correr al frente) a los candidatos durante la primera fase, una carrera de resistencia que dura horas por un túnel subterráneo repleto de trampas.',
+      'De apariencia inusual y voz calmada, revela más adelante ser un usuario de Nen sofisticado, capaz de detectar impostores entre los aspirantes mediante el olfato, un giro que expone lo peligroso que puede ser incluso el tramo "administrativo" del examen.',
+    ],
+    poderesNen: [
+      { nombre: 'Detección por olfato', descripcion: 'Es capaz de identificar la esencia individual de cada aspirante, lo que le permite detectar sustitutos o infiltrados que intenten hacerse pasar por otro candidato durante el examen.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Hisoka Morow', arco: 'Examen Hunter', contexto: 'Hisoka lo ataca sin previo aviso para medir su propio nivel contra un examinador de la Asociación Hunter.', resultado: 'El combate se corta antes de definirse, pero deja claro que Satotz posee un poder considerable pese a su rol administrativo.' },
+    ],
+  },
+  {
+    slug: 'menchi',
+    nombre: 'Menchi',
+    apiNames: ['menchi'],
+    malId: 6088,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Menchi es una Hunter Gourmet y examinadora de la segunda fase del Examen Hunter, centrada en pruebas de cocina que evalúan la capacidad de los candidatos para conseguir y preparar ingredientes extremadamente difíciles de obtener.',
+      'Su exigencia extrema estuvo a punto de descalificar a todos los participantes en un año determinado, lo que desencadena un conflicto directo con Netero sobre la validez de sus criterios de evaluación.',
+    ],
+    poderesNen: [
+      { nombre: 'Paladar Gourmet', descripcion: 'Su sentido del gusto y olfato están entrenados a un nivel sobrehumano, permitiéndole evaluar con precisión la calidad de cualquier ingrediente o platillo.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Netero (disputa de criterios)', arco: 'Examen Hunter', contexto: 'Netero cuestiona la dureza de sus pruebas tras la casi descalificación masiva de candidatos.', resultado: 'Menchi acepta ajustar la prueba, permitiendo que el examen continúe con una segunda oportunidad para los participantes.' },
+    ],
+  },
+  {
+    slug: 'hanzo',
+    nombre: 'Hanzo',
+    apiNames: ['hanzo'],
+    malId: 20677,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Hanzo es un ninja profesional y uno de los candidatos más experimentados del Examen Hunter, con un fuerte sentido del honor de combate a pesar de su lenguaje directo y a veces brusco.',
+      'Aunque compite contra Gon, Killua, Kurapika y Leorio, termina desarrollando un respeto genuino por la determinación de los cuatro, especialmente tras su combate contra Leorio.',
+    ],
+    poderesNen: [
+      { nombre: 'Técnicas ninja', descripcion: 'Domina un amplio arsenal de armas arrojadizas, sigilo y combate cuerpo a cuerpo propio del entrenamiento ninja tradicional.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Leorio Paradinight', arco: 'Examen Hunter', contexto: 'Se enfrentan en la fase final de combates uno contra uno del examen.', resultado: 'Hanzo gana el combate, pero queda impresionado por la resistencia y el espíritu de Leorio.' },
+    ],
+  },
+  {
+    slug: 'tonpa',
+    nombre: 'Tonpa',
+    apiNames: ['tonpa'],
+    malId: 22522,
+    arcoPrincipal: 'examen-hunter',
+    categoria: 'Secundario',
+    historia: [
+      'Tonpa es un examinado veterano apodado "el aplanador de novatos", conocido por presentarse año tras año al Examen Hunter no para aprobar, sino para sabotear sutilmente a los candidatos primerizos con trucos y engaños que no rompen las reglas del examen.',
+      'Su actitud aparentemente amistosa hacia Gon y sus amigos esconde intenciones de descalificarlos discretamente, aunque termina fallando repetidamente contra la perspicacia del grupo.',
+    ],
+    poderesNen: [
+      { nombre: 'Sin habilidades de Nen relevantes', descripcion: 'Su verdadera "arma" es el conocimiento acumulado del examen y sus trucos psicológicos, no el combate directo.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Gon Freecss y compañía (sabotaje)', arco: 'Examen Hunter', contexto: 'Intenta engañar a Gon con una bebida en mal estado durante la primera fase.', resultado: 'Gon acepta la bebida sin sospechar, pero su resistencia natural evita cualquier daño real, frustrando el plan de Tonpa.' },
+    ],
+  },
+  {
+    slug: 'wing',
+    nombre: 'Wing',
+    apiNames: ['wing'],
+    malId: 22521,
+    arcoPrincipal: 'heavens-arena',
+    categoria: 'Secundario',
+    historia: [
+      'Wing es un maestro de Nen que reside en los pisos intermedios de la Torre del Cielo, encargado de introducir a Gon y Killua a los fundamentos del Nen tras detectar su potencial sin explotar.',
+      'Su enseñanza paciente y metódica sienta las bases técnicas (Ten, Zetsu, Ren, Gyo, Ryu) que los protagonistas usarán durante el resto de la serie.',
+    ],
+    poderesNen: [
+      { nombre: 'Maestro instructor de Nen', descripcion: 'Su dominio profundo de los fundamentos del Nen lo convierte en un profesor excepcional, aunque rara vez se le ve en combate directo.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Heavens Arena', contexto: 'Su rol es principalmente pedagógico dentro de la Torre del Cielo.', resultado: 'Su enseñanza resulta decisiva para el desarrollo de Gon y Killua como usuarios de Nen.' },
+    ],
+  },
+  {
+    slug: 'zushi',
+    nombre: 'Zushi',
+    apiNames: ['zushi'],
+    malId: 43931,
+    arcoPrincipal: 'heavens-arena',
+    categoria: 'Secundario',
+    historia: [
+      'Zushi es un joven estudiante de artes marciales bajo la tutela de Wing en la Torre del Cielo, con un talento natural notable a pesar de su corta edad. Se convierte rápidamente en amigo de Gon y Killua durante su estadía en la torre.',
+      'Su dedicación y disciplina contrastan con el aprendizaje más autodidacta de Gon y Killua, ofreciendo una perspectiva distinta sobre cómo formarse como luchador dentro del mundo de Hunter x Hunter.',
+    ],
+    poderesNen: [
+      { nombre: 'Artes marciales tradicionales', descripcion: 'Entrenado en un estilo de combate disciplinado, complementado con los fundamentos de Nen enseñados por Wing.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Combates de entrenamiento en la Torre del Cielo', arco: 'Heavens Arena', contexto: 'Participa en combates de práctica y exhibición junto a Gon y Killua.', resultado: 'Mejora notablemente su nivel gracias al intercambio constante con los protagonistas.' },
+    ],
+  },
+  {
+    slug: 'genthru',
+    nombre: 'Genthru',
+    apiNames: ['genthru', 'bara'],
+    malId: 33300,
+    arcoPrincipal: 'greed-island',
+    categoria: 'Antagonista',
+    historia: [
+      'Genthru, apodado "Bara", es el líder de los Zorros de Hierro (Iron Fist Group), un grupo de jugadores hostiles dentro de Greed Island dedicados a robar tarjetas y eliminar a otros jugadores mediante trampas letales imperceptibles.',
+      'Su estrategia se basa en el miedo y el anonimato: ataca sin previo aviso usando explosivos invisibles distribuidos por todo el mapa, obligando a Gon y Killua a idear una contraestrategia igual de meticulosa.',
+    ],
+    poderesNen: [
+      { nombre: 'Punto de Explosión Invisible (Ten\'gu)', descripcion: 'Coloca bombas de aura completamente invisibles e indetectables por medios convencionales en cualquier superficie que su objetivo probablemente toque.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Gon Freecss y Killua Zoldyck', arco: 'Greed Island', contexto: 'Tras perder a varios miembros de su grupo, Genthru se enfrenta directamente a Gon y Killua en un duelo final.', resultado: 'Es derrotado por el dúo con ayuda de la estrategia de Biscuit, terminando la amenaza de los Zorros de Hierro.' },
+    ],
+  },
+  {
+    slug: 'razor',
+    nombre: 'Razor',
+    apiNames: ['razor'],
+    malId: 22518,
+    arcoPrincipal: 'greed-island',
+    categoria: 'Secundario',
+    historia: [
+      'Razor es el Game Master de Greed Island, un personaje del propio juego con un poder de combate extraordinario diseñado para poner a prueba a los jugadores más avanzados. Actúa como jefe final y árbitro de las reglas del juego.',
+      'A pesar de ser una construcción del juego, se comporta con una personalidad carismática y desafiante, ofreciendo entrenamiento de alto nivel a quienes logran ganarse su respeto.',
+    ],
+    poderesNen: [
+      { nombre: 'Maestría absoluta multi-categoría', descripcion: 'Como Game Master, tiene acceso a un dominio de Nen prácticamente ilimitado dentro de las reglas del juego, sirviendo como el mayor desafío de combate de Greed Island.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Jugadores de Greed Island (partidos de práctica)', arco: 'Greed Island', contexto: 'Ofrece combates de entrenamiento de altísimo nivel a los jugadores que avanzan lo suficiente en el juego.', resultado: 'Ayuda a pulir las habilidades de varios personajes, incluido Gon, antes de que abandonen la isla.' },
+    ],
+  },
+  {
+    slug: 'kite',
+    nombre: 'Kite',
+    apiNames: ['kite'],
+    malId: 20594,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Kite es un Hunter discípulo de Ging Freecss y mentor ocasional de Gon, a quien acompaña durante la investigación de las Hormigas Quimera en NGL. Su relación con Gon está marcada por conexiones indirectas con Ging, el padre ausente de Gon.',
+      'Su muerte a manos de Neferpitou, quien lo desmiembra casi sin esfuerzo, es el catalizador principal de la espiral de venganza que lleva a Gon a sacrificar su propio futuro Nen más adelante en el arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Chain Jail / Crazy Slots', descripcion: 'Utiliza una habilidad de tragamonedas conjurada que otorga efectos aleatorios (algunos beneficiosos, otros catastróficos) al accionar la palanca, una apuesta arriesgada pero potencialmente muy poderosa.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Neferpitou', arco: 'Hormiga Quimera', contexto: 'Se encuentra con Pitou durante una expedición de reconocimiento en territorio de las Hormigas Quimera.', resultado: 'Es asesinado y desmembrado por Pitou casi sin oportunidad de defenderse, desencadenando la furia de Gon.' },
+    ],
+  },
+  {
+    slug: 'welfin',
+    nombre: 'Welfin',
+    apiNames: ['welfin'],
+    malId: 83203,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Antagonista',
+    historia: [
+      'Welfin es una Hormiga Quimera de rango de escuadrón, con forma humanoide alada, que participa en las escaramuzas de NGL contra los Hunters enviados a investigar y contener la amenaza.',
+      'Como muchos escuadrones de la colonia, representa el peligro intermedio entre las hormigas comunes y la Guardia Real, sirviendo de obstáculo para las fuerzas humanas antes de llegar al núcleo del conflicto.',
+    ],
+    poderesNen: [
+      { nombre: 'Capacidades heredadas por consumo humano', descripcion: 'Como toda Hormiga Quimera, hereda rasgos y habilidades de los humanos que devoró durante su formación, en su caso ligadas al vuelo y el combate aéreo.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Fuerzas de la Asociación Hunter en NGL', arco: 'Hormiga Quimera', contexto: 'Enfrenta a los escuadrones de Hunters desplegados para contener a las Hormigas Quimera.', resultado: 'Forma parte de la resistencia general de la colonia antes del ataque decisivo al palacio de Meruem.' },
+    ],
+  },
+  {
+    slug: 'colt',
+    nombre: 'Colt',
+    apiNames: ['colt'],
+    malId: 83199,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Antagonista',
+    historia: [
+      'Colt es una Hormiga Quimera con apariencia de ave que sirve como mensajero y protector cercano de la Reina Hormiga durante la gestación de Meruem, mostrando un nivel de lealtad y ternura poco común entre las hormigas de su especie.',
+      'A diferencia de otros miembros más brutales de la colonia, Colt desarrolla una perspectiva más reflexiva sobre la naturaleza de las Hormigas Quimera y su lugar frente a la humanidad conforme avanza el arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Vuelo y percepción aguda', descripcion: 'Sus rasgos heredados de ave le dan gran movilidad aérea y sentidos agudizados, útiles para tareas de vigilancia y mensajería dentro de la colonia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Fuerzas humanas en NGL', arco: 'Hormiga Quimera', contexto: 'Participa en la defensa de la colonia y de la Reina Hormiga durante la incursión humana en NGL.', resultado: 'Sobrevive gran parte del conflicto inicial, alineado con la causa de proteger a la Reina y, después, a Meruem.' },
+    ],
+  },
+  {
+    slug: 'palm-siberia',
+    nombre: 'Palm Siberia',
+    apiNames: ['palm siberia', 'palm'],
+    malId: 34054,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Palm es una Hunter en entrenamiento bajo Knuckle y Morel, con una personalidad obsesiva particularmente marcada por su fijación romántica hacia Knov, su instructor. Su desarrollo durante el arco la lleva a un cambio físico y psicológico drástico tras ser capturada por las Hormigas Quimera.',
+      'Su transformación —una fusión parcial inducida por la Reina Hormiga— le otorga habilidades de detección inéditas, que termina poniendo al servicio de la Asociación Hunter en la batalla final contra Meruem.',
+    ],
+    poderesNen: [
+      { nombre: 'Detección tras la fusión', descripcion: 'Tras su transformación, desarrolla una capacidad de rastreo y detección de personas específicas prácticamente infalible, crucial para localizar a Komugi durante el asalto final.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Captura por parte de la colonia', arco: 'Hormiga Quimera', contexto: 'Es capturada y alterada físicamente por la Reina Hormiga durante una emboscada.', resultado: 'Sobrevive a la transformación y termina utilizando su nueva habilidad a favor de los Hunters en la etapa final del conflicto.' },
+    ],
+  },
+  {
+    slug: 'cheadle-yorkshire',
+    nombre: 'Cheadle Yorkshire',
+    apiNames: ['cheadle yorkshire', 'cheadle'],
+    malId: 55069,
+    arcoPrincipal: 'eleccion-presidencial',
+    categoria: 'Secundario',
+    historia: [
+      'Cheadle es miembro de la junta directiva de la Asociación Hunter (Zodiacos) y una de las candidatas más serias y pragmáticas en la elección del decimotercer presidente, valorada por su experiencia administrativa y su carácter analítico.',
+      'A diferencia de candidatos más carismáticos o manipuladores como Pariston, Cheadle representa la opción de continuidad institucional, apoyada por buena parte de la vieja guardia de la Asociación.',
+    ],
+    poderesNen: [
+      { nombre: 'Experiencia administrativa e investigadora', descripcion: 'Su influencia proviene principalmente de su trayectoria dentro de la Asociación Hunter y su capacidad analítica, más que de un poder de combate mostrado en pantalla.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Candidatos rivales en la elección', arco: 'Elección Presidencial', contexto: 'Compite dentro del proceso electoral contra Pariston y el resto de los doce candidatos.', resultado: 'Se mantiene como una de las opciones más sólidas y respetadas durante toda la contienda.' },
+    ],
+  },
+  {
+    slug: 'mizaistom-nana',
+    nombre: 'Mizaistom Nana',
+    apiNames: ['mizaistom nana', 'mizaistom'],
+    malId: 55725,
+    arcoPrincipal: 'eleccion-presidencial',
+    categoria: 'Secundario',
+    historia: [
+      'Mizaistom es miembro de la junta directiva de la Asociación Hunter (Zodiacos) y ex-detective, reconocido por su capacidad de razonamiento agudo y su enfoque metódico ante los conflictos internos de la organización durante la elección presidencial.',
+      'Su perspectiva analítica lo convierte en una voz de moderación dentro de la junta, frecuentemente contrapuesta a las maniobras más impredecibles de Pariston Hill.',
+    ],
+    poderesNen: [
+      { nombre: 'Deducción e investigación', descripcion: 'Su verdadera herramienta es su capacidad de análisis y deducción, heredada de su época como detective, más que una habilidad de combate directa.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Maniobras políticas de Pariston Hill', arco: 'Elección Presidencial', contexto: 'Actúa como contrapeso analítico frente a las estrategias impredecibles de Pariston durante el proceso electoral.', resultado: 'Contribuye a mantener cierto orden dentro de la caótica dinámica de la junta directiva.' },
+    ],
+  },
 ];
 
 export const findCharacterBySlug = (slug) => characters.find((c) => c.slug === slug);

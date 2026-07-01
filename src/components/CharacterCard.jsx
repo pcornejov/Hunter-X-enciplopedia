@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useFavorites } from '../hooks/useFavorites';
 
 // Renders as an internal link when the character has curated content (a local
 // slug), or as an external link to its MyAnimeList page otherwise — used by
@@ -6,6 +7,7 @@ import { Link } from 'react-router-dom';
 // haven't written a curated profile for yet.
 export default function CharacterCard({ character }) {
   const { slug, nombre, imagen, categoria, role, url } = character;
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const image = (
     <img
@@ -29,6 +31,22 @@ export default function CharacterCard({ character }) {
     </div>
   );
 
+  // Only curated characters (with a local detail page) can be favorited.
+  const favoriteButton = slug && (
+    <button
+      type="button"
+      className="favorite-toggle"
+      aria-label={isFavorite(slug) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavorite(slug);
+      }}
+    >
+      {isFavorite(slug) ? '★' : '☆'}
+    </button>
+  );
+
   if (!slug) {
     return (
       <a href={url} target="_blank" rel="noreferrer" className="card">
@@ -40,6 +58,7 @@ export default function CharacterCard({ character }) {
 
   return (
     <Link to={`/personajes/${slug}`} className="card">
+      {favoriteButton}
       {image}
       {body}
     </Link>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { grupos } from '../data/grupos';
 import { findCharacterBySlug } from '../data/characters';
+import { zoldyckFamilyTree } from '../data/zoldyckFamilyTree';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function GroupsPage() {
@@ -30,6 +31,28 @@ export default function GroupsPage() {
               );
             })}
           </div>
+
+          {grupo.slug === 'familia-zoldyck' && (
+            <div className="family-tree">
+              {zoldyckFamilyTree.map((gen, i) => (
+                <div className="family-tree-generation" key={gen.generacion}>
+                  <div className="family-tree-label">{gen.generacion}</div>
+                  <div className="family-tree-row">
+                    {gen.miembrosSlugs.map((s) => {
+                      const character = findCharacterBySlug(s);
+                      if (!character) return null;
+                      return (
+                        <Link key={s} to={`/personajes/${s}`} className="family-tree-node">
+                          {character.nombre}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  {i < zoldyckFamilyTree.length - 1 && <div className="family-tree-connector">↓</div>}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>

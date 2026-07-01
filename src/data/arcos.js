@@ -5,7 +5,18 @@ export const arcos = [
     titulo: 'Examen Hunter',
     sinopsis:
       'Gon Freecss abandona la isla Ballena para presentarse al Examen Hunter, una prueba anual brutal que reduce a cientos de aspirantes a un puñado de nuevos Hunters. En el camino conoce a Kurapika, Leorio e Hisoka, y se enfrenta a pruebas de supervivencia, combate y astucia diseñadas por el examinador Netero y su comité.',
-    personajesDestacadosSlugs: ['gon-freecss', 'killua-zoldyck', 'kurapika', 'leorio-paradinight', 'hisoka-morow', 'isaac-netero'],
+    personajesDestacadosSlugs: [
+      'gon-freecss',
+      'killua-zoldyck',
+      'kurapika',
+      'leorio-paradinight',
+      'hisoka-morow',
+      'isaac-netero',
+      'satotz',
+      'menchi',
+      'hanzo',
+      'tonpa',
+    ],
   },
   {
     slug: 'zoldyck',
@@ -30,7 +41,7 @@ export const arcos = [
     titulo: 'Heavens Arena',
     sinopsis:
       'Gon y Killua entrenan y ganan dinero escalando los pisos de la Torre del Cielo, una arena de combate de 251 niveles. Descubren el Nen de la mano de Wing y Zushi, y Gon se enfrenta en un combate decisivo contra Hisoka, quien despierta un interés obsesivo en el potencial del joven.',
-    personajesDestacadosSlugs: ['gon-freecss', 'killua-zoldyck', 'hisoka-morow'],
+    personajesDestacadosSlugs: ['gon-freecss', 'killua-zoldyck', 'hisoka-morow', 'wing', 'zushi'],
   },
   {
     slug: 'yorknew-city',
@@ -61,7 +72,7 @@ export const arcos = [
     titulo: 'Greed Island',
     sinopsis:
       'Gon y Killua entran en Greed Island, un videojuego de rol convertido en un mundo real y peligroso creado por Ging Freecss, para completarlo y obtener información sobre el paradero de Ging. Allí entrenan intensamente con Biscuit Krueger y se enfrentan a los Zorros de Hierro y otros cazadores de tarjetas hostiles como Genthru.',
-    personajesDestacadosSlugs: ['gon-freecss', 'killua-zoldyck', 'biscuit-krueger', 'ging-freecss'],
+    personajesDestacadosSlugs: ['gon-freecss', 'killua-zoldyck', 'biscuit-krueger', 'ging-freecss', 'genthru', 'razor'],
   },
   {
     slug: 'hormiga-quimera',
@@ -80,6 +91,10 @@ export const arcos = [
       'komugi',
       'knuckle-bine',
       'morel-mackernasey',
+      'kite',
+      'welfin',
+      'colt',
+      'palm-siberia',
     ],
   },
   {
@@ -88,7 +103,15 @@ export const arcos = [
     titulo: 'Elección del 13º Presidente Hunter',
     sinopsis:
       'Tras la muerte de Netero, la Asociación Hunter debe elegir a su decimotercer presidente. Doce candidatos, cada uno con motivaciones y capacidades muy distintas, compiten en un proceso electoral cargado de política, manipulación de Nen y traiciones, mientras antiguos personajes reaparecen con nuevos objetivos.',
-    personajesDestacadosSlugs: ['killua-zoldyck', 'illumi-zoldyck', 'pariston-hill', 'kalluto-zoldyck', 'zeno-zoldyck'],
+    personajesDestacadosSlugs: [
+      'killua-zoldyck',
+      'illumi-zoldyck',
+      'pariston-hill',
+      'kalluto-zoldyck',
+      'zeno-zoldyck',
+      'cheadle-yorkshire',
+      'mizaistom-nana',
+    ],
   },
 ];
 
