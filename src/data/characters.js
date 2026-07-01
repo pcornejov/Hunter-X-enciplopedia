@@ -400,6 +400,302 @@ export const characters = [
       { rival: 'Amenazas variadas en Yorknew City', arco: 'Yorknew City', contexto: 'Utiliza su aspiradora para neutralizar objetos y enemigos peligrosos durante los enfrentamientos de la Brigada.', resultado: 'Su habilidad demuestra ser una de las más versátiles del grupo para resolver situaciones inesperadas.' },
     ],
   },
+  {
+    slug: 'uvogin',
+    nombre: 'Uvogin',
+    apiNames: ['uvogin'],
+    malId: 5836,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Uvogin es el miembro más fuerte físicamente de la Brigada Fantasma (Miembro #12), un gigante de fuerza descomunal y lealtad ciega hacia Chrollo y el resto del grupo. Su personalidad es ruidosa, brutal y directa, todo lo opuesto a la frialdad calculadora de sus compañeros.',
+      'Su captura por parte de Kurapika en Yorknew City, usando una emboscada que aprovecha su exceso de confianza, desencadena la guerra abierta entre la Brigada y el clan Kurta, marcando uno de los puntos de inflexión más violentos del arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Fuerza bruta de Potenciador', descripcion: 'Su categoría de Nen es Potenciador puro, con una fuerza física que le permite destruir edificios y aplastar vehículos a mano limpia, sin necesidad de técnicas complejas.' },
+      { nombre: 'Bala de Cañón Humano (Rage Roar)', descripcion: 'Reúne aura en su boca y la dispara como un proyectil de energía concentrada capaz de perforar concreto reforzado a distancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Kurapika', arco: 'Yorknew City', contexto: 'Kurapika lo aísla con una emboscada meticulosa y le implanta la Cadena de Juicio tras interrogarlo sobre la masacre del clan Kurta.', resultado: 'Uvogin es ejecutado, siendo el primer miembro de la Brigada en caer ante la venganza de Kurapika.' },
+    ],
+  },
+  {
+    slug: 'nobunaga-hazama',
+    nombre: 'Nobunaga Hazama',
+    apiNames: ['nobunaga hazama', 'nobunaga'],
+    malId: 5831,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Nobunaga es el espadachín de la Brigada Fantasma (Miembro #10), un hombre de honor peculiar dentro de un grupo de criminales: valora los duelos justos y respeta a los oponentes fuertes, incluso cuando son enemigos declarados del grupo.',
+      'Es uno de los miembros más veteranos y cercanos a Chrollo, y mantiene una relación de camaradería genuina con Machi y el resto del núcleo original de la Brigada, mostrando una lealtad que trasciende la mera conveniencia.',
+    ],
+    poderesNen: [
+      { nombre: 'Transmutador de espada', descripcion: 'Refuerza su katana con aura, aumentando drásticamente su filo y potencia de corte hasta el punto de partir objetos que normalmente serían indestructibles para una hoja convencional.' },
+      { nombre: 'Maestría en kenjutsu', descripcion: 'Décadas de práctica con la espada le dan una técnica de combate depurada, priorizando la velocidad y precisión del corte por sobre la fuerza bruta.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Enemigos de la Brigada en Yorknew City', arco: 'Yorknew City', contexto: 'Participa activamente en los enfrentamientos callejeros durante la cacería de Kurapika contra el grupo.', resultado: 'Sobrevive al arco gracias a su habilidad y a la cobertura del resto de la Brigada.' },
+    ],
+  },
+  {
+    slug: 'franklin-bordeau',
+    nombre: 'Franklin Bordeau',
+    apiNames: ['franklin bordeau', 'franklin bordeaux', 'franklin'],
+    malId: 5828,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Franklin es el miembro de mayor tamaño físico de la Brigada Fantasma (Miembro #8), reconocible por sus manos descomunales. De pocas palabras y actitud reservada, es uno de los combatientes más confiables del grupo en enfrentamientos directos.',
+      'Su lealtad hacia Chrollo y sus compañeros es absoluta, y suele encargarse de tareas de apoyo pesado durante los golpes y robos que ejecuta la Brigada.',
+    ],
+    poderesNen: [
+      { nombre: 'Ametralladora de dedos (Double Fire Fingerguns)', descripcion: 'Convierte los dedos de sus manos en cañones capaces de disparar ráfagas de balas de aura, funcionando como un arma de fuego automática integrada a su propio cuerpo.' },
+      { nombre: 'Fuerza de gran calibre', descripcion: 'Su tamaño y fuerza física lo convierten también en un combatiente formidable cuerpo a cuerpo, complementando su habilidad a distancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Enemigos de la Brigada en Yorknew City', arco: 'Yorknew City', contexto: 'Usa su habilidad de disparo para cubrir las retiradas y ataques del grupo durante la guerra contra Kurapika y la mafia local.', resultado: 'Se mantiene como uno de los pilares defensivos de la Brigada durante todo el arco.' },
+    ],
+  },
+  {
+    slug: 'phinks-magcub',
+    nombre: 'Phinks Magcub',
+    apiNames: ['phinks magcub', 'phinks magkav', 'phinks'],
+    malId: 5834,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Phinks es un miembro veterano de la Brigada Fantasma (Miembro #7), de temperamento irritable y directo. Forma parte del núcleo original del grupo junto a Nobunaga, Machi y Feitan, con quienes comparte una relación de confianza forjada durante años de crímenes compartidos.',
+      'Es uno de los combatientes más pragmáticos de la Brigada: prioriza la eficiencia sobre el espectáculo, y no duda en recurrir a la fuerza bruta cuando la situación lo exige.',
+    ],
+    poderesNen: [
+      { nombre: 'Puño de Hierro (Percussion of Iron Fist)', descripcion: 'Habilidad de Potenciador que endurece su puño hasta una dureza comparable al metal, dándole golpes capaces de romper huesos y estructuras con facilidad.' },
+      { nombre: 'Resistencia física superior', descripcion: 'Complementa su fuerza con una notable capacidad de aguante en combates prolongados, algo poco común incluso dentro de la Brigada.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Enemigos de la Brigada en Yorknew City', arco: 'Yorknew City', contexto: 'Participa en los enfrentamientos violentos contra la mafia y los cazadores enviados a detener a la Brigada.', resultado: 'Su fuerza bruta resulta decisiva en varios choques directos durante el arco.' },
+    ],
+  },
+  {
+    slug: 'shalnark',
+    nombre: 'Shalnark',
+    apiNames: ['shalnark ryuseih', 'shalnark'],
+    malId: 5832,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Shalnark es un miembro de la Brigada Fantasma (Miembro #5) de apariencia amigable y sonriente, lo que contrasta con su naturaleza fría y calculadora. Es uno de los más leales a Chrollo, hasta el punto de portar consigo un teléfono con la habilidad de este.',
+      'Su carácter sociable le permite infiltrarse y ganarse la confianza de otros con facilidad, una herramienta que usa tanto para reunir información como para tender trampas a nombre de la Brigada.',
+    ],
+    poderesNen: [
+      { nombre: 'Antena de Control (Black Voice)', descripcion: 'Clava una antena en la cabeza de su víctima que le permite controlar sus acciones mediante un teléfono, convirtiéndola en un títere obediente por tiempo limitado.' },
+      { nombre: 'Manipulador estratégico', descripcion: 'Su categoría Manipuladora lo convierte en uno de los miembros más útiles para tareas de infiltración y control indirecto dentro de los planes del grupo.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Objetivos infiltrados en Yorknew City', arco: 'Yorknew City', contexto: 'Usa su habilidad de control para obtener información y neutralizar amenazas sin necesidad de enfrentamientos directos.', resultado: 'Su aporte discreto resulta clave en varias jugadas estratégicas de la Brigada durante el arco.' },
+    ],
+  },
+  {
+    slug: 'pakunoda',
+    nombre: 'Pakunoda',
+    apiNames: ['pakunoda'],
+    malId: 5835,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Pakunoda es miembro de la Brigada Fantasma (Miembro #9) y una de las combatientes más peligrosas del grupo por su habilidad para extraer información directamente de la mente de otras personas. Su lealtad hacia Chrollo es total y sincera.',
+      'Tras la captura de Chrollo por Kurapika, Pakunoda toma decisiones drásticas para proteger al líder del grupo, incluyendo compartir información vital sobre la Brigada con los propios enemigos a cambio de garantías, un acto que la marca como una de las figuras más trágicas del arco.',
+    ],
+    poderesNen: [
+      { nombre: 'Lectura de Memoria (Psychometry)', descripcion: 'Al tocar la cabeza de una persona, puede extraer y visualizar sus recuerdos, convirtiéndola en la interrogadora ideal de la Brigada.' },
+      { nombre: 'Píldoras de memoria', descripcion: 'Puede materializar los recuerdos extraídos en forma de píldoras que, al ser ingeridas, transmiten esa información a otra persona.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Kurapika (negociación)', arco: 'Yorknew City', contexto: 'Tras la captura de Chrollo, Pakunoda negocia directamente con Kurapika entregando información crucial sobre la Brigada.', resultado: 'Muere poco después por las reglas de una de sus propias cadenas de Nen, en un sacrificio que altera el curso del conflicto.' },
+    ],
+  },
+  {
+    slug: 'kortopi',
+    nombre: 'Kortopi',
+    apiNames: ['kortopi', 'koltopi', 'tounofmaill koltopi'],
+    malId: 5829,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Kortopi es uno de los miembros más silenciosos y misteriosos de la Brigada Fantasma (Miembro #6), rara vez visto en combate directo. Su función dentro del grupo suele ser de apoyo logístico y falsificación.',
+      'A pesar de su bajo perfil, es considerado un usuario de Nen valioso por la Brigada gracias a la utilidad práctica de su habilidad para las operaciones del grupo.',
+    ],
+    poderesNen: [
+      { nombre: 'Réplica Falsa (Fake Doll Effect)', descripcion: 'Puede crear réplicas exactas e inertes de objetos que haya tocado, útiles para falsificar pertenencias, señuelos o pruebas durante los golpes de la Brigada.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: '—', contexto: 'Su rol dentro de la Brigada es mayormente de soporte, evitando el combate abierto siempre que es posible.', resultado: 'Se mantiene al margen de los choques más violentos del arco de Yorknew City.' },
+    ],
+  },
+  {
+    slug: 'bonolenov-ndongo',
+    nombre: 'Bonolenov Ndongo',
+    apiNames: ['bonolenov ndongo', 'bonolenov'],
+    malId: 5827,
+    arcoPrincipal: 'yorknew-city',
+    categoria: 'Antagonista',
+    historia: [
+      'Bonolenov es un miembro de la Brigada Fantasma (Miembro #11), un excombatiente cubierto de vendajes que oculta cicatrices de guerras pasadas. De pocas palabras, participa en las operaciones del grupo con una disciplina casi militar.',
+      'Su historia previa a unirse a la Brigada permanece en gran parte sin explorar, pero su presencia dentro del grupo refuerza la idea de que Chrollo recluta a personas marcadas por la violencia y el abandono social.',
+    ],
+    poderesNen: [
+      { nombre: 'Combate con lanza', descripcion: 'Utiliza una lanza como arma principal, reforzada con su aura de Potenciador para aumentar el alcance y la potencia de sus estocadas.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Enemigos de la Brigada en Yorknew City', arco: 'Yorknew City', contexto: 'Participa en los enfrentamientos generales del grupo durante la crisis desatada por la cacería de Kurapika.', resultado: 'Sobrevive al arco manteniendo un perfil de combate discreto.' },
+    ],
+  },
+  {
+    slug: 'zeno-zoldyck',
+    nombre: 'Zeno Zoldyck',
+    apiNames: ['zeno zoldyck', 'zeno'],
+    malId: 59,
+    arcoPrincipal: 'zoldyck',
+    categoria: 'Secundario',
+    historia: [
+      'Zeno es el abuelo de Killua y el patriarca retirado de la familia Zoldyck, aunque sigue siendo uno de los asesinos más poderosos y solicitados del mundo pese a su avanzada edad. Su experiencia y sabiduría lo convierten en una referencia de combate incluso para su propio hijo Silva.',
+      'Mantiene una relación cercana y algo más permisiva con Killua que la de sus padres, mostrando un cariño particular por el nieto que decide alejarse del oficio familiar.',
+    ],
+    poderesNen: [
+      { nombre: 'Potenciador de clase mundial', descripcion: 'Décadas de refinamiento le dan un control del Nen extremadamente eficiente, compensando cualquier declive físico propio de la edad.' },
+      { nombre: 'Dragón de Fuego Ardiente (Dragon Dive)', descripcion: 'Conjura un dragón de fuego gigante capaz de causar destrucción masiva, una de las demostraciones de poder más contundentes vistas en la familia Zoldyck.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Amenazas contra la familia Zoldyck', arco: 'Elección Presidencial', contexto: 'Actúa como fuerza de seguridad de máximo nivel para proteger los intereses familiares durante los eventos políticos de la Asociación Hunter.', resultado: 'Su sola reputación basta para disuadir a la mayoría de posibles agresores.' },
+    ],
+  },
+  {
+    slug: 'kalluto-zoldyck',
+    nombre: 'Kalluto Zoldyck',
+    apiNames: ['kalluto zoldyck', 'kalluto'],
+    malId: 6089,
+    arcoPrincipal: 'eleccion-presidencial',
+    categoria: 'Secundario',
+    historia: [
+      'Kalluto es el menor de los hermanos Zoldyck, criado con una ambigüedad de género deliberada por la familia y entrenado desde pequeño en las artes del asesinato, especialmente en el uso de armas tradicionales japonesas.',
+      'Tras los eventos de Yorknew City, Kalluto se une a la Brigada Fantasma como reemplazo de un miembro caído, una decisión que sorprende incluso a su propia familia y que lo posiciona como un puente entre ambos grupos criminales.',
+    ],
+    poderesNen: [
+      { nombre: 'Transmutador con abanicos', descripcion: 'Utiliza abanicos de papel como arma, capaces de generar cuchillas de viento cortantes al combinarlos con su control de Nen.' },
+      { nombre: 'Disciplina de asesino Zoldyck', descripcion: 'Como el resto de sus hermanos, recibió un entrenamiento extremo en sigilo y eliminación de objetivos desde la infancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Elección Presidencial', contexto: 'Su rol dentro de la Brigada Fantasma tras Yorknew City se mantiene mayormente en segundo plano.', resultado: 'Su verdadero potencial en combate aún no se muestra a fondo en la historia.' },
+    ],
+  },
+  {
+    slug: 'milluki-zoldyck',
+    nombre: 'Milluki Zoldyck',
+    apiNames: ['milluki zoldyck', 'milluki'],
+    malId: 33375,
+    arcoPrincipal: 'zoldyck',
+    categoria: 'Secundario',
+    historia: [
+      'Milluki es el segundo hijo de la familia Zoldyck, de complexión distinta a la del resto de sus hermanos atléticos y con una personalidad más volcada hacia la tecnología que hacia el combate directo. Es el hacker de la familia, encargado de tareas de vigilancia e inteligencia.',
+      'Su relación con Killua es tensa, marcada por cierta envidia hacia el talento natural de su hermano menor, a quien considera injustamente favorecido por el resto de la familia.',
+    ],
+    poderesNen: [
+      { nombre: 'Habilidades informáticas', descripcion: 'Aunque su Nen en combate es limitado comparado con el resto de su familia, compensa con un dominio experto de sistemas informáticos y vigilancia electrónica.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Sin enfrentamientos directos destacados', arco: 'Zoldyck', contexto: 'Su función dentro de la familia es principalmente de soporte técnico y vigilancia, no de combate.', resultado: 'Rara vez se involucra en confrontaciones directas a lo largo de la historia.' },
+    ],
+  },
+  {
+    slug: 'kikyo-zoldyck',
+    nombre: 'Kikyo Zoldyck',
+    apiNames: ['kikyo zoldyck', 'kikyo'],
+    malId: 59457,
+    arcoPrincipal: 'zoldyck',
+    categoria: 'Secundario',
+    historia: [
+      'Kikyo es la madre de Killua y el resto de los hermanos Zoldyck, una mujer que oculta su rostro tras un dispositivo de aumento y que muestra un fanatismo particular por mantener las tradiciones y el legado de asesinos de la familia.',
+      'Su forma de amor hacia sus hijos está profundamente entrelazada con las expectativas y la disciplina familiar, lo que la lleva a chocar directamente con la decisión de Killua de abandonar el oficio familiar.',
+    ],
+    poderesNen: [
+      { nombre: 'Entrenamiento familiar Zoldyck', descripcion: 'Como el resto de la familia, posee habilidades de combate y sigilo propias de la disciplina de asesinos Zoldyck, aunque rara vez las despliega en pantalla.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Killua Zoldyck (conflicto familiar)', arco: 'Zoldyck', contexto: 'Se opone firmemente a la decisión de Killua de alejarse del camino de asesino trazado por la familia.', resultado: 'La tensión entre ambos queda como una herida familiar abierta durante gran parte de la historia.' },
+    ],
+  },
+  {
+    slug: 'komugi',
+    nombre: 'Komugi',
+    apiNames: ['komugi'],
+    malId: 14313,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Komugi es una joven ciega y campeona indiscutida del Gungi, un complejo juego de estrategia de mesa. Su encuentro con Meruem, buscando un rival digno tras su combate contra Netero, se convierte en una de las relaciones más humanizantes e inesperadas de toda la obra.',
+      'A pesar de no tener ninguna habilidad de combate, su determinación y maestría en el Gungi despiertan en Meruem un respeto genuino hacia la humanidad, contradiciendo por completo el desprecio con el que este había empezado su historia.',
+    ],
+    poderesNen: [
+      { nombre: 'Sin habilidades de Nen', descripcion: 'Komugi no es usuaria de Nen; su "poder" es puramente intelectual: una capacidad de concentración y análisis estratégico en el Gungi que ni siquiera Meruem logra igualar de inmediato.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Meruem (partidas de Gungi)', arco: 'Hormiga Quimera', contexto: 'Juega innumerables partidas de Gungi contra Meruem mientras este se recupera del veneno de Netero.', resultado: 'Aunque pierde la mayoría de las partidas, su nivel de juego termina ganándose el respeto absoluto del Rey Hormiga.' },
+    ],
+  },
+  {
+    slug: 'knuckle-bine',
+    nombre: 'Knuckle Bine',
+    apiNames: ['knuckle bine', 'knuckle'],
+    malId: 29809,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Knuckle es un Hunter joven y de carácter explosivo, reclutado por Netero como parte del comando de asalto contra las Hormigas Quimera. Su relación de rivalidad y amistad con Shoot McMahon es central en su desarrollo durante el arco.',
+      'Su determinación lo lleva a enfrentar a Youpi en un combate desesperado usando una habilidad de altísimo riesgo, del cual sale gravemente perjudicado pero con el objetivo cumplido a largo plazo.',
+    ],
+    poderesNen: [
+      { nombre: 'Puño Cazafortunas (Hakoware)', descripcion: 'Al golpear a un oponente, le "presta" una cantidad de su propia fuerza vital que deberá devolver con intereses divinos si no lo derrota en 24 horas, drenándolo progresivamente.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Youpi', arco: 'Hormiga Quimera', contexto: 'Usa su habilidad de préstamo de fuerza contra Youpi sin que este se dé cuenta al principio del golpe.', resultado: 'Youpi absorbe accidentalmente su habilidad, dejando a Knuckle debilitado por un largo periodo, aunque el plan a largo plazo termina beneficiando al bando Hunter.' },
+    ],
+  },
+  {
+    slug: 'morel-mackernasey',
+    nombre: 'Morel Mackernasey',
+    apiNames: ['morel mackernasey', 'morel'],
+    malId: 29806,
+    arcoPrincipal: 'hormiga-quimera',
+    categoria: 'Secundario',
+    historia: [
+      'Morel es un Hunter veterano y fumador empedernido que lidera el escuadrón de jóvenes Hunters (incluyendo a Knuckle y Shoot) durante la operación de exterminio de las Hormigas Quimera. Su experiencia y liderazgo son clave para mantener con vida a su equipo en un enemigo muy superior en poder individual.',
+      'Su relación mentor-alumno con los Hunters más jóvenes a su cargo aporta una calidez poco común en medio de uno de los arcos más oscuros de la serie.',
+    ],
+    poderesNen: [
+      { nombre: 'Manipulador de humo', descripcion: 'Crea y controla figuras de humo con su pipa, capaces de tomar formas sólidas de animales u objetos que usa tanto para combate como para vigilancia a distancia.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Shaiapouf (indirectamente)', arco: 'Hormiga Quimera', contexto: 'Coordina la estrategia de su escuadrón contra las fuerzas de la Guardia Real durante el asalto al palacio de Meruem.', resultado: 'Logra mantener a su equipo funcional pese a la enorme diferencia de poder frente a las Hormigas de élite.' },
+    ],
+  },
+  {
+    slug: 'pariston-hill',
+    nombre: 'Pariston Hill',
+    apiNames: ['pariston hill', 'pariston'],
+    malId: 55071,
+    arcoPrincipal: 'eleccion-presidencial',
+    categoria: 'Secundario',
+    historia: [
+      'Pariston es el vicepresidente de la Asociación Hunter bajo Netero y uno de los candidatos más carismáticos y manipuladores en la elección del decimotercer presidente. Su personalidad extravagante y su sonrisa permanente esconden una mente política extremadamente calculadora.',
+      'A diferencia de otros candidatos, Pariston no busca necesariamente ganar la presidencia por poder o ideología, sino que parece disfrutar genuinamente del caos y la manipulación del proceso electoral como un juego personal.',
+    ],
+    poderesNen: [
+      { nombre: 'Manipulación política', descripcion: 'Su verdadera arma no es el Nen de combate sino su habilidad para manipular información, alianzas y percepciones dentro de la Asociación Hunter durante la contienda electoral.' },
+    ],
+    enfrentamientos: [
+      { rival: 'Candidatos rivales en la elección', arco: 'Elección Presidencial', contexto: 'Compite y maniobra políticamente contra el resto de los doce candidatos a la presidencia de la Asociación Hunter.', resultado: 'Sus jugadas alteran repetidamente el curso de la elección, consolidándolo como uno de los actores más impredecibles del arco.' },
+    ],
+  },
 ];
 
 export const findCharacterBySlug = (slug) => characters.find((c) => c.slug === slug);

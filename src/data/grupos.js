@@ -5,7 +5,21 @@ export const grupos = [
     tambienConocidoComo: 'Los Arácnidos (Spiders)',
     descripcion:
       'Organización de trece ladrones de rango S, fundada por Chrollo Lucilfer, responsable de la masacre del clan Kurta. Cada miembro lleva tatuada una araña que representa su número dentro del grupo.',
-    miembrosSlugs: ['chrollo-lucilfer', 'feitan-portor', 'machi-komacine', 'shizuku-murasaki'],
+    miembrosSlugs: [
+      'chrollo-lucilfer',
+      'feitan-portor',
+      'machi-komacine',
+      'shizuku-murasaki',
+      'uvogin',
+      'nobunaga-hazama',
+      'franklin-bordeau',
+      'phinks-magcub',
+      'shalnark',
+      'pakunoda',
+      'kortopi',
+      'bonolenov-ndongo',
+      'kalluto-zoldyck',
+    ],
   },
   {
     slug: 'familia-zoldyck',
@@ -13,7 +27,16 @@ export const grupos = [
     tambienConocidoComo: 'La familia de asesinos más famosa del mundo',
     descripcion:
       'Estirpe de asesinos profesionales que ha entrenado a sus miembros durante generaciones para convertirlos en armas humanas. Habitan una mansión fortificada llena de trampas y pruebas de seguridad extremas.',
-    miembrosSlugs: ['killua-zoldyck', 'illumi-zoldyck', 'silva-zoldyck', 'alluka-zoldyck'],
+    miembrosSlugs: [
+      'killua-zoldyck',
+      'illumi-zoldyck',
+      'silva-zoldyck',
+      'alluka-zoldyck',
+      'zeno-zoldyck',
+      'kalluto-zoldyck',
+      'milluki-zoldyck',
+      'kikyo-zoldyck',
+    ],
   },
   {
     slug: 'guardia-real',

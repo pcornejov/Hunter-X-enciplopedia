@@ -21,7 +21,7 @@ export const nenTypes = [
     lema: 'Materializa objetos y armas a partir del aura.',
     descripcion:
       'Crean objetos tangibles con su aura, desde armas hasta criaturas complejas, siempre que sigan reglas y restricciones claras (Nen Kizoku). Son metódicos y disciplinados, ya que su poder depende de la precisión de sus condiciones autoimpuestas.',
-    ejemplosSlugs: ['kurapika', 'shizuku-murasaki'],
+    ejemplosSlugs: ['kurapika', 'shizuku-murasaki', 'kortopi'],
   },
   {
     slug: 'manipulador',
@@ -29,7 +29,7 @@ export const nenTypes = [
     lema: 'Controla personas, animales u objetos mediante condiciones.',
     descripcion:
       'Controlan seres vivos u objetos imponiendo condiciones específicas para el control (por ejemplo, clavar una aguja o ganar una apuesta). Suelen ser calculadores, pacientes y meticulosos al diseñar las reglas de su dominio.',
-    ejemplosSlugs: ['illumi-zoldyck', 'machi-komacine'],
+    ejemplosSlugs: ['illumi-zoldyck', 'machi-komacine', 'shalnark'],
   },
   {
     slug: 'emisor',
