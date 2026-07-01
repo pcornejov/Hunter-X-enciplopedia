@@ -12,8 +12,10 @@ import {
 } from '../data/aboutWork';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function AboutWorkPage() {
+  useDocumentTitle('La Obra');
   const [anime, setAnime] = useState(null);
   const [relations, setRelations] = useState([]);
   const [manga, setManga] = useState(null);

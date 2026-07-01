@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { nenTypes } from '../data/nenTypes';
 import { nenPrinciples } from '../data/nenPrinciples';
 import { findCharacterBySlug } from '../data/characters';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function NenPage() {
+  useDocumentTitle('Sistema Nen');
   return (
     <div className="container">
       <h1>El sistema Nen</h1>

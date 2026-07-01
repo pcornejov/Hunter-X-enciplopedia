@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react';
 import CharacterCard from '../components/CharacterCard';
+import CharacterCardSkeleton from '../components/CharacterCardSkeleton';
 import SearchBar from '../components/SearchBar';
 import FilterBar from '../components/FilterBar';
-import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
 import { useCharacters } from '../hooks/useCharacters';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function CharactersPage() {
+  useDocumentTitle('Personajes');
   const { characters, allCharacters, loading, error } = useCharacters();
   const [view, setView] = useState('principales');
   const [query, setQuery] = useState('');
@@ -24,7 +26,10 @@ export default function CharactersPage() {
 
   const filtered = source
     .filter((c) => {
-      const matchesQuery = c.nombre.toLowerCase().includes(query.toLowerCase());
+      const normalizedQuery = query.toLowerCase();
+      const matchesQuery =
+        c.nombre.toLowerCase().includes(normalizedQuery) ||
+        c.apiNames?.some((alias) => alias.includes(normalizedQuery));
       const matchesCategory = !category || c.categoria === category;
       const matchesRole = !role || c.role === role;
       return matchesQuery && matchesCategory && matchesRole;
@@ -92,7 +97,11 @@ export default function CharactersPage() {
       )}
 
       {loading ? (
-        <LoadingSpinner />
+        <div className="grid">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <CharacterCardSkeleton key={i} />
+          ))}
+        </div>
       ) : filtered.length === 0 ? (
         <p>No se encontraron personajes con esos filtros.</p>
       ) : (

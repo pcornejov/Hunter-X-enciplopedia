@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
+import ImageLightbox from '../components/ImageLightbox';
 import { useCharacterDetail } from '../hooks/useCharacterDetail';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { findArcoBySlug } from '../data/arcos';
 import { grupos } from '../data/grupos';
 
@@ -10,9 +11,12 @@ export default function CharacterDetailPage() {
   const { slug } = useParams();
   const { character, loading, error } = useCharacterDetail(slug);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  useDocumentTitle(character?.nombre);
 
   useEffect(() => {
     setSelectedImage(null);
+    setLightboxOpen(false);
   }, [slug]);
 
   if (!character) {
@@ -31,6 +35,10 @@ export default function CharacterDetailPage() {
 
   return (
     <div className="container">
+      {lightboxOpen && mainImage && (
+        <ImageLightbox src={mainImage} alt={character.nombre} onClose={() => setLightboxOpen(false)} />
+      )}
+
       {error && <ErrorBanner message={error} />}
 
       <div className="detail-header">
@@ -42,6 +50,8 @@ export default function CharacterDetailPage() {
               className="detail-image"
               src={mainImage || '/placeholder-character.svg'}
               alt={character.nombre}
+              style={{ cursor: mainImage ? 'zoom-in' : 'default' }}
+              onClick={() => mainImage && setLightboxOpen(true)}
               onError={(e) => {
                 e.currentTarget.src = '/placeholder-character.svg';
               }}

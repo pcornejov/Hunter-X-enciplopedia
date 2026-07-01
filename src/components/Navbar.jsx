@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const links = [
@@ -10,19 +11,31 @@ const links = [
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="navbar">
       <div className="container navbar-inner">
-        <NavLink to="/" className="brand">
+        <NavLink to="/" className="brand" onClick={() => setMenuOpen(false)}>
           <span className="brand-mark">⬡</span>
           Hunterpedia
         </NavLink>
-        <nav className="nav-links">
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          ☰
+        </button>
+        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {links.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.end}
+              onClick={() => setMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'active' : undefined)}
             >
               {link.label}

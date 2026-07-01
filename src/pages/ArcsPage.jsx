@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { arcos } from '../data/arcos';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function ArcsPage() {
+  useDocumentTitle('Arcos');
   return (
     <div className="container">
       <h1>Arcos argumentales</h1>

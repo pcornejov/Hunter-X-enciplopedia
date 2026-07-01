@@ -41,7 +41,7 @@ export function useCharacterDetail(slug) {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, curated]);
 
   return { character, loading, error };
 }

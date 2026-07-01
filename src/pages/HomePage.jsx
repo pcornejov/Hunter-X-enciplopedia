@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import CharacterCard from '../components/CharacterCard';
-import LoadingSpinner from '../components/LoadingSpinner';
+import CharacterCardSkeleton from '../components/CharacterCardSkeleton';
 import ErrorBanner from '../components/ErrorBanner';
 import { useCharacters } from '../hooks/useCharacters';
 
@@ -35,7 +35,11 @@ export default function HomePage() {
           <h2>Personajes destacados</h2>
         </div>
         {loading ? (
-          <LoadingSpinner />
+          <div className="grid">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <CharacterCardSkeleton key={i} />
+            ))}
+          </div>
         ) : (
           <div className="grid">
             {featured.map((character) => (

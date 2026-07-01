@@ -1,10 +1,12 @@
 import { Link, useParams } from 'react-router-dom';
 import { findArcoBySlug } from '../data/arcos';
 import { findCharacterBySlug } from '../data/characters';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function ArcDetailPage() {
   const { slug } = useParams();
   const arco = findArcoBySlug(slug);
+  useDocumentTitle(arco?.titulo);
 
   if (!arco) {
     return (

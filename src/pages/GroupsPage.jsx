@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { grupos } from '../data/grupos';
 import { findCharacterBySlug } from '../data/characters';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function GroupsPage() {
+  useDocumentTitle('Grupos');
   return (
     <div className="container">
       <h1>Grupos y facciones</h1>
