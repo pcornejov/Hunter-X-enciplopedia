@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
-import { getAnimeInfo, getAnimeRelations, getMangaInfo } from '../api/jikanApi';
+import { getAnimeInfo, getAnimeRelations, getMangaInfo, getAnimeThemes, getAnimeStaff } from '../api/jikanApi';
 import {
   animeSinopsis,
   mangaResumen,
   translateStatus,
   translateRelation,
   translateDateRange,
+  filterKeyStaff,
+  translateStaffRole,
+  translateThemeString,
 } from '../data/aboutWork';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorBanner from '../components/ErrorBanner';
@@ -14,6 +17,8 @@ export default function AboutWorkPage() {
   const [anime, setAnime] = useState(null);
   const [relations, setRelations] = useState([]);
   const [manga, setManga] = useState(null);
+  const [themes, setThemes] = useState(null);
+  const [staff, setStaff] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,13 +28,21 @@ export default function AboutWorkPage() {
     // allSettled (not all) so one source failing/rate-limited doesn't block
     // the others from rendering.
     async function load() {
-      const results = await Promise.allSettled([getAnimeInfo(), getAnimeRelations(), getMangaInfo()]);
+      const results = await Promise.allSettled([
+        getAnimeInfo(),
+        getAnimeRelations(),
+        getMangaInfo(),
+        getAnimeThemes(),
+        getAnimeStaff(),
+      ]);
       if (cancelled) return;
 
-      const [animeResult, relationsResult, mangaResult] = results;
+      const [animeResult, relationsResult, mangaResult, themesResult, staffResult] = results;
       if (animeResult.status === 'fulfilled') setAnime(animeResult.value);
       if (relationsResult.status === 'fulfilled') setRelations(relationsResult.value || []);
       if (mangaResult.status === 'fulfilled') setManga(mangaResult.value);
+      if (themesResult.status === 'fulfilled') setThemes(themesResult.value);
+      if (staffResult.status === 'fulfilled') setStaff(filterKeyStaff(staffResult.value));
 
       const failed = results.find((r) => r.status === 'rejected');
       if (failed) setError(failed.reason.message);
@@ -99,6 +112,44 @@ export default function AboutWorkPage() {
                     allowFullScreen
                   />
                 </div>
+              )}
+            </div>
+          )}
+
+          {staff.length > 0 && (
+            <div className="arc-card">
+              <h2>Equipo</h2>
+              <table className="info-table">
+                <tbody>
+                  {staff.map((s) => (
+                    <tr key={s.person.mal_id}>
+                      <td>{translateStaffRole(s.positions[0])}</td>
+                      <td>{s.person.name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {themes && (themes.openings?.length > 0 || themes.endings?.length > 0) && (
+            <div className="arc-card">
+              <h2>Bandas sonoras</h2>
+              {themes.openings?.length > 0 && (
+                <>
+                  <h4>Openings</h4>
+                  {themes.openings.map((t) => (
+                    <p key={t}>{translateThemeString(t)}</p>
+                  ))}
+                </>
+              )}
+              {themes.endings?.length > 0 && (
+                <>
+                  <h4>Endings</h4>
+                  {themes.endings.map((t) => (
+                    <p key={t}>{translateThemeString(t)}</p>
+                  ))}
+                </>
               )}
             </div>
           )}

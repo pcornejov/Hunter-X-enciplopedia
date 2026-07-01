@@ -26,6 +26,38 @@ export function mergeAllCharactersList(curatedCharacters, animeCharacters) {
   return curatedCharacters.map((c) => mergeCharacterListData(c, animeCharacters));
 }
 
+// Jikan names are formatted "Surname, Given" (or just a single name). Flips
+// them to "Given Surname" for display when there's no curated name to use.
+function formatJikanName(name) {
+  const [last, first] = name.split(', ');
+  return first ? `${first} ${last}` : name;
+}
+
+// Builds the complete roster shown in the anime (~200 characters), using
+// curated content where we have it and falling back to bare Jikan data
+// (image, role, link to MyAnimeList) for everyone else. Lets the site be
+// browsable in full without requiring a hand-written profile for every
+// minor character.
+export function buildFullCharacterList(curatedCharacters, animeCharacters) {
+  const curatedByMalId = new Map(curatedCharacters.map((c) => [c.malId, c]));
+
+  return (animeCharacters || []).map((entry) => {
+    const curated = curatedByMalId.get(entry.character.mal_id);
+    if (curated) return mergeCharacterListData(curated, animeCharacters);
+
+    return {
+      slug: null,
+      malId: entry.character.mal_id,
+      nombre: formatJikanName(entry.character.name),
+      imagen: extractImageUrl(entry.character.images),
+      role: entry.role,
+      favoritos: entry.favorites ?? null,
+      categoria: null,
+      url: entry.character.url,
+    };
+  });
+}
+
 function extractVoices(voices) {
   if (!Array.isArray(voices)) return [];
 

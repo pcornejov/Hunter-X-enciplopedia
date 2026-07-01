@@ -75,3 +75,13 @@ export function getAnimeRelations() {
 export function getMangaInfo() {
   return getCached('manga-info', `/manga/${HXH_MANGA_ID}`);
 }
+
+// Opening/ending theme songs.
+export function getAnimeThemes() {
+  return getCached('anime-themes', `/anime/${HXH_ANIME_ID}/themes`);
+}
+
+// Production staff (director, character design, music, etc.).
+export function getAnimeStaff() {
+  return getCached('anime-staff', `/anime/${HXH_ANIME_ID}/staff`);
+}

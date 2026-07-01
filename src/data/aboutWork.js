@@ -38,6 +38,29 @@ const RELATION_TRANSLATIONS = {
 export const translateStatus = (status) => STATUS_TRANSLATIONS[status] || status;
 export const translateRelation = (relation) => RELATION_TRANSLATIONS[relation] || relation;
 
+// Jikan's staff list has 200+ entries (mostly episode directors/key animators).
+// Only these creative-lead roles are shown on the site.
+const KEY_STAFF_ROLES = ['Director', 'Original Creator', 'Character Design', 'Music', 'Series Composition'];
+const STAFF_ROLE_TRANSLATIONS = {
+  Director: 'Director',
+  'Original Creator': 'Autor original',
+  'Character Design': 'Diseño de personajes',
+  Music: 'Música',
+  'Series Composition': 'Composición de la serie',
+};
+
+export function filterKeyStaff(staffList) {
+  return (staffList || [])
+    .map((s) => ({ ...s, positions: s.positions.filter((p) => KEY_STAFF_ROLES.includes(p)) }))
+    .filter((s) => s.positions.length > 0);
+}
+
+export const translateStaffRole = (role) => STAFF_ROLE_TRANSLATIONS[role] || role;
+
+// Theme strings look like `1: "Departure!" by Ono Masatoshi (eps 1-26)`.
+// Swaps the English connector; song titles and artist names stay as-is.
+export const translateThemeString = (theme) => theme.replace(' by ', ' — interpretada por ');
+
 // Jikan date ranges look like "Oct 2, 2011 to Sep 24, 2014" or "Mar 3, 1998 to ?".
 // This only swaps the English connector/placeholder, keeping the (already
 // language-neutral) month abbreviations and numbers as-is.

@@ -7,10 +7,14 @@ import ErrorBanner from '../components/ErrorBanner';
 import { useCharacters } from '../hooks/useCharacters';
 
 export default function CharactersPage() {
-  const { characters, loading, error } = useCharacters();
+  const { characters, allCharacters, loading, error } = useCharacters();
+  const [view, setView] = useState('principales');
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('');
   const [role, setRole] = useState('');
+  const [sort, setSort] = useState('alfabetico');
+
+  const source = view === 'principales' ? characters : allCharacters;
 
   const categoryOptions = useMemo(() => {
     const set = new Set();
@@ -18,32 +22,74 @@ export default function CharactersPage() {
     return Array.from(set).sort();
   }, [characters]);
 
-  const filtered = characters.filter((c) => {
-    const matchesQuery = c.nombre.toLowerCase().includes(query.toLowerCase());
-    const matchesCategory = !category || c.categoria === category;
-    const matchesRole = !role || c.role === role;
-    return matchesQuery && matchesCategory && matchesRole;
-  });
+  const filtered = source
+    .filter((c) => {
+      const matchesQuery = c.nombre.toLowerCase().includes(query.toLowerCase());
+      const matchesCategory = !category || c.categoria === category;
+      const matchesRole = !role || c.role === role;
+      return matchesQuery && matchesCategory && matchesRole;
+    })
+    .sort((a, b) => {
+      if (sort === 'popularidad') return (b.favoritos ?? 0) - (a.favoritos ?? 0);
+      return a.nombre.localeCompare(b.nombre);
+    });
+
+  function switchView(nextView) {
+    setView(nextView);
+    setCategory('');
+  }
 
   return (
     <div className="container">
       <div className="section-title">
         <h1>Personajes</h1>
-        <span className="count">{characters.length} en total</span>
+        <span className="count">
+          {view === 'principales' ? characters.length : allCharacters.length || '…'} en total
+        </span>
       </div>
 
       {error && <ErrorBanner message={error} />}
 
       <div className="toolbar">
-        <SearchBar value={query} onChange={setQuery} />
-        <FilterBar
-          category={category}
-          onCategoryChange={setCategory}
-          categoryOptions={categoryOptions}
-          role={role}
-          onRoleChange={setRole}
-        />
+        <button
+          type="button"
+          className={`btn ${view === 'principales' ? 'btn-primary' : ''}`}
+          onClick={() => switchView('principales')}
+        >
+          Personajes principales
+        </button>
+        <button
+          type="button"
+          className={`btn ${view === 'todos' ? 'btn-primary' : ''}`}
+          onClick={() => switchView('todos')}
+        >
+          Todos los personajes de la serie
+        </button>
       </div>
+
+      <div className="toolbar">
+        <SearchBar value={query} onChange={setQuery} />
+        {view === 'principales' && (
+          <FilterBar
+            category={category}
+            onCategoryChange={setCategory}
+            categoryOptions={categoryOptions}
+            role={role}
+            onRoleChange={setRole}
+          />
+        )}
+        <select className="filter-select" value={sort} onChange={(e) => setSort(e.target.value)}>
+          <option value="alfabetico">Orden alfabético</option>
+          <option value="popularidad">Más populares</option>
+        </select>
+      </div>
+
+      {view === 'todos' && (
+        <p className="banner banner-info">
+          Estos personajes se muestran con datos básicos de MyAnimeList (imagen, rol). Los que aún no tienen
+          ficha completa en Hunterpedia enlazan directo a su página en MyAnimeList.
+        </p>
+      )}
 
       {loading ? (
         <LoadingSpinner />
@@ -52,7 +98,7 @@ export default function CharactersPage() {
       ) : (
         <div className="grid">
           {filtered.map((character) => (
-            <CharacterCard key={character.slug} character={character} />
+            <CharacterCard key={character.malId} character={character} />
           ))}
         </div>
       )}
