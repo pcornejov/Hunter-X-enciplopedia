@@ -1,0 +1,63 @@
+---
+/**
+ * Imagen remota (AniList / Kitsu) con reserva de espacio, carga diferida y
+ * una silueta de respaldo cuando la fuente no trae imagen.
+ * Las imagenes se enlazan al CDN original: no se redistribuyen en el repo.
+ */
+interface Props {
+  src: string | null;
+  alt: string;
+  ratio?: 'portrait' | 'wide' | 'square';
+  eager?: boolean;
+  sizes?: string;
+  class?: string;
+}
+
+const { src, alt, ratio = 'portrait', eager = false, sizes, class: className = '' } = Astro.props;
+
+const ratioClass = ratio === 'wide' ? 'media--wide' : ratio === 'square' ? 'media--square' : 'media--portrait';
+---
+
+<div class:list={['media', ratioClass, className]}>
+  {
+    src ? (
+      <img
+        src={src}
+        alt={alt}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding={eager ? 'sync' : 'async'}
+        fetchpriority={eager ? 'high' : 'auto'}
+        sizes={sizes}
+        referrerpolicy="no-referrer"
+      />
+    ) : (
+      <div class="media-fallback" role="img" aria-label={`Sin imagen disponible de ${alt}`}>
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+        </svg>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .media--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .media-fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--text-faint);
+    background: repeating-linear-gradient(
+      45deg,
+      var(--bg-inset),
+      var(--bg-inset) 10px,
+      var(--bg-soft) 10px,
+      var(--bg-soft) 20px
+    );
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+import RemoteImage from './RemoteImage.astro';
+import { getNenTypeForCharacter, getProfile } from '~/lib/data';
+import { url } from '~/lib/paths';
+import type { Character } from '~/lib/types';
+
+interface Props {
+  character: Character;
+  eager?: boolean;
+}
+
+const { character, eager = false } = Astro.props;
+
+const profile = getProfile(character.slug);
+const nenType = getNenTypeForCharacter(character.slug);
+const roleLabel = character.role === 'MAIN' ? 'Protagonista' : character.role === 'SUPPORTING' ? 'Secundario' : 'Reparto';
+const blurb = profile?.tagline ?? character.summary;
+---
+
+<a class="card character-card" href={url(`personajes/${character.slug}`)}>
+  <RemoteImage src={character.image} alt={character.name} ratio="portrait" eager={eager} sizes="(max-width: 600px) 45vw, 220px" />
+
+  <div class="body">
+    <div class="tags">
+      <span class="badge">{roleLabel}</span>
+      {nenType && <span class="badge nen" style={`--nen: ${nenType.color}`}>{nenType.name}</span>}
+    </div>
+    <h3>{character.name}</h3>
+    {character.nativeName && <p class="native faint">{character.nativeName}</p>}
+    {blurb && <p class="blurb muted">{blurb}</p>}
+  </div>
+</a>
+
+<style>
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .body {
+    padding: 0.85rem 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .badge.nen {
+    border-color: color-mix(in srgb, var(--nen) 55%, transparent);
+    color: color-mix(in srgb, var(--nen) 78%, var(--text));
+    background: color-mix(in srgb, var(--nen) 12%, transparent);
+  }
+
+  h3 {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .native {
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  .blurb {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-top: 0.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

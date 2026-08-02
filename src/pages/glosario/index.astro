@@ -1,0 +1,111 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import { glosario, glosarioCategorias } from '~/data/curated/glosario';
+import { slugifyTerm } from '~/lib/slug';
+
+const groups = glosarioCategorias.map((category) => ({
+  category,
+  entries: glosario
+    .filter((entry) => entry.category === category)
+    .sort((a, b) => a.term.localeCompare(b.term, 'es')),
+}));
+---
+
+<Base
+  title="Glosario"
+  description="Glosario de Hunter x Hunter: Nen, Hatsu, condición y voto, licencia de Cazador, Ojos Escarlata, Meteor City, Continente Oscuro y otros términos clave."
+>
+  <PageHeader
+    eyebrow="Referencia"
+    title="Glosario"
+    lead="Los términos que la obra usa sin explicar dos veces. Agrupados por ámbito y con el original en japonés cuando existe."
+    crumbs={[{ label: 'Glosario' }]}
+  />
+
+  <nav class="jump" aria-label="Ir a una categoría">
+    {groups.map((group) => <a href={`#${slugifyTerm(group.category)}`} class="badge">{group.category}</a>)}
+  </nav>
+
+  {
+    groups.map((group) => (
+      <section class="group" id={slugifyTerm(group.category)}>
+        <h2>{group.category}</h2>
+        <dl class="entries">
+          {group.entries.map((entry) => (
+            <div class="entry card" id={slugifyTerm(entry.term)}>
+              <dt>
+                {entry.term}
+                {entry.japanese && <span class="jp faint">{entry.japanese}</span>}
+              </dt>
+              <dd>{entry.definition}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .group + .group {
+    margin-top: 3rem;
+  }
+
+  .group h2 {
+    font-size: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+    scroll-margin-top: 90px;
+  }
+
+  .group {
+    scroll-margin-top: 90px;
+  }
+
+  .entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .entry {
+    padding: 1.15rem 1.25rem 1.25rem;
+    scroll-margin-top: 90px;
+  }
+
+  dt {
+    font-weight: 700;
+    font-size: 1.02rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+  }
+
+  .jp {
+    font-weight: 400;
+    font-size: 0.85rem;
+  }
+
+  dd {
+    margin: 0.55rem 0 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+</style>

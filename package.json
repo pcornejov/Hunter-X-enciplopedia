@@ -1,0 +1,28 @@
+{
+  "name": "hunter-x-enciclopedia",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enciclopedia web de Hunter x Hunter construida con Astro y datos de APIs publicas",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "fetch:data": "node scripts/fetch-data.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
+    "validate:build": "node scripts/validate-build.mjs",
+    "verify": "npm run validate:data && npm run check && npm run build && npm run validate:build"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.6.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.3.0"
+  }
+}

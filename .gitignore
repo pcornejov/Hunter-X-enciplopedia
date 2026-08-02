@@ -1,0 +1,25 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.production
+
+# os
+.DS_Store
+
+# editors
+.idea/
+.vscode/
+
+# scratch
+*.tmp
+.cache/

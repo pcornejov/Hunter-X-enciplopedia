@@ -1,0 +1,1243 @@
+[
+  {
+    "anilistId": 11061,
+    "malId": 11061,
+    "slug": "hunter-x-hunter-2011",
+    "kind": "anime",
+    "format": "TV",
+    "formatLabel": "Serie de TV",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter (2011)",
+      "romaji": "HUNTER×HUNTER (2011)",
+      "english": "Hunter x Hunter (2011)",
+      "native": "HUNTER×HUNTER (2011)"
+    },
+    "synonyms": [
+      "ハンター×ハンター",
+      "HxH",
+      "全职猎人",
+      "האנטר האנטר",
+      "ฮันเตอร์ x ฮันเตอร์",
+      "القناص "
+    ],
+    "description": "A new adaption of the manga of the same name by Togashi Yoshihiro.\n\nA Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.\n\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter.",
+    "summary": "A new adaption of the manga of the same name by Togashi Yoshihiro. A Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose…",
+    "startDate": "2011-10-02",
+    "endDate": "2014-09-24",
+    "year": 2011,
+    "season": "FALL",
+    "episodes": 148,
+    "duration": 24,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 89,
+    "meanScore": 89,
+    "popularity": 827967,
+    "favourites": 97066,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png",
+    "coverColor": "#f1d65d",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
+    "trailer": {
+      "site": "youtube",
+      "id": "d6kBeJjTGnY",
+      "thumbnail": "https://i.ytimg.com/vi/d6kBeJjTGnY/hqdefault.jpg"
+    },
+    "studios": [
+      {
+        "id": 11,
+        "name": "MADHOUSE",
+        "url": "https://anilist.co/studio/11"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 95,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 91,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 88,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Travel",
+        "rank": 82,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Philosophy",
+        "rank": 80,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 80,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Martial Arts",
+        "rank": 80,
+        "category": "Theme-Action"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Anthropomorphism",
+        "rank": 76,
+        "category": "Cast-Traits"
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 73,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Coming of Age",
+        "rank": 71,
+        "category": "Theme-Drama"
+      },
+      {
+        "name": "Criminal Organization",
+        "rank": 70,
+        "category": "Theme-Other-Organisations"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 7,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      },
+      {
+        "rank": 6,
+        "type": "POPULAR",
+        "context": "most popular all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [
+      {
+        "site": "Crunchyroll",
+        "url": "http://www.crunchyroll.com/hunter-x-hunter",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Hulu",
+        "url": "https://www.hulu.com/hunter-x-hunter",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Netflix",
+        "url": "https://www.netflix.com/title/70300472",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Tubi TV",
+        "url": "https://tubitv.com/series/1627/hunter_x_hunter",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Bilibili",
+        "url": "https://www.bilibili.tv/en/play/37603",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "YouTube",
+        "url": "https://youtube.com/playlist?list=PLwLSw1_eDZl2SdSro00Nvg38MQUf-5ZL8",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Hoopla",
+        "url": "https://www.hoopladigital.com/series/hunter-x-hunter-dubbed/11834349593",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Hoopla",
+        "url": "https://www.hoopladigital.com/series/hunter-x-hunter-subbed/11834349354",
+        "type": "STREAMING",
+        "language": null
+      },
+      {
+        "site": "Amazon Prime Video",
+        "url": "https://www.amazon.com/Hunter-Japanese-English-Subs/dp/B0B5X87G1P",
+        "type": "STREAMING",
+        "language": null
+      }
+    ],
+    "siteUrl": "https://anilist.co/anime/11061"
+  },
+  {
+    "anilistId": 136,
+    "malId": 136,
+    "slug": "hunter-x-hunter",
+    "kind": "anime",
+    "format": "TV",
+    "formatLabel": "Serie de TV",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter",
+      "romaji": "HUNTER×HUNTER",
+      "english": "Hunter x Hunter",
+      "native": "HUNTER×HUNTER"
+    },
+    "synonyms": [
+      "ハンターxハンター",
+      "HxH",
+      "全职猎人",
+      "القناص"
+    ],
+    "description": "A Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.\n\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter. Based on the manga by Togashi Yoshihiro.",
+    "summary": "A Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could…",
+    "startDate": "1999-10-16",
+    "endDate": "2001-03-31",
+    "year": 1999,
+    "season": "FALL",
+    "episodes": 62,
+    "duration": 23,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 83,
+    "meanScore": 83,
+    "popularity": 132445,
+    "favourites": 4675,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136-gj0bbCpDNrKG.jpg",
+    "coverColor": "#e4ae5d",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/136-uHALFo2vGOGd.jpg",
+    "trailer": null,
+    "studios": [
+      {
+        "id": 22,
+        "name": "Nippon Animation",
+        "url": "https://anilist.co/studio/22"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 95,
+        "category": "Demographic"
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 90,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Super Power",
+        "rank": 80,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 80,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 79,
+        "category": "Setting-Universe"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 78,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Primarily Teen Cast",
+        "rank": 70,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Revenge",
+        "rank": 68,
+        "category": "Theme-Drama"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 65,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Crime",
+        "rank": 64,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Assassins",
+        "rank": 55,
+        "category": "Theme-Other-Organisations"
+      },
+      {
+        "name": "Kuudere",
+        "rank": 48,
+        "category": "Cast-Traits"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 153,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      },
+      {
+        "rank": 443,
+        "type": "POPULAR",
+        "context": "most popular all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [
+      {
+        "site": "YouTube",
+        "url": "https://www.youtube.com/playlist?list=PLwLSw1_eDZl2SdSro00Nvg38MQUf-5ZL8",
+        "type": "STREAMING",
+        "language": null
+      }
+    ],
+    "siteUrl": "https://anilist.co/anime/136",
+    "relationLabel": "Adaptacion"
+  },
+  {
+    "anilistId": 30026,
+    "malId": 26,
+    "slug": "hunter-x-hunter-1998",
+    "kind": "manga",
+    "format": "MANGA",
+    "formatLabel": "Manga",
+    "status": "RELEASING",
+    "title": {
+      "display": "Hunter x Hunter",
+      "romaji": "HUNTER×HUNTER",
+      "english": "Hunter x Hunter",
+      "native": "HUNTER×HUNTER"
+    },
+    "synonyms": [
+      "ハンター×ハンター",
+      "HxH",
+      "헌터×헌터",
+      "القناص"
+    ],
+    "description": "Gon might be a country boy, but he has high aspirations. Despite his Aunt Mito's protests, Gon decides to follow in his father's footsteps and become a legendary Hunter. The Hunter hopefuls begin their journey by storm-tossed ship, where Gon meets Leorio and Kurapika, the only other applicants who aren't devastated by bouts of seasickness.\n\nHaving survived the terrors of the high seas, Gon and his companions now have to prove their worth in a variety of tests in order to find the elusive Exam Hall. And once they get there, will they ever leave alive...?\n\n(Source: VIZ Media)",
+    "summary": "Gon might be a country boy, but he has high aspirations. Despite his Aunt Mito's protests, Gon decides to follow in his father's footsteps and become a legendary Hunter. The Hunter hopefuls begin their journey by storm-tossed ship, where Gon meets Leorio and…",
+    "startDate": "1998-03-03",
+    "endDate": null,
+    "year": 1998,
+    "season": null,
+    "episodes": null,
+    "duration": null,
+    "chapters": null,
+    "volumes": null,
+    "source": "ORIGINAL",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "averageScore": 88,
+    "meanScore": 88,
+    "popularity": 107441,
+    "favourites": 12150,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30026-uCvXMudMzmwI.jpg",
+    "coverColor": "#ffbb43",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/manga/banner/30026-JXfraiazLTQe.jpg",
+    "trailer": {
+      "site": "youtube",
+      "id": "R5lpKKrm5m8",
+      "thumbnail": "https://i.ytimg.com/vi/R5lpKKrm5m8/hqdefault.jpg"
+    },
+    "studios": [],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 89,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 88,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 88,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 85,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Travel",
+        "rank": 82,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 81,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 76,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Assassins",
+        "rank": 73,
+        "category": "Theme-Other-Organisations"
+      },
+      {
+        "name": "Politics",
+        "rank": 73,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 72,
+        "category": "Setting-Universe"
+      },
+      {
+        "name": "Revenge",
+        "rank": 72,
+        "category": "Theme-Drama"
+      },
+      {
+        "name": "Philosophy",
+        "rank": 70,
+        "category": "Theme-Other"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 23,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      },
+      {
+        "rank": 23,
+        "type": "POPULAR",
+        "context": "most popular all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [
+      {
+        "site": "MANGA Plus",
+        "url": "https://mangaplus.shueisha.co.jp/titles/100015",
+        "type": "STREAMING",
+        "language": "English"
+      },
+      {
+        "site": "Shonen Jump Plus",
+        "url": "https://shonenjumpplus.com/episode/10833519556325021810",
+        "type": "STREAMING",
+        "language": "Japanese"
+      },
+      {
+        "site": "MANGA Plus",
+        "url": "https://mangaplus.shueisha.co.jp/titles/700012",
+        "type": "STREAMING",
+        "language": "French"
+      },
+      {
+        "site": "VIZ",
+        "url": "https://www.viz.com/shonenjump/chapters/hunter-x-hunter",
+        "type": "STREAMING",
+        "language": "English"
+      },
+      {
+        "site": "Shonen Jump",
+        "url": "https://www.shonenjump.com/j/rensai/hunter.html",
+        "type": "STREAMING",
+        "language": "Japanese"
+      },
+      {
+        "site": "Official Site",
+        "url": "https://www.shueisha.co.jp/books/search/search.html?seriesid=35172",
+        "type": "INFO",
+        "language": "Japanese"
+      },
+      {
+        "site": "VIZ",
+        "url": "https://www.viz.com/hunter-x-hunter",
+        "type": "STREAMING",
+        "language": "English"
+      },
+      {
+        "site": "Naver Series",
+        "url": "https://series.naver.com/comic/detail.series?productNo=3140742",
+        "type": "STREAMING",
+        "language": "Korean"
+      },
+      {
+        "site": "KakaoPage",
+        "url": "https://page.kakao.com/content/50666945",
+        "type": "STREAMING",
+        "language": "Korean"
+      },
+      {
+        "site": "Kana",
+        "url": "https://www.kana.fr/series/hunter-x-hunter/",
+        "type": "INFO",
+        "language": "French"
+      }
+    ],
+    "siteUrl": "https://anilist.co/manga/30026"
+  },
+  {
+    "anilistId": 13271,
+    "malId": 13271,
+    "slug": "hunter-x-hunter-phantom-rouge",
+    "kind": "anime",
+    "format": "MOVIE",
+    "formatLabel": "Pelicula",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter: Phantom Rouge",
+      "romaji": "HUNTER×HUNTER: Phantom Rouge",
+      "english": "Hunter x Hunter: Phantom Rouge",
+      "native": "劇場版 HUNTER×HUNTER 緋色の幻影（ファントム・ルージュ）"
+    },
+    "synonyms": [
+      "Gekijouban Hunter x Hunter: Hiiro no Genei",
+      "HxH Movie",
+      "HxH: Phantom Rogue",
+      "Hunter x Hunter: Fantasma Vermelho"
+    ],
+    "description": "Kurapika became a Hunter to take vengeance on the Class-A crime group Phantom Troupe who massacred his clan for their unique eyes. The eyes of the Kurta clan turn scarlet in times of anger or emotional agitation and are considered the most beautiful treasures in the world. Kurapika continues to pursue the Phantom Troupe but an unknown party has stolen his \"scarlet eyes\". With the help of Gon, Killua and Leorio, Kurapika' s life was saved. However, the Phantom Troupe shows up before them and blocks their way. The true identity of the one with the No.4 spider tattoo is about to be unveiled.",
+    "summary": "Kurapika became a Hunter to take vengeance on the Class-A crime group Phantom Troupe who massacred his clan for their unique eyes. The eyes of the Kurta clan turn scarlet in times of anger or emotional agitation and are considered the most beautiful treasures…",
+    "startDate": "2013-01-12",
+    "endDate": "2013-01-12",
+    "year": 2013,
+    "season": "WINTER",
+    "episodes": 1,
+    "duration": 97,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 72,
+    "meanScore": 72,
+    "popularity": 64089,
+    "favourites": 661,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13271-jBxQFqHCpb2K.png",
+    "coverColor": "#5d93f1",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/13271-JeaNxflV2oOy.jpg",
+    "trailer": {
+      "site": "youtube",
+      "id": "dgNFnNBMhzo",
+      "thumbnail": "https://i.ytimg.com/vi/dgNFnNBMhzo/hqdefault.jpg"
+    },
+    "studios": [
+      {
+        "id": 11,
+        "name": "MADHOUSE",
+        "url": "https://anilist.co/studio/11"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 100,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 97,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 95,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 92,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Assassins",
+        "rank": 65,
+        "category": "Theme-Other-Organisations"
+      },
+      {
+        "name": "Kuudere",
+        "rank": 65,
+        "category": "Cast-Traits"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 60,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Martial Arts",
+        "rank": 56,
+        "category": "Theme-Action"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 117,
+        "type": "POPULAR",
+        "context": "most popular all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [
+      {
+        "site": "Netflix",
+        "url": "https://www.netflix.com/title/80108601",
+        "type": "STREAMING",
+        "language": null
+      }
+    ],
+    "siteUrl": "https://anilist.co/anime/13271",
+    "relationLabel": "Historia paralela"
+  },
+  {
+    "anilistId": 19951,
+    "malId": 19951,
+    "slug": "hunter-x-hunter-the-last-mission",
+    "kind": "anime",
+    "format": "MOVIE",
+    "formatLabel": "Pelicula",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter: The Last Mission",
+      "romaji": "HUNTER×HUNTER: THE LAST MISSION",
+      "english": "Hunter x Hunter: The Last Mission",
+      "native": "劇場版 HUNTER×HUNTER THE LAST MISSION"
+    },
+    "synonyms": [
+      "HxH",
+      "HxH: The Last Mission",
+      "Hunter x Hunter: A Última Missão"
+    ],
+    "description": "The strongest Hunters that once existed in the Hunters Association were split into “light” and “dark”, and each walked down their respective paths. The “dark” side begins moving in order to massacre all Hunters! What actions will Gon take when the many crimes of Netero and the Hunters Association are unveiled...!?\n\n(Source: Anime News Network)",
+    "summary": "The strongest Hunters that once existed in the Hunters Association were split into “light” and “dark”, and each walked down their respective paths. The “dark” side begins moving in order to massacre all Hunters! What actions will Gon take when the many crimes…",
+    "startDate": "2013-12-27",
+    "endDate": "2013-12-27",
+    "year": 2013,
+    "season": "FALL",
+    "episodes": 1,
+    "duration": 98,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 71,
+    "meanScore": 71,
+    "popularity": 52377,
+    "favourites": 496,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx19951-kouyrYvcEyGP.jpg",
+    "coverColor": "#ffae35",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n19951-UYgobtqBfn0L.jpg",
+    "trailer": {
+      "site": "youtube",
+      "id": "HUUHxCSqcvU",
+      "thumbnail": "https://i.ytimg.com/vi/HUUHxCSqcvU/hqdefault.jpg"
+    },
+    "studios": [
+      {
+        "id": 11,
+        "name": "MADHOUSE",
+        "url": "https://anilist.co/studio/11"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Male Protagonist",
+        "rank": 96,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Revenge",
+        "rank": 96,
+        "category": "Theme-Drama"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 92,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Shounen",
+        "rank": 88,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 83,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Martial Arts",
+        "rank": 79,
+        "category": "Theme-Action"
+      },
+      {
+        "name": "Ensemble Cast",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Kuudere",
+        "rank": 60,
+        "category": "Cast-Traits"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 60,
+        "category": "Theme-Fantasy"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 160,
+        "type": "POPULAR",
+        "context": "most popular all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [
+      {
+        "site": "Netflix",
+        "url": "https://www.netflix.com/title/80108453",
+        "type": "STREAMING",
+        "language": null
+      }
+    ],
+    "siteUrl": "https://anilist.co/anime/19951",
+    "relationLabel": "Historia paralela"
+  },
+  {
+    "anilistId": 138,
+    "malId": 138,
+    "slug": "hunter-x-hunter-greed-island",
+    "kind": "anime",
+    "format": "OVA",
+    "formatLabel": "OVA",
+    "status": "FINISHED",
+    "title": {
+      "display": "HUNTER×HUNTER: Greed Island",
+      "romaji": "HUNTER×HUNTER: Greed Island",
+      "english": null,
+      "native": "HUNTER×HUNTER: Greed Island"
+    },
+    "synonyms": [
+      "Hunter x Hunter OVA 2",
+      "HxH",
+      "ハンターｘハンター: Greed Island"
+    ],
+    "description": "After the battle with the Spiders, the search for Ging continues as Gon and Killua decided to once again attempt to purchase the rare game \"Greed Island\". However, Gon came up with a better plan, which was to volunteer to complete the game for the billionaire who owned it. But some training must be done, as Gon and Killua's abilities are still at a developing stage and \"Greed Island\" is no simple game for anyone to play with. It is the infamous game that could easily lead to one's death. Based on the manga by Togashi Yoshihiro.",
+    "summary": "After the battle with the Spiders, the search for Ging continues as Gon and Killua decided to once again attempt to purchase the rare game \"Greed Island\". However, Gon came up with a better plan, which was to volunteer to complete the game for the billionaire…",
+    "startDate": "2003-02-05",
+    "endDate": "2003-04-16",
+    "year": 2003,
+    "season": "WINTER",
+    "episodes": 8,
+    "duration": 22,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 79,
+    "meanScore": 79,
+    "popularity": 33597,
+    "favourites": 392,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138-BY6R1y8zuf7s.png",
+    "coverColor": "#d6c96b",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/138-RQXeNBg62Nue.jpg",
+    "trailer": null,
+    "studios": [
+      {
+        "id": 22,
+        "name": "Nippon Animation",
+        "url": "https://anilist.co/studio/22"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Super Power",
+        "rank": 85,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Card Battle",
+        "rank": 84,
+        "category": "Theme-Game-Card & Board Game"
+      },
+      {
+        "name": "Shounen",
+        "rank": 79,
+        "category": "Demographic"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 73,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Death Game",
+        "rank": 60,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Augmented Reality",
+        "rank": 55,
+        "category": "Setting-Universe"
+      },
+      {
+        "name": "Video Games",
+        "rank": 40,
+        "category": "Theme-Game"
+      },
+      {
+        "name": "Shapeshifting",
+        "rank": 40,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Battle Royale",
+        "rank": 40,
+        "category": "Theme-Action"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 28,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [],
+    "siteUrl": "https://anilist.co/anime/138",
+    "relationLabel": "Adaptacion"
+  },
+  {
+    "anilistId": 137,
+    "malId": 137,
+    "slug": "hunter-x-hunter-yorknew-city",
+    "kind": "anime",
+    "format": "OVA",
+    "formatLabel": "OVA",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter: Yorknew City",
+      "romaji": "HUNTER×HUNTER OVA",
+      "english": "Hunter x Hunter: Yorknew City",
+      "native": "HUNTER×HUNTER OVA"
+    },
+    "synonyms": [
+      "Hunter x Hunter: Yorkshin City Kanketsu-hen",
+      "HxH"
+    ],
+    "description": "After reuniting with Gon and his friends, Kurapika explained to them the risks he bears because of his abilities. Believing that his target of revenge is no longer alive and the search for his fallen comrade's eyes could truly begin, Kurapika soon after receives a message informing him that all the Spiders still lived. After much discussion between his friends, Gon, Kurapika and company decided to hunt after the one Spider member who's ability could ultimately result in Kurapika's defeat and death. Based on the manga by Togashi Yoshihiro.",
+    "summary": "After reuniting with Gon and his friends, Kurapika explained to them the risks he bears because of his abilities. Believing that his target of revenge is no longer alive and the search for his fallen comrade's eyes could truly begin, Kurapika soon after…",
+    "startDate": "2002-01-17",
+    "endDate": "2002-04-17",
+    "year": 2002,
+    "season": "WINTER",
+    "episodes": 8,
+    "duration": 24,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 82,
+    "meanScore": 82,
+    "popularity": 30159,
+    "favourites": 559,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137-u17pWQRTZfKn.jpg",
+    "coverColor": "#e4d635",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/137-vQTvNvv37Cyl.jpg",
+    "trailer": null,
+    "studios": [
+      {
+        "id": 22,
+        "name": "Nippon Animation",
+        "url": "https://anilist.co/studio/22"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Revenge",
+        "rank": 97,
+        "category": "Theme-Drama"
+      },
+      {
+        "name": "Shounen",
+        "rank": 90,
+        "category": "Demographic"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 88,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Super Power",
+        "rank": 85,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Noir",
+        "rank": 84,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Philosophy",
+        "rank": 79,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Crime",
+        "rank": 74,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Mafia",
+        "rank": 72,
+        "category": "Theme-Other-Organisations"
+      },
+      {
+        "name": "Assassins",
+        "rank": 68,
+        "category": "Theme-Other-Organisations"
+      },
+      {
+        "name": "Primarily Adult Cast",
+        "rank": 64,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Urban Fantasy",
+        "rank": 62,
+        "category": "Setting-Universe"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 7,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [],
+    "siteUrl": "https://anilist.co/anime/137",
+    "relationLabel": "Adaptacion"
+  },
+  {
+    "anilistId": 139,
+    "malId": 139,
+    "slug": "hunter-x-hunter-greed-island-final",
+    "kind": "anime",
+    "format": "OVA",
+    "formatLabel": "OVA",
+    "status": "FINISHED",
+    "title": {
+      "display": "HUNTER×HUNTER: Greed Island Final",
+      "romaji": "HUNTER×HUNTER: Greed Island Final",
+      "english": null,
+      "native": "HUNTER×HUNTER　G・I　Final"
+    },
+    "synonyms": [
+      "Hunter x Hunter: G I Final",
+      "Hunter x Hunter OVA 3",
+      "ハンター×ハンター　G・I　Final",
+      "HxH"
+    ],
+    "description": "Continuing with their adventure at Greed Island, Gon and Killua train furiously under the guidance of Biscuit for better preparation at attempting the game. With their abilities vastly improving and the threat of player killers menacing Greed Island, Gon and company continue the game despite the dangers that they will face with the game activities and encounters with other players. Based on the manga by Togashi Yoshihiro.",
+    "summary": "Continuing with their adventure at Greed Island, Gon and Killua train furiously under the guidance of Biscuit for better preparation at attempting the game. With their abilities vastly improving and the threat of player killers menacing Greed Island, Gon and…",
+    "startDate": "2004-03-03",
+    "endDate": "2004-08-18",
+    "year": 2004,
+    "season": "SPRING",
+    "episodes": 14,
+    "duration": 24,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 79,
+    "meanScore": 79,
+    "popularity": 27934,
+    "favourites": 300,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139-qiFhjx4o1sKI.png",
+    "coverColor": "#d65d1a",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139-3rPUPc2yOJck.jpg",
+    "trailer": null,
+    "studios": [
+      {
+        "id": 22,
+        "name": "Nippon Animation",
+        "url": "https://anilist.co/studio/22"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 79,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 79,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Death Game",
+        "rank": 60,
+        "category": "Theme-Other"
+      },
+      {
+        "name": "Card Battle",
+        "rank": 55,
+        "category": "Theme-Game-Card & Board Game"
+      },
+      {
+        "name": "Cultivation",
+        "rank": 53,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Volleyball",
+        "rank": 53,
+        "category": "Theme-Game-Sport"
+      },
+      {
+        "name": "Shapeshifting",
+        "rank": 40,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Battle Royale",
+        "rank": 40,
+        "category": "Theme-Action"
+      }
+    ],
+    "rankings": [
+      {
+        "rank": 27,
+        "type": "RATED",
+        "context": "highest rated all time",
+        "year": null
+      }
+    ],
+    "externalLinks": [],
+    "siteUrl": "https://anilist.co/anime/139",
+    "relationLabel": "Adaptacion"
+  },
+  {
+    "anilistId": 10189,
+    "malId": 10189,
+    "slug": "hunter-x-hunter-pilot-ban",
+    "kind": "anime",
+    "format": "OVA",
+    "formatLabel": "OVA",
+    "status": "FINISHED",
+    "title": {
+      "display": "HUNTER×HUNTER Pilot-ban",
+      "romaji": "HUNTER×HUNTER Pilot-ban",
+      "english": null,
+      "native": "HUNTER×HUNTER パイロット版"
+    },
+    "synonyms": [
+      "ハンター×ハンター",
+      "HUNTER×HUNTER ジャンプスーパーアニメツアー'98",
+      "HUNTER×HUNTER Jump Super Anime Tour '98"
+    ],
+    "description": "The stand-alone pilot OVA which was shown as part of the \"Jump Super Anime Tour\" of 1998.\n\n(Source: Wikipedia)",
+    "summary": "The stand-alone pilot OVA which was shown as part of the \"Jump Super Anime Tour\" of 1998. (Source: Wikipedia)",
+    "startDate": "1998-07-26",
+    "endDate": "1998-07-26",
+    "year": 1998,
+    "season": null,
+    "episodes": 1,
+    "duration": 25,
+    "chapters": null,
+    "volumes": null,
+    "source": "MANGA",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "averageScore": 68,
+    "meanScore": 68,
+    "popularity": 8125,
+    "favourites": 57,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10189-Zzk7UAz3GEtk.png",
+    "coverColor": "#e4c935",
+    "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n10189-3wv5sphDdGZk.jpg",
+    "trailer": null,
+    "studios": [
+      {
+        "id": 1,
+        "name": "Studio Pierrot",
+        "url": "https://anilist.co/studio/1"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 100,
+        "category": "Demographic"
+      },
+      {
+        "name": "Super Power",
+        "rank": 50,
+        "category": "Theme-Fantasy"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 40,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Ships",
+        "rank": 40,
+        "category": "Theme-Other-Vehicle"
+      }
+    ],
+    "rankings": [],
+    "externalLinks": [],
+    "siteUrl": "https://anilist.co/anime/10189",
+    "relationLabel": "Adaptacion"
+  },
+  {
+    "anilistId": 75996,
+    "malId": 45996,
+    "slug": "hunter-x-hunter-kurapikas-memories",
+    "kind": "manga",
+    "format": "MANGA",
+    "formatLabel": "Manga",
+    "status": "FINISHED",
+    "title": {
+      "display": "Hunter x Hunter: Kurapika's Memories",
+      "romaji": "HUNTER×HUNTER: Kurapika Tsuioku-hen",
+      "english": "Hunter x Hunter: Kurapika's Memories",
+      "native": "HUNTER×HUNTER クラピカ追憶編"
+    },
+    "synonyms": [
+      "Hunter x Hunter: Kurapika Recollections"
+    ],
+    "description": "A 2 chapter manga about Kurapika's past released as a prequel to the movie.",
+    "summary": "A 2 chapter manga about Kurapika's past released as a prequel to the movie.",
+    "startDate": "2012-12-02",
+    "endDate": "2012-12-09",
+    "year": 2012,
+    "season": null,
+    "episodes": null,
+    "duration": null,
+    "chapters": 2,
+    "volumes": null,
+    "source": "ORIGINAL",
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "averageScore": 75,
+    "meanScore": 75,
+    "popularity": 7904,
+    "favourites": 115,
+    "coverImage": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx75996-31xQNNFRBnGy.png",
+    "coverColor": "#e45028",
+    "bannerImage": null,
+    "trailer": null,
+    "studios": [],
+    "tags": [
+      {
+        "name": "Shounen",
+        "rank": 79,
+        "category": "Demographic"
+      },
+      {
+        "name": "Primarily Male Cast",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Male Protagonist",
+        "rank": 79,
+        "category": "Cast-Main Cast"
+      },
+      {
+        "name": "Language Barrier",
+        "rank": 60,
+        "category": "Theme-Other"
+      }
+    ],
+    "rankings": [],
+    "externalLinks": [],
+    "siteUrl": "https://anilist.co/manga/75996",
+    "relationLabel": "Precuela"
+  }
+]

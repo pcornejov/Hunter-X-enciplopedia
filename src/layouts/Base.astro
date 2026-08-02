@@ -1,0 +1,113 @@
+---
+/**
+ * Layout base: cabecera, pie, metadatos sociales y tema.
+ * Todas las paginas del sitio pasan por aqui.
+ */
+import '~/styles/global.css';
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
+import { asset, url } from '~/lib/paths';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Imagen para redes sociales (URL absoluta o remota). */
+  image?: string | null;
+  /** Cuando es true no se indexa (paginas de utilidad como el 404). */
+  noindex?: boolean;
+  /** Ancho completo para portadas con banner. */
+  bleed?: boolean;
+}
+
+const { title, description, image = null, noindex = false, bleed = false } = Astro.props;
+
+const siteName = 'Enciclopedia Hunter x Hunter';
+const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com').toString();
+const socialImage = image ?? null;
+---
+
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+    <meta name="theme-color" content="#0c0f10" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8f7" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_ES" />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} />
+
+    <link rel="preconnect" href="https://s4.anilist.co" crossorigin />
+    <link rel="preconnect" href="https://media.kitsu.app" crossorigin />
+    <link rel="sitemap" href={asset('sitemap-index.xml')} />
+
+    <!-- Aplicamos el tema antes de pintar para evitar el parpadeo blanco. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('hxh-theme');
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.setAttribute('data-theme', stored);
+          }
+        } catch (error) {
+          /* localStorage bloqueado: nos quedamos con la preferencia del sistema. */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <Header currentPath={Astro.url.pathname} />
+    <main id="contenido" class={bleed ? '' : 'container'} style={bleed ? '' : 'padding-block: 1rem 3rem;'}>
+      <slot />
+    </main>
+    <Footer />
+
+    <script is:inline define:vars={{ homeUrl: url() }}>
+      // Interruptor de tema: persiste la eleccion y actualiza el boton.
+      (function () {
+        var button = document.querySelector('[data-theme-toggle]');
+        if (!button) return;
+
+        function current() {
+          var explicit = document.documentElement.getAttribute('data-theme');
+          if (explicit) return explicit;
+          return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+
+        function sync() {
+          var mode = current();
+          button.setAttribute('aria-label', mode === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+          button.setAttribute('data-mode', mode);
+        }
+
+        button.addEventListener('click', function () {
+          var next = current() === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('hxh-theme', next);
+          } catch (error) {
+            /* sin persistencia, pero el cambio visual funciona igual */
+          }
+          sync();
+        });
+
+        sync();
+        void homeUrl;
+      })();
+    </script>
+  </body>
+</html>

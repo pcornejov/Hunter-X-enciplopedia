@@ -1,0 +1,67 @@
+---
+import RemoteImage from './RemoteImage.astro';
+import { url } from '~/lib/paths';
+import type { Series } from '~/lib/types';
+
+interface Props {
+  series: Series;
+  eager?: boolean;
+}
+
+const { series, eager = false } = Astro.props;
+
+const meta = [
+  series.formatLabel,
+  series.year ? String(series.year) : null,
+  series.episodes ? `${series.episodes} episodios` : null,
+  series.volumes ? `${series.volumes} tomos` : null,
+].filter(Boolean) as string[];
+---
+
+<a class="card series-card" href={url(`series/${series.slug}`)}>
+  <RemoteImage src={series.coverImage} alt={`Portada de ${series.title.display}`} ratio="portrait" eager={eager} sizes="(max-width: 600px) 45vw, 240px" />
+  <div class="body">
+    <h3>{series.title.display}</h3>
+    <p class="meta faint">{meta.join(' · ')}</p>
+    {
+      series.averageScore && (
+        <p class="score">
+          <span class="badge badge--accent">{series.averageScore}/100</span>
+          <span class="faint">en AniList</span>
+        </p>
+      )
+    }
+  </div>
+</a>
+
+<style>
+  .series-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .body {
+    padding: 0.85rem 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  h3 {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+
+  .meta {
+    font-size: 0.78rem;
+  }
+
+  .score {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    margin-top: 0.15rem;
+  }
+</style>

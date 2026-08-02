@@ -1,0 +1,330 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '~/layouts/Base.astro';
+import Breadcrumbs from '~/components/Breadcrumbs.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import { arcos } from '~/data/curated/arcos';
+import { getCharacters, getEpisodeSet, mainAnime } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+export const getStaticPaths = (() => {
+  return arcos.map((arc, index) => ({
+    params: { slug: arc.slug },
+    props: {
+      arc,
+      previous: arcos[index - 1] ?? null,
+      next: arcos[index + 1] ?? null,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { arc, previous, next } = Astro.props;
+
+const cast = getCharacters(arc.characterSlugs);
+
+/**
+ * "Episodios 76–136" -> lista real de episodios de esa horquilla,
+ * para poder enlazar la guia de episodios desde el arco.
+ */
+const range = arc.animeEpisodes2011.match(/(\d+)\s*[–-]\s*(\d+)/);
+const episodeSet = getEpisodeSet(mainAnime.anilistId);
+const episodes = range && episodeSet
+  ? episodeSet.episodes.filter((episode) => episode.number >= Number(range[1]) && episode.number <= Number(range[2]))
+  : [];
+---
+
+<Base title={arc.name} description={arc.summary.slice(0, 180)} image={mainAnime.bannerImage}>
+  <Breadcrumbs items={[{ href: url('arcos'), label: 'Arcos' }, { label: arc.name }]} />
+
+  <article class="arc" style={`--arc: ${arc.color}`}>
+    <header class="head">
+      <p class="order">Arco {String(arc.order).padStart(2, '0')} de {arcos.length}</p>
+      <h1>{arc.name}</h1>
+      <p class="tagline">{arc.tagline}</p>
+      <div class="meta">
+        <span class="badge">{arc.mangaChapters}</span>
+        <span class="badge">{arc.animeEpisodes2011}</span>
+        <span class="badge">{cast.length} personajes</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="content">
+        <section class="block">
+          <h2>De qué va</h2>
+          <div class="prose lead-prose">
+            <p>{arc.summary}</p>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>Momentos que definen el arco</h2>
+          <ul class="key-points">
+            {arc.keyPoints.map((point) => <li>{point}</li>)}
+          </ul>
+        </section>
+
+        {
+          episodes.length > 0 && (
+            <section class="block">
+              <h2>Episodios ({episodes.length})</h2>
+              <p class="muted note">Numeración del anime de 2011. Los títulos enlazan a la ficha del episodio.</p>
+              <ol class="episodes">
+                {episodes.map((episode) => (
+                  <li>
+                    <a href={url(`episodios/${mainAnime.slug}#ep-${episode.number}`)}>
+                      <span class="num">{episode.number}</span>
+                      <span class="title">{episode.title}</span>
+                      {episode.airDate && <span class="date faint">{episode.airDate}</span>}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="sidebar">
+        <nav class="arc-nav card" aria-label="Navegación entre arcos">
+          <h2>Otros arcos</h2>
+          {
+            previous ? (
+              <a class="nav-link" href={url(`arcos/${previous.slug}`)}>
+                <span class="faint">Anterior</span>
+                <strong>{previous.name}</strong>
+              </a>
+            ) : (
+              <p class="faint nav-empty">Este es el primer arco.</p>
+            )
+          }
+          {
+            next ? (
+              <a class="nav-link" href={url(`arcos/${next.slug}`)}>
+                <span class="faint">Siguiente</span>
+                <strong>{next.name}</strong>
+              </a>
+            ) : (
+              <p class="faint nav-empty">Este es el último arco publicado.</p>
+            )
+          }
+          <a class="button" href={url('arcos')}>Ver los {arcos.length} arcos</a>
+        </nav>
+      </aside>
+    </div>
+
+    {
+      cast.length > 0 && (
+        <section class="block cast-block">
+          <h2>Reparto del arco</h2>
+          <div class="grid grid--cast">
+            {cast.map((character) => (
+              <CharacterCard character={character} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .arc {
+    padding-block: 1.5rem 2rem;
+  }
+
+  .head {
+    padding: 1.75rem 0 1.75rem;
+    border-bottom: 1px solid var(--border);
+    border-left: 4px solid var(--arc);
+    padding-left: 1.25rem;
+    margin-block: 1.5rem 2.5rem;
+  }
+
+  .order {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--arc);
+    font-weight: 700;
+  }
+
+  h1 {
+    margin-top: 0.5rem;
+  }
+
+  .tagline {
+    margin-top: 0.75rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 55ch;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .block + .block {
+    margin-top: 2.5rem;
+  }
+
+  .block h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lead-prose p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .note {
+    font-size: 0.82rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .key-points {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .key-points li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+  }
+
+  .key-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--arc);
+  }
+
+  .episodes {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.25rem;
+    max-height: 460px;
+    overflow-y: auto;
+    padding-right: 0.35rem;
+  }
+
+  .episodes a {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+  }
+
+  .episodes a:hover {
+    background: var(--bg-soft);
+    color: var(--accent);
+  }
+
+  .num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-align: right;
+  }
+
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .date {
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 84px;
+  }
+
+  .arc-nav {
+    padding: 1.15rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .arc-nav h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link:hover {
+    border-color: var(--accent);
+  }
+
+  .nav-link span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-link strong {
+    font-size: 0.9rem;
+  }
+
+  .nav-empty {
+    font-size: 0.82rem;
+  }
+
+  .cast-block {
+    margin-top: 3.5rem;
+  }
+
+  .grid--cast {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  @media (max-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+  }
+</style>

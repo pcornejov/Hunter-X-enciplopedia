@@ -1,0 +1,259 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import { nenTypes } from '~/data/curated/nen';
+import { organizaciones } from '~/data/curated/organizaciones';
+import { allCharacters, getNenTypeForCharacter, getOrganizationsForCharacter, getProfile } from '~/lib/data';
+
+/**
+ * Listado completo con buscador y filtros que funcionan sin peticiones:
+ * cada tarjeta lleva sus metadatos en atributos data-* y el script filtra
+ * en el cliente. Sin JavaScript se ve la lista entera, que sigue siendo util.
+ */
+const characters = [...allCharacters].sort((a, b) => {
+  const roleWeight = { MAIN: 0, SUPPORTING: 1, BACKGROUND: 2 } as const;
+  if (roleWeight[a.role] !== roleWeight[b.role]) return roleWeight[a.role] - roleWeight[b.role];
+  return b.favourites - a.favourites;
+});
+
+const entries = characters.map((character) => {
+  const profile = getProfile(character.slug);
+  const nenType = getNenTypeForCharacter(character.slug);
+  const orgs = getOrganizationsForCharacter(character.slug);
+  const haystack = [
+    character.name,
+    character.nativeName ?? '',
+    ...character.aliases,
+    profile?.tagline ?? '',
+    profile?.hatsu ?? '',
+    nenType?.name ?? '',
+    ...orgs.map((org) => org.name),
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  return {
+    character,
+    search: haystack,
+    nen: nenType?.slug ?? '',
+    orgs: orgs.map((org) => org.slug).join(' '),
+    role: character.role,
+  };
+});
+
+const usedNenSlugs = new Set(entries.map((entry) => entry.nen).filter(Boolean));
+const usedOrgSlugs = new Set(entries.flatMap((entry) => entry.orgs.split(' ')).filter(Boolean));
+---
+
+<Base
+  title="Personajes"
+  description={`Fichas de los ${allCharacters.length} personajes de Hunter x Hunter, con búsqueda por nombre, alias, categoría de Nen y facción.`}
+>
+  <PageHeader
+    eyebrow="Reparto"
+    title="Personajes"
+    lead={`${allCharacters.length} fichas construidas con datos de AniList y biografías en español para el reparto principal. Busca por nombre, alias, habilidad o facción.`}
+    crumbs={[{ label: 'Personajes' }]}
+  />
+
+  <div class="toolbar" data-character-toolbar>
+    <div class="search">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-3.5-3.5" />
+      </svg>
+      <input
+        type="search"
+        id="buscador"
+        placeholder="Buscar: Killua, Cadenas del Juicio, Brigada Fantasma…"
+        autocomplete="off"
+        data-search
+      />
+      <label class="visually-hidden" for="buscador">Buscar personajes</label>
+    </div>
+
+    <div class="filters">
+      <label class="visually-hidden" for="filtro-rol">Filtrar por rol</label>
+      <select id="filtro-rol" data-filter="role">
+        <option value="">Todos los roles</option>
+        <option value="MAIN">Protagonistas</option>
+        <option value="SUPPORTING">Secundarios</option>
+        <option value="BACKGROUND">Reparto de fondo</option>
+      </select>
+
+      <label class="visually-hidden" for="filtro-nen">Filtrar por categoría de Nen</label>
+      <select id="filtro-nen" data-filter="nen">
+        <option value="">Cualquier Nen</option>
+        {nenTypes.filter((type) => usedNenSlugs.has(type.slug)).map((type) => <option value={type.slug}>{type.name}</option>)}
+      </select>
+
+      <label class="visually-hidden" for="filtro-faccion">Filtrar por facción</label>
+      <select id="filtro-faccion" data-filter="org">
+        <option value="">Cualquier facción</option>
+        {organizaciones.filter((org) => usedOrgSlugs.has(org.slug)).map((org) => <option value={org.slug}>{org.name}</option>)}
+      </select>
+
+      <button type="button" class="button" data-reset hidden>Limpiar</button>
+    </div>
+  </div>
+
+  <p class="result-count muted" data-count aria-live="polite">
+    Mostrando {entries.length} de {entries.length} personajes
+  </p>
+
+  <div class="grid grid--cast" data-character-grid>
+    {
+      entries.map((entry, index) => (
+        <div
+          class="cell"
+          data-search={entry.search}
+          data-role={entry.role}
+          data-nen={entry.nen}
+          data-org={entry.orgs}
+        >
+          <CharacterCard character={entry.character} eager={index < 6} />
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="empty" data-empty hidden>
+    No hay personajes que coincidan con esa búsqueda. Prueba con un alias o con el nombre en japonés.
+  </p>
+</Base>
+
+<script>
+  // Filtrado en cliente sobre el DOM ya renderizado: nada de peticiones extra.
+  const grid = document.querySelector<HTMLElement>('[data-character-grid]');
+  const toolbar = document.querySelector<HTMLElement>('[data-character-toolbar]');
+  const countEl = document.querySelector<HTMLElement>('[data-count]');
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+
+  if (grid && toolbar && countEl && emptyEl) {
+    // Copias locales para que TypeScript conserve el estrechamiento dentro de apply().
+    const counter = countEl;
+    const empty = emptyEl;
+    const cells = Array.from(grid.querySelectorAll<HTMLElement>('.cell'));
+    const searchInput = toolbar.querySelector<HTMLInputElement>('[data-search]');
+    const selects = Array.from(toolbar.querySelectorAll<HTMLSelectElement>('[data-filter]'));
+    const resetButton = toolbar.querySelector<HTMLButtonElement>('[data-reset]');
+    const total = cells.length;
+
+    const normalize = (value: string) =>
+      value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+    function apply() {
+      const term = normalize(searchInput?.value.trim() ?? '');
+      const active: Record<string, string> = {};
+      for (const select of selects) active[select.dataset.filter ?? ''] = select.value;
+
+      let visible = 0;
+      for (const cell of cells) {
+        const matchesTerm = !term || normalize(cell.dataset.search ?? '').includes(term);
+        const matchesRole = !active.role || cell.dataset.role === active.role;
+        const matchesNen = !active.nen || cell.dataset.nen === active.nen;
+        const matchesOrg = !active.org || (cell.dataset.org ?? '').split(' ').includes(active.org);
+        const show = matchesTerm && matchesRole && matchesNen && matchesOrg;
+        cell.hidden = !show;
+        if (show) visible += 1;
+      }
+
+      counter.textContent = `Mostrando ${visible} de ${total} personajes`;
+      empty.hidden = visible !== 0;
+
+      const isFiltered = Boolean(term) || selects.some((select) => select.value !== '');
+      if (resetButton) resetButton.hidden = !isFiltered;
+    }
+
+    searchInput?.addEventListener('input', apply);
+    for (const select of selects) select.addEventListener('change', apply);
+    resetButton?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      for (const select of selects) select.value = '';
+      apply();
+      searchInput?.focus();
+    });
+
+    apply();
+  }
+</script>
+
+<style>
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 320px;
+  }
+
+  .search svg {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--text-faint);
+    pointer-events: none;
+  }
+
+  .search input {
+    width: 100%;
+    padding: 0.65rem 0.9rem 0.65rem 2.4rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-size: 0.925rem;
+  }
+
+  .search input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  select {
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  select:hover {
+    border-color: var(--border-strong);
+  }
+
+  .result-count {
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .grid--cast {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  }
+
+  .cell[hidden] {
+    display: none;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+  }
+</style>

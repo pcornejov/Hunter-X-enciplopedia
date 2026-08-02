@@ -1,0 +1,233 @@
+---
+import { isActive, url } from '~/lib/paths';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const links = [
+  { href: url('personajes'), label: 'Personajes' },
+  { href: url('arcos'), label: 'Arcos' },
+  { href: url('nen'), label: 'Nen' },
+  { href: url('series'), label: 'Obras' },
+  { href: url('episodios'), label: 'Episodios' },
+  { href: url('organizaciones'), label: 'Facciones' },
+  { href: url('glosario'), label: 'Glosario' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={url()} aria-label="Inicio de la enciclopedia">
+      <span class="brand-mark" aria-hidden="true">H<span>×</span>H</span>
+      <span class="brand-text">
+        <strong>Enciclopedia</strong>
+        <small>Hunter x Hunter</small>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+    <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Secciones principales">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} aria-current={isActive(currentPath, link.href) ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 64px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-mark span {
+    opacity: 0.7;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .brand-text strong {
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-text small {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .site-nav {
+    margin-left: auto;
+  }
+
+  .site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .site-nav a:hover {
+    color: var(--text);
+    background: var(--bg-soft);
+  }
+
+  .site-nav a[aria-current='page'] {
+    color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 600;
+  }
+
+  .theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    cursor: pointer;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .theme-toggle .icon-sun {
+    display: none;
+  }
+  .theme-toggle[data-mode='dark'] .icon-sun {
+    display: block;
+  }
+  .theme-toggle[data-mode='dark'] .icon-moon {
+    display: none;
+  }
+
+  .nav-burger {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .site-nav {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+      display: none;
+      padding-bottom: 0.75rem;
+    }
+
+    .site-nav ul {
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .nav-toggle:checked ~ .site-nav {
+      display: block;
+    }
+
+    .header-inner {
+      flex-wrap: wrap;
+      padding-block: 0.5rem;
+    }
+
+    .nav-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      margin-left: auto;
+      width: 38px;
+      height: 38px;
+      padding: 0 8px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--bg-soft);
+      cursor: pointer;
+    }
+
+    .nav-burger span {
+      display: block;
+      height: 2px;
+      background: var(--text-muted);
+      border-radius: 2px;
+    }
+  }
+</style>

@@ -1,0 +1,461 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '~/layouts/Base.astro';
+import Breadcrumbs from '~/components/Breadcrumbs.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import SeriesCard from '~/components/SeriesCard.astro';
+import { allSeries, allStaff, getEpisodeSet, getSeriesRelations, mainAnime } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+export const getStaticPaths = (() => {
+  return allSeries.map((series) => ({
+    params: { slug: series.slug },
+    props: { series },
+  }));
+}) satisfies GetStaticPaths;
+
+const { series } = Astro.props;
+
+const episodeSet = getEpisodeSet(series.anilistId);
+const related = getSeriesRelations(series);
+/** El staff que descargamos es el del anime de 2011; solo lo mostramos ahi. */
+const staff = series.anilistId === mainAnime.anilistId ? allStaff.slice(0, 12) : [];
+
+const STATUS_LABELS: Record<string, string> = {
+  FINISHED: 'Finalizada',
+  RELEASING: 'En emisión',
+  NOT_YET_RELEASED: 'Sin estrenar',
+  CANCELLED: 'Cancelada',
+  HIATUS: 'En pausa',
+};
+
+const SEASON_LABELS: Record<string, string> = {
+  WINTER: 'Invierno',
+  SPRING: 'Primavera',
+  SUMMER: 'Verano',
+  FALL: 'Otoño',
+};
+
+const facts: Array<{ label: string; value: string }> = [
+  { label: 'Formato', value: series.formatLabel },
+  ...(series.status ? [{ label: 'Estado', value: STATUS_LABELS[series.status] ?? series.status }] : []),
+  ...(series.startDate ? [{ label: 'Estreno', value: series.startDate }] : []),
+  ...(series.endDate ? [{ label: 'Final', value: series.endDate }] : []),
+  ...(series.season && series.year ? [{ label: 'Temporada', value: `${SEASON_LABELS[series.season] ?? series.season} ${series.year}` }] : []),
+  ...(series.episodes ? [{ label: 'Episodios', value: String(series.episodes) }] : []),
+  ...(series.duration ? [{ label: 'Duración', value: `${series.duration} min por episodio` }] : []),
+  ...(series.chapters ? [{ label: 'Capítulos', value: String(series.chapters) }] : []),
+  ...(series.volumes ? [{ label: 'Tomos', value: String(series.volumes) }] : []),
+  ...(series.studios.length > 0 ? [{ label: 'Estudio', value: series.studios.map((s) => s.name).join(', ') }] : []),
+  ...(series.averageScore ? [{ label: 'Puntuación media', value: `${series.averageScore}/100` }] : []),
+  ...(series.popularity ? [{ label: 'Usuarios en AniList', value: series.popularity.toLocaleString('es') }] : []),
+];
+
+const paragraphs = series.description.split('\n\n').map((p) => p.trim()).filter(Boolean);
+---
+
+<Base
+  title={series.title.display}
+  description={series.summary || `Ficha de ${series.title.display} en la enciclopedia de Hunter x Hunter.`}
+  image={series.bannerImage ?? series.coverImage}
+>
+  <Breadcrumbs items={[{ href: url('series'), label: 'Obras' }, { label: series.title.display }]} />
+
+  <article class="series">
+    {
+      series.bannerImage && (
+        <div class="banner">
+          <img src={series.bannerImage} alt="" aria-hidden="true" loading="eager" referrerpolicy="no-referrer" />
+        </div>
+      )
+    }
+
+    <header class="hero">
+      <div class="cover">
+        <RemoteImage src={series.coverImage} alt={`Portada de ${series.title.display}`} ratio="portrait" eager sizes="260px" />
+      </div>
+
+      <div class="intro">
+        <div class="tags">
+          <span class="badge badge--accent">{series.formatLabel}</span>
+          {series.year && <span class="badge">{series.year}</span>}
+          {series.genres.slice(0, 4).map((genre) => <span class="badge">{genre}</span>)}
+        </div>
+
+        <h1>{series.title.display}</h1>
+        <p class="titles faint">
+          {[series.title.romaji, series.title.native].filter(Boolean).filter((t) => t !== series.title.display).join(' · ')}
+        </p>
+
+        {
+          series.rankings.length > 0 && (
+            <ul class="rankings">
+              {series.rankings.slice(0, 3).map((ranking) => (
+                <li>
+                  <strong>#{ranking.rank}</strong>
+                  <span class="faint">{ranking.context}</span>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        {
+          episodeSet && (
+            <a class="button button--primary" href={url(`episodios/${series.slug}`)}>
+              Ver los {episodeSet.total} episodios
+            </a>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="content">
+        {
+          paragraphs.length > 0 && (
+            <section class="block">
+              <h2>Sinopsis</h2>
+              <p class="source-note faint">Descripción de AniList, en inglés y sin traducir.</p>
+              <div class="prose">
+                {paragraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          series.tags.length > 0 && (
+            <section class="block">
+              <h2>Temas y etiquetas</h2>
+              <ul class="tag-list">
+                {series.tags.map((tag) => (
+                  <li>
+                    <span class="badge">{tag.name}</span>
+                    <span class="faint pct">{tag.rank}%</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          staff.length > 0 && (
+            <section class="block">
+              <h2>Equipo de producción</h2>
+              <ul class="staff">
+                {staff.map((member) => (
+                  <li>
+                    {member.image && <img src={member.image} alt="" loading="lazy" referrerpolicy="no-referrer" />}
+                    <span>
+                      <strong>{member.name}</strong>
+                      <small class="faint">{member.role}</small>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="sidebar">
+        <div class="card facts">
+          <h2>Datos</h2>
+          <dl>
+            {
+              facts.map((fact) => (
+                <div>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        {
+          series.externalLinks.length > 0 && (
+            <div class="card links">
+              <h2>Enlaces oficiales</h2>
+              <ul>
+                {series.externalLinks.slice(0, 6).map((link) => (
+                  <li>
+                    <a href={link.url} rel="noopener noreferrer external" target="_blank">
+                      {link.site}
+                      <span class="faint">{link.type === 'STREAMING' ? 'streaming' : 'info'}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </aside>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="block related">
+          <h2>Otras obras de la franquicia</h2>
+          <div class="grid grid--series">
+            {related.map((item) => (
+              <SeriesCard series={item} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .series {
+    padding-block: 1.5rem 2rem;
+  }
+
+  .banner {
+    margin-block: 1.25rem 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 6 / 1;
+    border: 1px solid var(--border);
+  }
+
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    margin-block: 2rem 2.5rem;
+  }
+
+  .cover {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .titles {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .rankings {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-block: 1.5rem;
+  }
+
+  .rankings li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rankings strong {
+    font-size: 1.35rem;
+    color: var(--accent);
+  }
+
+  .rankings span {
+    font-size: 0.78rem;
+    max-width: 22ch;
+    line-height: 1.35;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .block + .block {
+    margin-top: 2.5rem;
+  }
+
+  .block h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .source-note {
+    font-size: 0.78rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .pct {
+    font-size: 0.72rem;
+  }
+
+  .staff {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .staff li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .staff img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .staff span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .staff strong {
+    font-size: 0.87rem;
+  }
+
+  .staff small {
+    font-size: 0.75rem;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 84px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .facts,
+  .links {
+    padding: 1.15rem 1.25rem 1.25rem;
+  }
+
+  .facts h2,
+  .links h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+    border: none;
+    padding: 0;
+  }
+
+  .facts dl {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .facts dt {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .facts dd {
+    margin: 0.1rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .links ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .links a {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .links a:hover {
+    color: var(--accent);
+  }
+
+  .links span {
+    font-size: 0.72rem;
+  }
+
+  .related {
+    margin-top: 3.5rem;
+  }
+
+  .grid--series {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+
+  @media (max-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .cover {
+      max-width: 200px;
+    }
+
+    .banner {
+      aspect-ratio: 3 / 1;
+    }
+  }
+</style>

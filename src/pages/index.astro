@@ -1,0 +1,408 @@
+---
+import Base from '~/layouts/Base.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import SeriesCard from '~/components/SeriesCard.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { arcos } from '~/data/curated/arcos';
+import { nenTypes } from '~/data/curated/nen';
+import { allCharacters, dataMeta, mainAnime, mainManga, notableCharacters } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const heroCast = notableCharacters.slice(0, 6);
+const popularCast = notableCharacters.slice(0, 12);
+const featuredSeries = [mainAnime, mainManga].filter(Boolean).slice(0, 2);
+const totalEpisodes = dataMeta.counts.episodes ?? 0;
+
+const stats = [
+  { value: String(allCharacters.length), label: 'personajes catalogados' },
+  { value: String(totalEpisodes), label: 'episodios con sinopsis' },
+  { value: String(arcos.length), label: 'arcos narrativos' },
+  { value: '6', label: 'categorías de Nen' },
+];
+---
+
+<Base
+  title="Enciclopedia Hunter x Hunter"
+  description="Enciclopedia en español de Hunter x Hunter: personajes, arcos, sistema de Nen, episodios y obras, con datos de AniList y Kitsu."
+  image={mainAnime.bannerImage ?? mainAnime.coverImage}
+  bleed
+>
+  <section class="hero">
+    {mainAnime.bannerImage && <img class="hero-bg" src={mainAnime.bannerImage} alt="" aria-hidden="true" fetchpriority="high" />}
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Enciclopedia no oficial · en español</p>
+        <h1>Todo el mundo de <span class="highlight">Hunter&nbsp;×&nbsp;Hunter</span>, en un solo sitio</h1>
+        <p class="lead">
+          Fichas de personajes, guía de arcos, el sistema de Nen explicado y la lista completa de
+          episodios de las dos adaptaciones. Los datos se descargan de APIs públicas y se publican de
+          forma estática: sin rastreo, sin anuncios y sin esperas.
+        </p>
+        <div class="hero-actions">
+          <a class="button button--primary" href={url('personajes')}>Explorar personajes</a>
+          <a class="button" href={url('nen')}>Entender el Nen</a>
+        </div>
+
+        <dl class="stats">
+          {
+            stats.map((stat) => (
+              <div>
+                <dt>{stat.value}</dt>
+                <dd>{stat.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <div class="hero-cast" aria-hidden="true">
+        {
+          heroCast.map((character, index) => (
+            <div class="hero-portrait" style={`--i: ${index}`}>
+              <RemoteImage src={character.image} alt={character.name} ratio="portrait" eager={index < 3} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Reparto</p>
+          <h2>Personajes más buscados</h2>
+          <p>Ordenados por el número de favoritos que acumulan en AniList.</p>
+        </div>
+        <a class="button" href={url('personajes')}>Ver los {allCharacters.length} personajes</a>
+      </div>
+
+      <div class="grid grid--cast">
+        {popularCast.map((character) => <CharacterCard character={character} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Historia</p>
+          <h2>Los arcos, en orden</h2>
+          <p>De la Isla Ballena al Continente Oscuro, con equivalencias entre manga y anime.</p>
+        </div>
+        <a class="button" href={url('arcos')}>Guía completa</a>
+      </div>
+
+      <ol class="arc-list">
+        {
+          arcos.map((arc) => (
+            <li>
+              <a class="arc-item" href={url(`arcos/${arc.slug}`)} style={`--arc: ${arc.color}`}>
+                <span class="arc-order">{String(arc.order).padStart(2, '0')}</span>
+                <span class="arc-body">
+                  <strong>{arc.name}</strong>
+                  <span class="muted">{arc.tagline}</span>
+                </span>
+                <span class="arc-meta faint">{arc.animeEpisodes2011}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Sistema de poder</p>
+          <h2>Las seis categorías de Nen</h2>
+          <p>Cada persona nace con afinidad hacia una de ellas, y esa afinidad decide qué puede aprender.</p>
+        </div>
+        <a class="button" href={url('nen')}>Ver el hexágono</a>
+      </div>
+
+      <div class="grid grid--nen">
+        {
+          nenTypes.map((type) => (
+            <a class="card nen-card" href={url(`nen#${type.slug}`)} style={`--nen: ${type.color}`}>
+              <span class="nen-jp" aria-hidden="true">{type.japanese}</span>
+              <h3>{type.name}</h3>
+              <p class="faint">{type.romaji}</p>
+              <p class="muted nen-desc">{type.waterDivination}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Obras</p>
+          <h2>Manga y adaptaciones</h2>
+          <p>Las dos series de televisión, las OVAs, las películas y el manga original.</p>
+        </div>
+        <a class="button" href={url('series')}>Todas las obras</a>
+      </div>
+
+      <div class="featured">
+        {
+          featuredSeries.map((series) => (
+            <article class="featured-item">
+              <SeriesCard series={series!} />
+              <div class="featured-copy">
+                <h3>{series!.title.display}</h3>
+                <p class="muted">{series!.summary}</p>
+                <a class="button" href={url(`series/${series!.slug}`)}>Ficha completa</a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: saturate(0.75);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(to right, var(--bg) 20%, color-mix(in srgb, var(--bg) 82%, transparent) 55%, color-mix(in srgb, var(--bg) 40%, transparent)),
+      linear-gradient(to top, var(--bg), transparent 60%);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.5rem;
+    align-items: center;
+    padding-block: clamp(3rem, 8vw, 5.5rem);
+  }
+
+  .hero-copy h1 {
+    margin-top: 0.6rem;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  .lead {
+    margin-top: 1.1rem;
+    color: var(--text-muted);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
+    max-width: 56ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stats dt {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+
+  .stats dd {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    line-height: 1.35;
+  }
+
+  .hero-cast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  .hero-portrait {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transform: translateY(calc(var(--i) % 2 * 14px));
+  }
+
+  .grid--cast {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  }
+
+  .grid--nen {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .nen-card {
+    padding: 1.15rem 1.1rem 1.25rem;
+    border-top: 3px solid var(--nen);
+  }
+
+  .nen-jp {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--nen);
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+
+  .nen-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .nen-card p {
+    font-size: 0.82rem;
+  }
+
+  .nen-desc {
+    margin-top: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .arc-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .arc-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--arc);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .arc-item:hover {
+    border-color: var(--border-strong);
+    border-left-color: var(--arc);
+    transform: translateX(3px);
+  }
+
+  .arc-order {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--arc);
+    font-weight: 700;
+  }
+
+  .arc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  .arc-body strong {
+    font-size: 0.98rem;
+  }
+
+  .arc-body span {
+    font-size: 0.84rem;
+  }
+
+  .arc-meta {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .featured-item {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .featured-copy h3 {
+    font-size: 1.1rem;
+  }
+
+  .featured-copy p {
+    font-size: 0.88rem;
+    margin-block: 0.5rem 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-cast {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .hero-portrait:nth-child(n + 5) {
+      display: none;
+    }
+
+    .hero-portrait {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .arc-item {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .arc-meta {
+      grid-column: 2;
+    }
+
+    .featured-item {
+      grid-template-columns: 120px minmax(0, 1fr);
+    }
+  }
+</style>

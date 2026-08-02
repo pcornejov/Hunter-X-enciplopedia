@@ -1,0 +1,61 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import SeriesCard from '~/components/SeriesCard.astro';
+import { animeSeries, mangaSeries } from '~/lib/data';
+
+const groups = [
+  {
+    title: 'Anime',
+    description: 'Las dos series de televisión, las OVAs de Yorknew y Greed Island, y las dos películas.',
+    items: animeSeries,
+  },
+  {
+    title: 'Manga',
+    description: 'La obra original de Yoshihiro Togashi, serializada en Weekly Shōnen Jump desde 1998.',
+    items: mangaSeries,
+  },
+];
+---
+
+<Base
+  title="Obras"
+  description="Todas las obras de la franquicia Hunter x Hunter: manga original, las dos series de anime, OVAs y películas, con puntuaciones y fichas de AniList."
+>
+  <PageHeader
+    eyebrow="Franquicia"
+    title="Manga y adaptaciones"
+    lead="La obra de Togashi ha tenido dos adaptaciones televisivas muy distintas, tres tandas de OVAs y dos películas. Aquí está cada una con sus datos, su ficha y su lugar en la cronología."
+    crumbs={[{ label: 'Obras' }]}
+  />
+
+  {
+    groups.map((group) => (
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>{group.title}</h2>
+            <p>{group.description}</p>
+          </div>
+          <span class="badge">{group.items.length} obras</span>
+        </div>
+
+        <div class="grid grid--series">
+          {group.items.map((series, index) => (
+            <SeriesCard series={series} eager={index < 4} />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .grid--series {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .section:first-of-type {
+    padding-top: 0;
+  }
+</style>

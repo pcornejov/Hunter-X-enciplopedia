@@ -1,0 +1,558 @@
+[
+  {
+    "anilistId": 96893,
+    "name": "Yoshihiro Togashi",
+    "nativeName": "冨樫義博",
+    "role": "Original Creator",
+    "occupations": [
+      "Mangaka"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n96893-QixoFuZYSkpq.png",
+    "url": "https://anilist.co/staff/96893"
+  },
+  {
+    "anilistId": 105223,
+    "name": "Hiroshi Koujina",
+    "nativeName": "神志那弘志",
+    "role": "Director",
+    "occupations": [
+      "Director",
+      "Animator"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n105223-mb3Ek3cd3bTR.png",
+    "url": "https://anilist.co/staff/105223"
+  },
+  {
+    "anilistId": 151523,
+    "name": "Chie Yamashiro",
+    "nativeName": "山城智恵",
+    "role": "Assistant Director (eps 1-79)",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n151523-laq2RCK9pm3p.png",
+    "url": "https://anilist.co/staff/151523"
+  },
+  {
+    "anilistId": 144207,
+    "name": "Naomi Nakayama",
+    "nativeName": "中山奈緒美",
+    "role": "Assistant Director (eps 1-26)",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n144207-Hp8bHZDftyhw.png",
+    "url": "https://anilist.co/staff/144207"
+  },
+  {
+    "anilistId": 128838,
+    "name": "Hiroyasu Aoki",
+    "nativeName": "青木弘安",
+    "role": "Assistant Director (eps 27-89)",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n128838-FmWK5sHMeJy6.png",
+    "url": "https://anilist.co/staff/128838"
+  },
+  {
+    "anilistId": 149054,
+    "name": "migmi",
+    "nativeName": null,
+    "role": "Assistant Director (eps 80-148)",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/149054"
+  },
+  {
+    "anilistId": 125144,
+    "name": "Shinichirou Ushijima",
+    "nativeName": "牛嶋新一郎",
+    "role": "Assistant Director (eps 90-148)",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n125144-IHaCKmazbTu8.png",
+    "url": "https://anilist.co/staff/125144"
+  },
+  {
+    "anilistId": 102503,
+    "name": "Atsushi Maekawa",
+    "nativeName": "前川淳",
+    "role": "Series Composition (eps 1-58)",
+    "occupations": [
+      "Scriptwriter"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n102503-4pMzOOvpwmpr.png",
+    "url": "https://anilist.co/staff/102503"
+  },
+  {
+    "anilistId": 106829,
+    "name": "Tsutomu Kamishiro",
+    "nativeName": "上代務",
+    "role": "Series Composition (eps 39-148)",
+    "occupations": [
+      "Scriptwriter",
+      "Writer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n106829-PYzNtp7oIyT0.jpg",
+    "url": "https://anilist.co/staff/106829"
+  },
+  {
+    "anilistId": 101187,
+    "name": "Takahiro Yoshimatsu",
+    "nativeName": "吉松孝博",
+    "role": "Character Design (eps 1-87)",
+    "occupations": [
+      "Animator",
+      "Designer",
+      "Mangaka"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n101187-r707iYOUsA1n.png",
+    "url": "https://anilist.co/staff/101187"
+  },
+  {
+    "anilistId": 220414,
+    "name": "Indori Bokujou",
+    "nativeName": "いんどり牧場",
+    "role": "Character Design (eps 88-148)",
+    "occupations": [],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n220414-9m7aZkblCRp8.png",
+    "url": "https://anilist.co/staff/220414"
+  },
+  {
+    "anilistId": 101187,
+    "name": "Takahiro Yoshimatsu",
+    "nativeName": "吉松孝博",
+    "role": "Main Character Design (eps 88-148)",
+    "occupations": [
+      "Animator",
+      "Designer",
+      "Mangaka"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n101187-r707iYOUsA1n.png",
+    "url": "https://anilist.co/staff/101187"
+  },
+  {
+    "anilistId": 134309,
+    "name": "Mio Isshiki",
+    "nativeName": "一色美緒",
+    "role": "Art Director",
+    "occupations": [
+      "Background Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/134309"
+  },
+  {
+    "anilistId": 131244,
+    "name": "Shinji Sugiyama",
+    "nativeName": "杉山晋史",
+    "role": "Art Design",
+    "occupations": [
+      "Background Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/131244"
+  },
+  {
+    "anilistId": 133278,
+    "name": "Yoshinori Horikawa",
+    "nativeName": "堀川佳典",
+    "role": "Color Design",
+    "occupations": [
+      "Painter"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n133278-dLSkWVZ2E7hx.png",
+    "url": "https://anilist.co/staff/133278"
+  },
+  {
+    "anilistId": 149442,
+    "name": "Satoshi Terauchi",
+    "nativeName": "寺内聡",
+    "role": "Editing",
+    "occupations": [
+      "Editor"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/149442"
+  },
+  {
+    "anilistId": 153755,
+    "name": "Naoki Kawanishi",
+    "nativeName": "河西直樹",
+    "role": "Editing",
+    "occupations": [
+      "Editor"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/153755"
+  },
+  {
+    "anilistId": 119192,
+    "name": "Chiaki Yamada",
+    "nativeName": "山田知明",
+    "role": "Sound Director",
+    "occupations": [
+      "Audio Engineer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119192-lXbpD2fOAGAf.png",
+    "url": "https://anilist.co/staff/119192"
+  },
+  {
+    "anilistId": 146147,
+    "name": "Toshiya Wada",
+    "nativeName": "和田俊也",
+    "role": "Sound Effects",
+    "occupations": [
+      "Audio Engineer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/146147"
+  },
+  {
+    "anilistId": 102221,
+    "name": "Yoshihisa Hirano",
+    "nativeName": "平野義久",
+    "role": "Music",
+    "occupations": [
+      "Composer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n102221-NnK2mJ58cz1R.png",
+    "url": "https://anilist.co/staff/102221"
+  },
+  {
+    "anilistId": 220422,
+    "name": "Shinya Yamada",
+    "nativeName": "山田慎也",
+    "role": "Music Producer",
+    "occupations": [
+      "Music Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220422"
+  },
+  {
+    "anilistId": 220429,
+    "name": "Yoshinari Kanai",
+    "nativeName": "金井良成",
+    "role": "Music Production Assistance",
+    "occupations": [
+      "Music Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220429"
+  },
+  {
+    "anilistId": 194598,
+    "name": "Keiji Mita",
+    "nativeName": "三田圭志",
+    "role": "Animation Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n194598-t5GY8jK7wTSX.png",
+    "url": "https://anilist.co/staff/194598"
+  },
+  {
+    "anilistId": 154635,
+    "name": "Makoto Aoki",
+    "nativeName": "青木誠",
+    "role": "Production Desk",
+    "occupations": [
+      "Production Manager",
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/154635"
+  },
+  {
+    "anilistId": 125144,
+    "name": "Shinichirou Ushijima",
+    "nativeName": "牛嶋新一郎",
+    "role": "Design Manager",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n125144-IHaCKmazbTu8.png",
+    "url": "https://anilist.co/staff/125144"
+  },
+  {
+    "anilistId": 128838,
+    "name": "Hiroyasu Aoki",
+    "nativeName": "青木弘安",
+    "role": "Design Manager",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n128838-FmWK5sHMeJy6.png",
+    "url": "https://anilist.co/staff/128838"
+  },
+  {
+    "anilistId": 165996,
+    "name": "Tomoya Kitagawa",
+    "nativeName": "北川朋哉",
+    "role": "Design Manager",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/165996"
+  },
+  {
+    "anilistId": 220442,
+    "name": "Asami Kawano",
+    "nativeName": "川野麻美",
+    "role": "Design Manager",
+    "occupations": [
+      "Director",
+      "Storyboard Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n220442-AoiCPJvoNxJd.png",
+    "url": "https://anilist.co/staff/220442"
+  },
+  {
+    "anilistId": 189491,
+    "name": "Takaaki Hirayama",
+    "nativeName": "平山貴章",
+    "role": "Action Animation Director",
+    "occupations": [
+      "Animator"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/189491"
+  },
+  {
+    "anilistId": 149839,
+    "name": "Ayumi Arahata",
+    "nativeName": "荒畑歩美",
+    "role": "Special Effects",
+    "occupations": [
+      "Composite Artist"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/149839"
+  },
+  {
+    "anilistId": 103141,
+    "name": "Mitsuru Ooshima",
+    "nativeName": "大島満",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/103141"
+  },
+  {
+    "anilistId": 148835,
+    "name": "Masahiko Ibaraki",
+    "nativeName": "茨木政彦",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n148835-LFddlDA06qnN.jpg",
+    "url": "https://anilist.co/staff/148835"
+  },
+  {
+    "anilistId": 192231,
+    "name": "Haruo Okamoto",
+    "nativeName": "岡本東郎",
+    "role": "Planning",
+    "occupations": [],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/192231"
+  },
+  {
+    "anilistId": 194596,
+    "name": "Hiroyuki Okada",
+    "nativeName": "岡田浩行",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/194596"
+  },
+  {
+    "anilistId": 217465,
+    "name": "Suzuko Fujimoto",
+    "nativeName": "藤本鈴子",
+    "role": "Planning",
+    "occupations": [],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n217465-AoFCWa0tEkfu.png",
+    "url": "https://anilist.co/staff/217465"
+  },
+  {
+    "anilistId": 219343,
+    "name": "Seiji Okuda",
+    "nativeName": "奥田誠治",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n219343-sgR7cZn2NFtq.png",
+    "url": "https://anilist.co/staff/219343"
+  },
+  {
+    "anilistId": 220410,
+    "name": "Naoki Suganuma",
+    "nativeName": "菅沼直樹",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220410"
+  },
+  {
+    "anilistId": 220400,
+    "name": "Masashi Funakoshi",
+    "nativeName": "船越雅史",
+    "role": "Planning",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n220400-kC7odI2ybyff.png",
+    "url": "https://anilist.co/staff/220400"
+  },
+  {
+    "anilistId": 220441,
+    "name": "Yuu Saitou",
+    "nativeName": "齋藤優",
+    "role": "Planning Assistance",
+    "occupations": [
+      "Magazine Editor"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n220441-EnwTzYOQ0saV.png",
+    "url": "https://anilist.co/staff/220441"
+  },
+  {
+    "anilistId": 219343,
+    "name": "Seiji Okuda",
+    "nativeName": "奥田誠治",
+    "role": "Executive Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n219343-sgR7cZn2NFtq.png",
+    "url": "https://anilist.co/staff/219343"
+  },
+  {
+    "anilistId": 102500,
+    "name": "Toshio Nakatani",
+    "nativeName": "中谷敏夫",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n102500-iT6NooUatisY.png",
+    "url": "https://anilist.co/staff/102500"
+  },
+  {
+    "anilistId": 101758,
+    "name": "Manabu Tamura",
+    "nativeName": "田村学",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n101758-Z7U7AFlzBw0B.jpg",
+    "url": "https://anilist.co/staff/101758"
+  },
+  {
+    "anilistId": 103169,
+    "name": "Akira Shinohara",
+    "nativeName": "篠原昭",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/103169"
+  },
+  {
+    "anilistId": 150001,
+    "name": "Atsushi Kirimoto",
+    "nativeName": "桐本篤",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/150001"
+  },
+  {
+    "anilistId": 189640,
+    "name": "Kenichi Sakurai",
+    "nativeName": "櫻井健一",
+    "role": "Producer",
+    "occupations": [],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/189640"
+  },
+  {
+    "anilistId": 206977,
+    "name": "Tetsuhito Motoyasu",
+    "nativeName": "本安哲人",
+    "role": "Producer",
+    "occupations": [],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/206977"
+  },
+  {
+    "anilistId": 220402,
+    "name": "Naoki Iwasa",
+    "nativeName": "岩佐直樹",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220402"
+  },
+  {
+    "anilistId": 220403,
+    "name": "Hiroyuki Okino",
+    "nativeName": "興野裕之",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220403"
+  },
+  {
+    "anilistId": 220405,
+    "name": "Tomoko Yoshino",
+    "nativeName": "吉野朋子",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220405"
+  },
+  {
+    "anilistId": 220413,
+    "name": "Ai Morikawa",
+    "nativeName": "森川愛",
+    "role": "Producer",
+    "occupations": [
+      "Producer"
+    ],
+    "image": "https://s4.anilist.co/file/anilistcdn/staff/large/default.jpg",
+    "url": "https://anilist.co/staff/220413"
+  }
+]

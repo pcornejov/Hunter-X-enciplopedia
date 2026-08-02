@@ -1,0 +1,478 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { nenEfficiency, nenPrinciples, nenTypes } from '~/data/curated/nen';
+import { getCharacters } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const basics = nenPrinciples.filter((principle) => principle.level === 'basico');
+const advanced = nenPrinciples.filter((principle) => principle.level === 'avanzado');
+
+const entries = nenTypes.map((type) => ({
+  type,
+  users: getCharacters(type.characterSlugs),
+  efficiencies: nenTypes.map((other) => ({ other, value: nenEfficiency(type, other) })),
+}));
+
+/** Coordenadas del hexagono: seis vertices equidistantes en un circulo. */
+const RADIUS = 120;
+const CENTER = 160;
+const vertices = nenTypes.map((type) => {
+  const angle = (Math.PI / 3) * type.affinity - Math.PI / 2;
+  return {
+    type,
+    x: CENTER + RADIUS * Math.cos(angle),
+    y: CENTER + RADIUS * Math.sin(angle),
+  };
+});
+const polygon = vertices.map((vertex) => `${vertex.x.toFixed(1)},${vertex.y.toFixed(1)}`).join(' ');
+---
+
+<Base
+  title="El sistema de Nen"
+  description="Las seis categorías de Nen de Hunter x Hunter explicadas: hexágono de afinidad, eficiencia entre categorías, principios básicos y avanzados, y quién usa cada una."
+>
+  <PageHeader
+    eyebrow="Sistema de poder"
+    title="El Nen, explicado"
+    lead="El Nen es la capacidad de controlar la propia energía vital. Toda persona nace con afinidad hacia una de seis categorías, y esa afinidad decide cuánto rendimiento puede sacar de cada tipo de habilidad."
+    crumbs={[{ label: 'Nen' }]}
+  />
+
+  <section class="section hexagon-section">
+    <div class="hex-wrap">
+      <svg viewBox="0 0 320 320" role="img" aria-labelledby="hex-title hex-desc" class="hexagon">
+        <title id="hex-title">Hexágono de afinidad de las categorías de Nen</title>
+        <desc id="hex-desc">
+          Las seis categorías dispuestas en hexágono. Cuanto más lejos está una categoría de la propia,
+          menor es el rendimiento que se obtiene al entrenarla.
+        </desc>
+        <polygon points={polygon} fill="none" stroke="var(--border-strong)" stroke-width="1.5" />
+        {
+          vertices.map((vertex) => (
+            <>
+              <line
+                x1={CENTER}
+                y1={CENTER}
+                x2={vertex.x}
+                y2={vertex.y}
+                stroke="var(--border)"
+                stroke-width="1"
+                stroke-dasharray="3 4"
+              />
+              <circle cx={vertex.x} cy={vertex.y} r="9" fill={vertex.type.color} />
+              <text
+                x={vertex.x}
+                y={vertex.y > CENTER ? vertex.y + 26 : vertex.y - 16}
+                text-anchor="middle"
+                fill="var(--text)"
+                font-size="12.5"
+                font-weight="600"
+              >
+                {vertex.type.name}
+              </text>
+            </>
+          ))
+        }
+      </svg>
+    </div>
+
+    <div class="hex-copy">
+      <h2>Por qué importa la posición</h2>
+      <p class="muted">
+        La categoría propia rinde al 100 %. Las dos vecinas del hexágono llegan al 80 %, las siguientes
+        al 60 % y la opuesta se queda en el 40 %. Por eso Kurapika, materializador, puede alcanzar
+        habilidades de manipulación con esfuerzo, pero nunca sería un buen reforzador.
+      </p>
+      <p class="muted">
+        La <strong>Especialización</strong> es la excepción: no se entrena, y algunos materializadores y
+        manipuladores derivan hacia ella con los años. La <strong>adivinación del agua</strong> es la
+        prueba estándar para averiguar a qué categoría pertenece alguien.
+      </p>
+      <table class="efficiency">
+        <caption class="visually-hidden">Eficiencia entre categorías de Nen</caption>
+        <thead>
+          <tr>
+            <th scope="col">Categoría</th>
+            {nenTypes.map((type) => <th scope="col" title={type.name}>{type.name.slice(0, 4)}.</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {
+            entries.map(({ type, efficiencies }) => (
+              <tr>
+                <th scope="row" style={`--nen: ${type.color}`}>{type.name}</th>
+                {efficiencies.map(({ value }) => (
+                  <td data-value={value}>{value}</td>
+                ))}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Las seis categorías</p>
+        <h2>Cada tipo, en detalle</h2>
+        <p>Qué hace, en qué destaca, cómo se detecta y quién la usa en la obra.</p>
+      </div>
+    </div>
+
+    <div class="types">
+      {
+        entries.map(({ type, users }) => (
+          <article class="type card" id={type.slug} style={`--nen: ${type.color}`}>
+            <header>
+              <span class="jp" aria-hidden="true">{type.japanese}</span>
+              <div>
+                <h3>{type.name}</h3>
+                <p class="faint">{type.romaji}</p>
+              </div>
+            </header>
+
+            <p class="muted">{type.description}</p>
+
+            <dl>
+              <div>
+                <dt>Punto fuerte</dt>
+                <dd>{type.strengths}</dd>
+              </div>
+              <div>
+                <dt>Adivinación del agua</dt>
+                <dd>{type.waterDivination}</dd>
+              </div>
+            </dl>
+
+            {users.length > 0 && (
+              <div class="users">
+                <p class="eyebrow">Usuarios destacados</p>
+                <ul>
+                  {users.map((character) => (
+                    <li>
+                      <a href={url(`personajes/${character.slug}`)}>
+                        <span class="avatar">
+                          <RemoteImage src={character.image} alt={character.name} ratio="square" />
+                        </span>
+                        <span>{character.name}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Técnica</p>
+        <h2>Principios del Nen</h2>
+        <p>Los cuatro fundamentos que todo usuario aprende, y las siete aplicaciones avanzadas.</p>
+      </div>
+    </div>
+
+    <h3 class="group-title">Los Cuatro Principios</h3>
+    <div class="principles">
+      {
+        basics.map((principle) => (
+          <article class="principle card">
+            <span class="kanji" aria-hidden="true">{principle.japanese}</span>
+            <h4>{principle.name}</h4>
+            <p class="muted">{principle.description}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <h3 class="group-title">Aplicaciones avanzadas</h3>
+    <div class="principles">
+      {
+        advanced.map((principle) => (
+          <article class="principle card principle--advanced">
+            <span class="kanji" aria-hidden="true">{principle.japanese}</span>
+            <h4>{principle.name}</h4>
+            <p class="muted">{principle.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card condition-box">
+      <p class="eyebrow">La regla que lo gobierna todo</p>
+      <h2>Condición y voto</h2>
+      <p class="muted">
+        Una habilidad de Nen se vuelve más fuerte cuanto más se limita a sí misma. Restringir el uso a
+        un solo tipo de enemigo, a una hora del día o a un ritual concreto multiplica su potencia, y
+        aceptar un castigo grave por incumplir la restricción la multiplica todavía más.
+      </p>
+      <p class="muted">
+        Kurapika lleva el principio al extremo: sus cadenas solo funcionan contra la Brigada Fantasma y
+        lo matan si las usa contra cualquier otra persona. A cambio, obtiene acceso a las seis
+        categorías. Es el mejor ejemplo de por qué en esta obra el poder siempre se paga.
+      </p>
+      <a class="button" href={url('glosario')}>Ver el glosario completo</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hexagon-section {
+    display: grid;
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .hex-wrap {
+    display: grid;
+    place-items: center;
+  }
+
+  .hexagon {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
+
+  .hex-copy h2 {
+    margin-bottom: 0.85rem;
+  }
+
+  .hex-copy p + p {
+    margin-top: 0.8rem;
+  }
+
+  .hex-copy p {
+    font-size: 0.94rem;
+    max-width: 62ch;
+  }
+
+  .efficiency {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .efficiency th,
+  .efficiency td {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .efficiency thead th {
+    background: var(--bg-soft);
+    color: var(--text-faint);
+    font-weight: 600;
+    font-size: 0.72rem;
+  }
+
+  .efficiency tbody th {
+    text-align: left;
+    white-space: nowrap;
+    font-weight: 600;
+    border-left: 3px solid var(--nen);
+  }
+
+  .efficiency td[data-value='100'] {
+    background: color-mix(in srgb, var(--accent) 26%, transparent);
+    font-weight: 700;
+  }
+  .efficiency td[data-value='80'] {
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+  .efficiency td[data-value='60'] {
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
+  }
+  .efficiency td[data-value='40'] {
+    color: var(--text-faint);
+  }
+
+  .types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .type {
+    padding: 1.35rem 1.4rem 1.4rem;
+    border-top: 3px solid var(--nen);
+    scroll-margin-top: 90px;
+  }
+
+  .type header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .jp {
+    font-size: 1.6rem;
+    color: var(--nen);
+    line-height: 1;
+  }
+
+  .type h3 {
+    font-size: 1.15rem;
+  }
+
+  .type header p {
+    font-size: 0.8rem;
+  }
+
+  .type > p {
+    font-size: 0.9rem;
+  }
+
+  .type dl {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .type dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+  }
+
+  .type dd {
+    margin: 0.15rem 0 0;
+    font-size: 0.87rem;
+    color: var(--text-muted);
+  }
+
+  .users {
+    margin-top: 1.15rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .users ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+
+  .users a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.25rem 0.6rem 0.25rem 0.25rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  .users a:hover {
+    border-color: var(--nen);
+    color: var(--text);
+  }
+
+  .avatar {
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .avatar :global(.media) {
+    border-radius: 50%;
+  }
+
+  .group-title {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-block: 1.5rem 1rem;
+  }
+
+  .group-title:first-of-type {
+    margin-top: 0;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+  }
+
+  .principle {
+    padding: 1.1rem 1.15rem 1.2rem;
+  }
+
+  .principle--advanced {
+    background: var(--bg-inset);
+  }
+
+  .kanji {
+    display: block;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .principle h4 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .principle p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .condition-box {
+    padding: 2rem 2.25rem 2.25rem;
+    max-width: 75ch;
+  }
+
+  .condition-box h2 {
+    margin-block: 0.5rem 1rem;
+  }
+
+  .condition-box p {
+    font-size: 0.96rem;
+  }
+
+  .condition-box p + p {
+    margin-top: 0.8rem;
+  }
+
+  .condition-box .button {
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .hexagon-section {
+      grid-template-columns: 1fr;
+    }
+
+    .efficiency {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>

@@ -1,0 +1,502 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '~/layouts/Base.astro';
+import Breadcrumbs from '~/components/Breadcrumbs.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import CharacterCard from '~/components/CharacterCard.astro';
+import Spoiler from '~/components/Spoiler.astro';
+import {
+  allCharacters,
+  getArcsForCharacter,
+  getCharacters,
+  getNenTypeForCharacter,
+  getOrganizationsForCharacter,
+  getProfile,
+} from '~/lib/data';
+import { url } from '~/lib/paths';
+
+export const getStaticPaths = (() => {
+  return allCharacters.map((character) => ({
+    params: { slug: character.slug },
+    props: { character },
+  }));
+}) satisfies GetStaticPaths;
+
+const { character } = Astro.props;
+
+const profile = getProfile(character.slug);
+const nenType = getNenTypeForCharacter(character.slug);
+const organizations = getOrganizationsForCharacter(character.slug);
+const arcs = getArcsForCharacter(character.slug);
+
+const roleLabel =
+  character.role === 'MAIN' ? 'Protagonista' : character.role === 'SUPPORTING' ? 'Personaje secundario' : 'Reparto de fondo';
+
+const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
+/** Datos de ficha: mezclamos los campos de la API con lo que hemos curado. */
+const facts: Array<{ label: string; value: string }> = [
+  { label: 'Rol en la obra', value: roleLabel },
+  ...(character.age ? [{ label: 'Edad', value: character.age }] : []),
+  ...(character.gender ? [{ label: 'Género', value: character.gender === 'Male' ? 'Masculino' : character.gender === 'Female' ? 'Femenino' : character.gender }] : []),
+  ...(character.bloodType ? [{ label: 'Grupo sanguíneo', value: character.bloodType }] : []),
+  ...(character.birthday ? [{ label: 'Cumpleaños', value: `${character.birthday.day} de ${MONTHS[character.birthday.month - 1]}` }] : []),
+  ...character.attributes,
+  ...(profile?.hatsu ? [{ label: 'Hatsu', value: profile.hatsu }] : []),
+  { label: 'Favoritos en AniList', value: character.favourites.toLocaleString('es') },
+];
+
+/** Personajes relacionados: mismo arco principal, excluyendo al propio. */
+const relatedSlugs = [...new Set(arcs.flatMap((arc) => arc.characterSlugs))].filter((slug) => slug !== character.slug);
+const related = getCharacters(relatedSlugs)
+  .sort((a, b) => b.favourites - a.favourites)
+  .slice(0, 6);
+
+const bioParagraphs = profile ? profile.bio.split('\n\n').map((p) => p.trim()).filter(Boolean) : [];
+const apiParagraphs = character.description.split('\n\n').map((p) => p.trim()).filter(Boolean);
+
+/**
+ * Muchos personajes menores no traen descripcion en AniList. En vez de dejar
+ * la meta vacia, componemos una frase con los datos que si tenemos.
+ */
+function buildDescription(): string {
+  const written = profile?.tagline || character.summary;
+  if (written && written.length >= 40) return written;
+
+  const pieces = [`${character.name} es un ${roleLabel.toLowerCase()} de Hunter x Hunter`];
+  if (nenType) pieces.push(`de categoría ${nenType.name}`);
+  if (organizations.length > 0) pieces.push(`vinculado a ${organizations[0]!.name}`);
+  if (arcs.length > 0) pieces.push(`que aparece en el arco ${arcs[0]!.name}`);
+  const voice = character.voiceActors[0]?.name;
+  if (voice) pieces.push(`con voz de ${voice}`);
+
+  const sentence = `${pieces.join(', ')}.`;
+  return written ? `${sentence} ${written}` : sentence;
+}
+
+const description = buildDescription();
+---
+
+<Base title={character.name} description={description} image={character.image}>
+  <Breadcrumbs items={[{ href: url('personajes'), label: 'Personajes' }, { label: character.name }]} />
+
+  <article class="character">
+    <header class="hero">
+      <div class="portrait">
+        <RemoteImage src={character.image} alt={character.name} ratio="portrait" eager sizes="320px" />
+      </div>
+
+      <div class="intro">
+        <div class="tags">
+          <span class="badge">{roleLabel}</span>
+          {nenType && (
+            <a class="badge nen" href={url(`nen#${nenType.slug}`)} style={`--nen: ${nenType.color}`}>
+              {nenType.name}
+            </a>
+          )}
+          {organizations.map((org) => (
+            <a class="badge" href={url(`organizaciones#${org.slug}`)}>{org.name}</a>
+          ))}
+        </div>
+
+        <h1>{character.name}</h1>
+        {character.nativeName && <p class="native faint">{character.nativeName}</p>}
+        {profile?.tagline && <p class="tagline">{profile.tagline}</p>}
+
+        {
+          character.aliases.length > 0 && (
+            <p class="aliases muted">
+              <strong>También conocido como:</strong> {character.aliases.join(' · ')}
+            </p>
+          )
+        }
+
+        {
+          character.voiceActors.length > 0 && (
+            <div class="voices">
+              <p class="eyebrow">Voz japonesa</p>
+              <ul>
+                {character.voiceActors.map((va) => (
+                  <li>
+                    {va.image && <img src={va.image} alt="" loading="lazy" referrerpolicy="no-referrer" />}
+                    <span>
+                      <strong>{va.name}</strong>
+                      {va.nativeName && <small class="faint">{va.nativeName}</small>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="content">
+        {
+          bioParagraphs.length > 0 && (
+            <section class="block">
+              <h2>Biografía</h2>
+              <div class="prose">
+                {bioParagraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          apiParagraphs.length > 0 && (
+            <section class="block">
+              <h2>{bioParagraphs.length > 0 ? 'Ficha de AniList' : 'Descripción'}</h2>
+              <p class="source-note faint">
+                Texto original de la comunidad de AniList, en inglés y sin traducir.
+              </p>
+              <div class="prose api-text">
+                {apiParagraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          character.spoilers.length > 0 && (
+            <Spoiler summary="Contenido marcado como spoiler en AniList" count={character.spoilers.length}>
+              {character.spoilers.map((spoiler) => (
+                <p>{spoiler}</p>
+              ))}
+              {character.spoilerAliases.length > 0 && (
+                <p><strong>Otros alias:</strong> {character.spoilerAliases.join(' · ')}</p>
+              )}
+            </Spoiler>
+          )
+        }
+
+        {
+          arcs.length > 0 && (
+            <section class="block">
+              <h2>Aparece en</h2>
+              <ul class="arc-links">
+                {arcs.map((arc) => (
+                  <li>
+                    <a href={url(`arcos/${arc.slug}`)} style={`--arc: ${arc.color}`}>
+                      <strong>{arc.name}</strong>
+                      <span class="faint">{arc.animeEpisodes2011}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </div>
+
+      <aside class="sidebar">
+        <div class="facts card">
+          <h2>Datos</h2>
+          <dl>
+            {
+              facts.map((fact) => (
+                <div>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        {
+          nenType && (
+            <div class="card nen-box" style={`--nen: ${nenType.color}`}>
+              <p class="eyebrow">Categoría de Nen</p>
+              <h3>
+                {nenType.name} <span class="faint">{nenType.japanese}</span>
+              </h3>
+              <p class="muted">{nenType.description}</p>
+              <a class="button" href={url(`nen#${nenType.slug}`)}>Ver la categoría</a>
+            </div>
+          )
+        }
+
+        {
+          character.siteUrl && (
+            <p class="external faint">
+              Datos base obtenidos de{' '}
+              <a href={character.siteUrl} rel="noopener noreferrer external" target="_blank">
+                la ficha en AniList
+              </a>.
+            </p>
+          )
+        }
+      </aside>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="block related">
+          <h2>Personajes relacionados</h2>
+          <div class="grid grid--cast">
+            {related.map((item) => (
+              <CharacterCard character={item} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .character {
+    padding-block: 1.5rem 2rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    margin-block: 1.5rem 2.5rem;
+  }
+
+  .portrait {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .badge.nen {
+    border-color: color-mix(in srgb, var(--nen) 55%, transparent);
+    color: color-mix(in srgb, var(--nen) 80%, var(--text));
+    background: color-mix(in srgb, var(--nen) 12%, transparent);
+  }
+
+  a.badge:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .native {
+    margin-top: 0.35rem;
+    font-size: 1rem;
+  }
+
+  .tagline {
+    margin-top: 0.9rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 55ch;
+  }
+
+  .aliases {
+    margin-top: 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .voices {
+    margin-top: 1.5rem;
+  }
+
+  .voices ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .voices li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .voices img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+  }
+
+  .voices span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  .voices strong {
+    font-size: 0.9rem;
+  }
+
+  .voices small {
+    font-size: 0.75rem;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .block + .block {
+    margin-top: 2.5rem;
+  }
+
+  .block h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .source-note {
+    font-size: 0.78rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .api-text {
+    font-size: 0.92rem;
+  }
+
+  .arc-links {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .arc-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--arc);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+    font-size: 0.9rem;
+  }
+
+  .arc-links a:hover {
+    border-color: var(--border-strong);
+    border-left-color: var(--arc);
+  }
+
+  .arc-links span {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 84px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .facts {
+    padding: 1.15rem 1.25rem 1.25rem;
+  }
+
+  .facts h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+  }
+
+  .facts dl {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .facts dt {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .facts dd {
+    margin: 0.1rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .nen-box {
+    padding: 1.15rem 1.25rem 1.25rem;
+    border-top: 3px solid var(--nen);
+  }
+
+  .nen-box h3 {
+    font-size: 1.05rem;
+    margin-block: 0.4rem 0.6rem;
+  }
+
+  .nen-box h3 span {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  .nen-box p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .external {
+    font-size: 0.78rem;
+  }
+
+  .external a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .related {
+    margin-top: 3.5rem;
+  }
+
+  .grid--cast {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  @media (max-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .portrait {
+      max-width: 220px;
+    }
+  }
+</style>

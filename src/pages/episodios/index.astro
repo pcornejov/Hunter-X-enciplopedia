@@ -1,0 +1,114 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { allEpisodeSets, seriesBySlug } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const sets = allEpisodeSets
+  .map((set) => ({
+    set,
+    series: [...seriesBySlug.values()].find((series) => series.anilistId === set.anilistId) ?? null,
+  }))
+  .filter((entry) => entry.series !== null);
+
+const totalEpisodes = allEpisodeSets.reduce((sum, set) => sum + set.total, 0);
+---
+
+<Base
+  title="Episodios"
+  description={`Guía de los ${totalEpisodes} episodios de las dos adaptaciones de Hunter x Hunter, con título original, fecha de emisión y sinopsis.`}
+>
+  <PageHeader
+    eyebrow="Guía de visionado"
+    title="Episodios"
+    lead={`${totalEpisodes} episodios entre las dos series de televisión, con título en japonés, fecha de emisión y sinopsis de cada uno. Los datos vienen de Kitsu.`}
+    crumbs={[{ label: 'Episodios' }]}
+  />
+
+  <div class="sets">
+    {
+      sets.map(({ set, series }) => (
+        <a class="card set" href={url(`episodios/${series!.slug}`)}>
+          <div class="cover">
+            <RemoteImage src={series!.coverImage} alt={`Portada de ${series!.title.display}`} ratio="portrait" eager />
+          </div>
+          <div class="body">
+            <h2>{series!.title.display}</h2>
+            <p class="meta faint">
+              {series!.year} · {series!.studios.map((s) => s.name).join(', ') || 'Estudio no listado'}
+            </p>
+            <p class="count">
+              <strong>{set.total}</strong> <span class="muted">episodios catalogados</span>
+            </p>
+            <p class="muted preview">{set.episodes[0]?.synopsis.slice(0, 200)}…</p>
+            <span class="button">Abrir la guía</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .sets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .set {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .body {
+    padding: 1.25rem 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .meta {
+    font-size: 0.8rem;
+  }
+
+  .count {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .count strong {
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+
+  .preview {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-top: 0.35rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .button {
+    align-self: flex-start;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 520px) {
+    .set {
+      grid-template-columns: 110px minmax(0, 1fr);
+    }
+  }
+</style>

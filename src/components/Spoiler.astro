@@ -1,0 +1,67 @@
+---
+/**
+ * Bloque de spoiler plegable. AniList marca ciertos parrafos como spoiler y
+ * no queremos reventarle la trama a quien esta viendo la serie.
+ * Usa <details>, asi que funciona sin JavaScript.
+ */
+interface Props {
+  summary?: string;
+  count?: number;
+}
+
+const { summary = 'Mostrar spoilers', count } = Astro.props;
+---
+
+<details class="spoiler">
+  <summary>
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+    <span>{summary}{count ? ` (${count})` : ''}</span>
+  </summary>
+  <div class="spoiler-body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .spoiler {
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg-inset);
+    margin-top: 1rem;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--warning);
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    color: var(--text);
+  }
+
+  .spoiler-body {
+    padding: 0 0.85rem 0.9rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 0.75rem;
+  }
+
+  .spoiler-body :global(p + p) {
+    margin-top: 0.7em;
+  }
+</style>

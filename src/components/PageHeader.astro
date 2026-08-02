@@ -1,0 +1,39 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  crumbs?: Array<{ href?: string; label: string }>;
+}
+
+const { eyebrow, title, lead, crumbs = [] } = Astro.props;
+---
+
+<div class="page-header">
+  {crumbs.length > 0 && <Breadcrumbs items={crumbs} />}
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <h1>{title}</h1>
+  {lead && <p class="lead">{lead}</p>}
+  <slot />
+</div>
+
+<style>
+  .page-header {
+    padding-block: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+  .lead {
+    margin-top: 0.85rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 70ch;
+  }
+</style>

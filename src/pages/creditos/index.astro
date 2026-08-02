@@ -1,0 +1,226 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import { dataMeta, formatFetchedAt } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const counts = dataMeta.counts;
+
+const pipeline = [
+  {
+    step: '1. Ingesta',
+    detail:
+      'scripts/fetch-data.mjs consulta AniList (GraphQL) y Kitsu (JSON:API) con reintentos, backoff exponencial y control del límite de peticiones. Normaliza el resultado y lo guarda como JSON en el repositorio.',
+  },
+  {
+    step: '2. Validación de datos',
+    detail:
+      'scripts/validate-data.mjs comprueba que no falten obras ni personajes clave, que los slugs sean únicos, que las imágenes vengan de hosts esperados y que la numeración de episodios no tenga huecos.',
+  },
+  {
+    step: '3. Integridad referencial',
+    detail:
+      'src/lib/data.ts cruza el contenido escrito en español con los datos de las APIs. Si un arco cita a un personaje inexistente, el build falla antes de generar una sola página.',
+  },
+  {
+    step: '4. Build y validación del sitio',
+    detail:
+      'scripts/validate-build.mjs recorre dist/ y verifica enlaces internos rotos, páginas sin título o sin descripción, imágenes sin alt y ausencia de ficheros necesarios para GitHub Pages.',
+  },
+];
+---
+
+<Base
+  title="Créditos y fuentes"
+  description="De dónde salen los datos de esta enciclopedia de Hunter x Hunter, cómo se procesan y qué se valida antes de publicar."
+>
+  <PageHeader
+    eyebrow="Transparencia"
+    title="Créditos y fuentes"
+    lead="Este sitio no inventa datos: los descarga de APIs públicas, los normaliza y los publica de forma estática. Aquí está todo lo que hay detrás."
+    crumbs={[{ label: 'Créditos' }]}
+  />
+
+  <section class="section">
+    <h2>Fuentes de datos</h2>
+    <div class="sources">
+      {
+        dataMeta.sources.map((source) => (
+          <article class="card source">
+            <h3>{source.name}</h3>
+            <p class="muted">{source.license}</p>
+            <p class="faint api">{source.api}</p>
+            <a class="button" href={source.url} rel="noopener noreferrer external" target="_blank">
+              Visitar {source.name}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <dl class="counts">
+      <div><dt>{counts.series}</dt><dd>obras de la franquicia</dd></div>
+      <div><dt>{counts.characters}</dt><dd>personajes</dd></div>
+      <div><dt>{counts.charactersWithImage}</dt><dd>con retrato</dd></div>
+      <div><dt>{counts.staff}</dt><dd>entradas de staff</dd></div>
+      <div><dt>{counts.episodes}</dt><dd>episodios</dd></div>
+    </dl>
+
+    <p class="muted stamp">
+      Última ingesta ejecutada el <strong>{formatFetchedAt()}</strong> (UTC). Los JSON resultantes están
+      versionados en el repositorio, así que el sitio se reconstruye igual aunque las APIs no respondan.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Cómo se construye</h2>
+    <ol class="pipeline">
+      {
+        pipeline.map((item) => (
+          <li class="card">
+            <h3>{item.step}</h3>
+            <p class="muted">{item.detail}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>Contenido propio</h2>
+    <div class="prose wide">
+      <p>
+        Las APIs devuelven fichas en inglés y sin contexto narrativo. Para que esto funcione como
+        enciclopedia en español, el sitio añade material escrito específicamente para él: los ocho arcos
+        con sus resúmenes y equivalencias manga/anime, las seis categorías de Nen con su hexágono de
+        afinidad, los principios del Nen, las facciones, el glosario y biografías propias del reparto
+        principal.
+      </p>
+      <p>
+        Cuando una ficha muestra texto traído de AniList, se indica de forma explícita y se deja en su
+        idioma original en lugar de traducirlo automáticamente.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Derechos</h2>
+    <div class="prose wide">
+      <p>
+        <strong>Hunter x Hunter</strong> es una obra de Yoshihiro Togashi, publicada por Shueisha y
+        adaptada por Nippon Animation (1999) y Madhouse (2011). Este es un proyecto de fans, sin ánimo
+        de lucro y sin relación con los titulares de los derechos.
+      </p>
+      <p>
+        Las imágenes no se copian a este repositorio: se enlazan directamente desde los CDN públicos de
+        AniList y Kitsu, que son sus fuentes originales. Los textos escritos para este sitio se ofrecen
+        para uso libre; los datos de las APIs pertenecen a sus respectivas comunidades.
+      </p>
+    </div>
+    <a class="button button--primary" href={url()}>Volver al inicio</a>
+  </section>
+</Base>
+
+<style>
+  .section {
+    padding-block: 0 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .sources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .source {
+    padding: 1.25rem 1.35rem 1.4rem;
+  }
+
+  .source h3 {
+    font-size: 1.1rem;
+  }
+
+  .source p {
+    font-size: 0.87rem;
+    margin-top: 0.4rem;
+  }
+
+  .api {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    word-break: break-all;
+    margin-block: 0.5rem 1rem;
+  }
+
+  .counts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-block: 1.5rem;
+    border-block: 1px solid var(--border);
+  }
+
+  .counts dt {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+
+  .counts dd {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  .stamp {
+    margin-top: 1.25rem;
+    font-size: 0.88rem;
+    max-width: 75ch;
+  }
+
+  .pipeline {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .pipeline li {
+    padding: 1.25rem 1.35rem 1.4rem;
+  }
+
+  .pipeline h3 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .pipeline p {
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+
+  .wide {
+    max-width: 80ch;
+  }
+
+  .wide p {
+    font-size: 0.95rem;
+  }
+
+  .section .button {
+    margin-top: 1.5rem;
+  }
+</style>

@@ -1,0 +1,293 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '~/layouts/Base.astro';
+import Breadcrumbs from '~/components/Breadcrumbs.astro';
+import { arcos } from '~/data/curated/arcos';
+import { allEpisodeSets, allSeries, mainAnime } from '~/lib/data';
+import { url } from '~/lib/paths';
+import type { Arc, Episode } from '~/lib/types';
+
+export const getStaticPaths = (() => {
+  return allEpisodeSets
+    .map((set) => {
+      const series = allSeries.find((item) => item.anilistId === set.anilistId);
+      if (!series) return null;
+      return { params: { slug: series.slug }, props: { set, series } };
+    })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
+}) satisfies GetStaticPaths;
+
+const { set, series } = Astro.props;
+
+/**
+ * Solo el anime de 2011 tiene sus arcos mapeados a numeros de episodio,
+ * asi que solo ahi podemos agrupar la lista por arco narrativo.
+ */
+const isMain = series.anilistId === mainAnime.anilistId;
+
+const arcRanges = isMain
+  ? arcos
+      .map((arc) => {
+        const match = arc.animeEpisodes2011.match(/(\d+)\s*[–-]\s*(\d+)/);
+        return match ? { arc, from: Number(match[1]), to: Number(match[2]) } : null;
+      })
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+  : [];
+
+function arcFor(number: number) {
+  return arcRanges.find((range) => number >= range.from && number <= range.to)?.arc ?? null;
+}
+
+interface EpisodeGroup {
+  arc: Arc | null;
+  episodes: Episode[];
+}
+
+const groups: EpisodeGroup[] = isMain
+  ? arcRanges.map((range) => ({
+      arc: range.arc,
+      episodes: set.episodes.filter((episode) => episode.number >= range.from && episode.number <= range.to),
+    }))
+  : [{ arc: null, episodes: set.episodes }];
+
+// Episodios que no caen en ningun arco mapeado (recapitulaciones, especiales).
+const ungrouped = isMain ? set.episodes.filter((episode) => arcFor(episode.number) === null) : [];
+if (ungrouped.length > 0) groups.push({ arc: null, episodes: ungrouped });
+---
+
+<Base
+  title={`Episodios de ${series.title.display}`}
+  description={`Los ${set.total} episodios de ${series.title.display} con título original, fecha de emisión y sinopsis, agrupados por arco narrativo.`}
+  image={series.bannerImage ?? series.coverImage}
+>
+  <Breadcrumbs
+    items={[{ href: url('episodios'), label: 'Episodios' }, { label: series.title.display }]}
+  />
+
+  <div class="head">
+    <p class="eyebrow">Guía de episodios</p>
+    <h1>{series.title.display}</h1>
+    <p class="lead muted">
+      {set.total} episodios{isMain ? ', agrupados por arco narrativo' : ''}. Sinopsis y miniaturas de
+      Kitsu; los textos están en inglés porque es el idioma en el que la comunidad los mantiene.
+    </p>
+    <div class="head-meta">
+      <a class="button" href={url(`series/${series.slug}`)}>Ficha de la obra</a>
+      {isMain && <a class="button" href={url('arcos')}>Guía de arcos</a>}
+    </div>
+  </div>
+
+  {
+    groups
+      .filter((group) => group.episodes.length > 0)
+      .map((group) => (
+        <section class="arc-group" style={group.arc ? `--arc: ${group.arc.color}` : '--arc: var(--border-strong)'}>
+          {group.arc ? (
+            <header class="arc-head">
+              <div>
+                <p class="eyebrow">Arco {String(group.arc.order).padStart(2, '0')}</p>
+                <h2>{group.arc.name}</h2>
+                <p class="muted">{group.arc.tagline}</p>
+              </div>
+              <a class="button" href={url(`arcos/${group.arc.slug}`)}>Ver el arco</a>
+            </header>
+          ) : (
+            <header class="arc-head">
+              <div>
+                <h2>{isMain ? 'Otros episodios' : 'Lista completa'}</h2>
+              </div>
+            </header>
+          )}
+
+          <ol class="episodes">
+            {group.episodes.map((episode) => (
+              <li id={`ep-${episode.number}`} class="episode">
+                <details>
+                  <summary>
+                    <span class="num">{String(episode.number).padStart(3, '0')}</span>
+                    <span class="titles">
+                      <strong>{episode.title}</strong>
+                      {episode.nativeTitle && <small class="faint">{episode.nativeTitle}</small>}
+                    </span>
+                    <span class="date faint">{episode.airDate ?? '—'}</span>
+                  </summary>
+                  <div class="detail">
+                    {episode.thumbnail && (
+                      <img src={episode.thumbnail} alt={`Fotograma del episodio ${episode.number}`} loading="lazy" referrerpolicy="no-referrer" />
+                    )}
+                    <div>
+                      {episode.synopsis ? <p>{episode.synopsis}</p> : <p class="faint">Sin sinopsis disponible.</p>}
+                      {episode.length && <p class="faint runtime">Duración: {episode.length} min</p>}
+                    </div>
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+  }
+</Base>
+
+<style>
+  .head {
+    padding-block: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+
+  .lead {
+    margin-top: 0.85rem;
+    max-width: 70ch;
+    font-size: 1rem;
+  }
+
+  .head-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+
+  .arc-group + .arc-group {
+    margin-top: 3rem;
+  }
+
+  .arc-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    border-left: 4px solid var(--arc);
+    margin-bottom: 1rem;
+  }
+
+  .arc-head h2 {
+    font-size: 1.25rem;
+    margin-top: 0.2rem;
+  }
+
+  .arc-head p.muted {
+    font-size: 0.88rem;
+    margin-top: 0.2rem;
+  }
+
+  .episodes {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .episode {
+    scroll-margin-top: 90px;
+  }
+
+  details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+    overflow: hidden;
+  }
+
+  details[open] {
+    border-color: var(--border-strong);
+  }
+
+  summary {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover .titles strong {
+    color: var(--accent);
+  }
+
+  .num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--arc);
+    font-weight: 700;
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.3;
+  }
+
+  .titles strong {
+    font-size: 0.92rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .titles small {
+    font-size: 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .date {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .detail {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 1.15rem;
+    padding: 0.9rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-inset);
+  }
+
+  .detail img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--border);
+  }
+
+  .detail p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .runtime {
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 640px) {
+    summary {
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      gap: 0.65rem;
+    }
+
+    .date {
+      grid-column: 2;
+      font-size: 0.72rem;
+    }
+
+    .detail {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+{
+  "fetchedAt": "2026-08-02T03:21:45.684Z",
+  "sources": [
+    {
+      "name": "AniList",
+      "url": "https://anilist.co",
+      "api": "https://graphql.anilist.co",
+      "license": "Datos comunitarios de AniList"
+    },
+    {
+      "name": "Kitsu",
+      "url": "https://kitsu.app",
+      "api": "https://kitsu.io/api/edge",
+      "license": "Datos comunitarios de Kitsu"
+    }
+  ],
+  "counts": {
+    "series": 10,
+    "characters": 159,
+    "charactersWithImage": 158,
+    "staff": 50,
+    "episodeSets": 2,
+    "episodes": 210
+  }
+}

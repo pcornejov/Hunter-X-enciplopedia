@@ -1,0 +1,179 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { organizaciones } from '~/data/curated/organizaciones';
+import { getCharacters } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const entries = organizaciones.map((org) => ({
+  org,
+  members: getCharacters(org.characterSlugs),
+}));
+---
+
+<Base
+  title="Facciones"
+  description="Las organizaciones de Hunter x Hunter: la Asociación de Cazadores, los Zodiacos, la Brigada Fantasma, la familia Zoldyck, las Hormigas Quimera y el clan Kurta."
+>
+  <PageHeader
+    eyebrow="Mundo"
+    title="Facciones y organizaciones"
+    lead="Instituciones, bandas y linajes que estructuran el mundo de la obra. Cada ficha lista a los miembros que aparecen en la enciclopedia."
+    crumbs={[{ label: 'Facciones' }]}
+  />
+
+  <div class="orgs">
+    {
+      entries.map(({ org, members }) => (
+        <article class="card org" id={org.slug}>
+          <header>
+            <div class="titles">
+              <span class="badge">{org.kind}</span>
+              <h2>{org.name}</h2>
+              {org.japanese && <p class="faint jp">{org.japanese}</p>}
+            </div>
+            <span class="count faint">{members.length} miembros</span>
+          </header>
+
+          <p class="muted description">{org.description}</p>
+
+          <ul class="facts">
+            {org.facts.map((fact) => <li>{fact}</li>)}
+          </ul>
+
+          {members.length > 0 && (
+            <div class="members">
+              <p class="eyebrow">Miembros</p>
+              <ul>
+                {members.map((character) => (
+                  <li>
+                    <a href={url(`personajes/${character.slug}`)}>
+                      <span class="avatar">
+                        <RemoteImage src={character.image} alt={character.name} ratio="square" />
+                      </span>
+                      <span class="name">{character.name}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </article>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .orgs {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .org {
+    padding: 1.5rem 1.65rem 1.65rem;
+    scroll-margin-top: 90px;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .jp {
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+  }
+
+  .count {
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    max-width: 75ch;
+    line-height: 1.65;
+  }
+
+  .facts {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1.15rem;
+  }
+
+  .facts li {
+    position: relative;
+    padding-left: 1.3rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .facts li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .members {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .members ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+  }
+
+  .members a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .members a:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .avatar {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .avatar :global(.media) {
+    border-radius: 50%;
+  }
+</style>

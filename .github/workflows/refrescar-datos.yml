@@ -1,0 +1,51 @@
+name: Refrescar datos de las APIs
+
+# Vuelve a ejecutar la ingesta cada lunes. Si algo cambio en AniList o Kitsu,
+# commitea los JSON actualizados en main, lo que dispara el despliegue.
+on:
+  schedule:
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refrescar:
+    name: Ingesta semanal
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Descargar datos frescos
+        run: npm run fetch:data
+
+      - name: Validar lo descargado
+        run: npm run validate:data
+
+      # El build entero tiene que pasar antes de commitear: si los datos nuevos
+      # rompen una referencia del contenido curado, preferimos no tocar main.
+      - name: Comprobar que el sitio sigue construyendo
+        run: npm run build && npm run validate:build
+
+      - name: Commitear si hay cambios
+        run: |
+          if git diff --quiet -- src/data/generated; then
+            echo "Sin cambios en los datos."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated
+          git commit -m "Actualizar datos de AniList y Kitsu"
+          git push origin main

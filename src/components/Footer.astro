@@ -1,0 +1,117 @@
+---
+import { dataMeta, formatFetchedAt } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const year = new Date().getFullYear();
+const counts = dataMeta.counts;
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-block">
+      <p class="eyebrow">Sobre este sitio</p>
+      <p class="muted">
+        Enciclopedia no oficial de <strong>Hunter x Hunter</strong>, la obra de Yoshihiro Togashi publicada
+        por Shueisha. Sitio estático, sin rastreo ni publicidad, construido con Astro y desplegado en
+        GitHub Pages.
+      </p>
+    </div>
+
+    <div class="footer-block">
+      <p class="eyebrow">Fuentes de datos</p>
+      <ul class="footer-links">
+        {
+          dataMeta.sources.map((source) => (
+            <li>
+              <a href={source.url} rel="noopener noreferrer external" target="_blank">
+                {source.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="faint small">
+        Última ingesta: {formatFetchedAt()} (UTC) · {counts.characters} personajes, {counts.episodes}
+        episodios, {counts.series} obras.
+      </p>
+    </div>
+
+    <div class="footer-block">
+      <p class="eyebrow">Secciones</p>
+      <ul class="footer-links">
+        <li><a href={url('personajes')}>Personajes</a></li>
+        <li><a href={url('arcos')}>Arcos</a></li>
+        <li><a href={url('nen')}>Sistema de Nen</a></li>
+        <li><a href={url('episodios')}>Episodios</a></li>
+        <li><a href={url('creditos')}>Créditos y fuentes</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="faint small">
+      © {year} · Proyecto de fans sin ánimo de lucro. Hunter x Hunter y sus personajes pertenecen a
+      Yoshihiro Togashi, Shueisha y sus licenciatarios. Las imágenes se enlazan desde los CDN públicos de
+      AniList y Kitsu.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+    padding-block: 2.5rem 1.5rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-block p.muted {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    max-width: 42ch;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .small {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .footer-block .small {
+    margin-top: 0.75rem;
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-bottom p {
+    max-width: 80ch;
+  }
+</style>

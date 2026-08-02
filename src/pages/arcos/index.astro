@@ -1,0 +1,138 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { arcos } from '~/data/curated/arcos';
+import { getCharacters } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const entries = arcos.map((arc) => ({
+  arc,
+  cast: getCharacters(arc.characterSlugs).slice(0, 5),
+}));
+---
+
+<Base
+  title="Arcos"
+  description="Guía de los ocho arcos de Hunter x Hunter, con resúmenes sin rodeos y las equivalencias entre capítulos del manga y episodios del anime de 2011."
+>
+  <PageHeader
+    eyebrow="Historia"
+    title="Los arcos, en orden"
+    lead="De la Isla Ballena al Continente Oscuro. Cada ficha indica dónde empieza y dónde acaba en el manga y en el anime de 2011, para que puedas saltar directamente a donde te interesa."
+    crumbs={[{ label: 'Arcos' }]}
+  />
+
+  <ol class="arc-grid">
+    {
+      entries.map(({ arc, cast }) => (
+        <li class="arc" style={`--arc: ${arc.color}`}>
+          <a class="card arc-card" href={url(`arcos/${arc.slug}`)}>
+            <div class="head">
+              <span class="order">Arco {String(arc.order).padStart(2, '0')}</span>
+              <h2>{arc.name}</h2>
+              <p class="tagline muted">{arc.tagline}</p>
+            </div>
+
+            <p class="summary muted">{arc.summary}</p>
+
+            <div class="meta">
+              <span class="badge">{arc.mangaChapters}</span>
+              <span class="badge">{arc.animeEpisodes2011}</span>
+            </div>
+
+            {cast.length > 0 && (
+              <div class="cast" aria-hidden="true">
+                {cast.map((character) => (
+                  <span class="avatar">
+                    <RemoteImage src={character.image} alt={character.name} ratio="square" />
+                  </span>
+                ))}
+              </div>
+            )}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</Base>
+
+<style>
+  .arc-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .arc-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.35rem 1.4rem 1.4rem;
+    border-top: 3px solid var(--arc);
+  }
+
+  .order {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--arc);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 0.35rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  .summary {
+    font-size: 0.87rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.1rem;
+  }
+
+  .cast {
+    display: flex;
+    margin-top: 1.1rem;
+  }
+
+  .avatar {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--bg-soft);
+    margin-left: -10px;
+  }
+
+  .avatar:first-child {
+    margin-left: 0;
+  }
+
+  .avatar :global(.media) {
+    border-radius: 50%;
+  }
+</style>
