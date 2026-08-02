@@ -95,11 +95,17 @@ Node 20.3 o superior.
 
 `.github/workflows/deploy.yml` construye, valida y publica en GitHub Pages en cada push a `main`.
 
-> **Paso manual, una sola vez:** hay que poner **Settings → Pages → Build and deployment → Source**
-> en **GitHub Actions**. El workflow intenta activarlo solo (`configure-pages` con `enablement: true`),
-> pero el `GITHUB_TOKEN` no siempre tiene permiso para crear el sitio y entonces falla con
-> `Resource not accessible by integration`. Tras activarlo, relanza el workflow desde
-> **Actions → Desplegar en GitHub Pages → Re-run all jobs**.
+El workflow tiene dos vías de publicación:
+
+1. **Recomendada** — `actions/deploy-pages`, que requiere **Settings → Pages → Build and deployment →
+   Source: GitHub Actions**.
+2. **Respaldo automático** — si la vía anterior no está disponible (el entorno `github-pages` rechaza
+   el despliegue cuando el origen es "Deploy from a branch"), un job publica el mismo `dist/` en la
+   rama `gh-pages`. Solo necesita permiso de escritura sobre el contenido, que el `GITHUB_TOKEN`
+   siempre tiene.
+
+Con la opción 2 basta con poner **Source: Deploy from a branch → `gh-pages` / (root)**. Sea cual sea
+la que elijas, el contenido publicado es idéntico y ha pasado las cinco validaciones.
 
 `.github/workflows/refrescar-datos.yml` vuelve a ejecutar la ingesta cada lunes; si los datos cambian
 y el sitio sigue construyendo y validando, commitea los JSON nuevos en `main`, lo que dispara un

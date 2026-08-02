@@ -101,3 +101,54 @@ jobs:
       - name: Desplegar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Respaldo: si el despliegue via GitHub Actions no esta disponible (el
+  # entorno github-pages rechaza el deploy cuando el origen del repositorio
+  # es "Deploy from a branch"), publicamos el mismo dist/ en la rama
+  # gh-pages, que solo necesita permiso de escritura sobre el contenido.
+  # Asi el sitio queda en linea con cualquiera de las dos configuraciones.
+  respaldo-rama:
+    name: Publicar en la rama gh-pages
+    needs: [build, deploy]
+    if: always() && needs.build.result == 'success' && needs.deploy.result != 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v5
+
+      - name: Preparar Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir el sitio
+        run: npm run build
+
+      - name: Publicar dist/ en gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Rama huerfana: gh-pages solo contiene el sitio, sin historia de codigo.
+          git checkout --orphan gh-pages-tmp
+          git rm -rf --cached . >/dev/null
+          find . -maxdepth 1 ! -name . ! -name .git ! -name dist -exec rm -rf {} +
+          mv dist/* dist/.nojekyll . 2>/dev/null || mv dist/* .
+          rmdir dist 2>/dev/null || true
+          touch .nojekyll
+          git add -A
+          git commit -q -m "Publicar sitio (${GITHUB_SHA::7})"
+          git push -f origin gh-pages-tmp:gh-pages
+
+      - name: Recordar el ajuste pendiente
+        run: |
+          echo "::warning title=Publicado por la rama gh-pages::El despliegue via GitHub Actions no esta disponible."
+          echo "El sitio se ha publicado en la rama gh-pages como respaldo."
+          echo ""
+          echo "Para usar la via recomendada, pon Settings -> Pages -> Source en 'GitHub Actions'."
+          echo "Si prefieres seguir con la rama, ponlo en 'Deploy from a branch' -> gh-pages / (root)."
