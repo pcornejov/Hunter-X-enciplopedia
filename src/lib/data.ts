@@ -17,6 +17,8 @@ import { arcos } from '~/data/curated/arcos';
 import { nenTypes } from '~/data/curated/nen';
 import { organizaciones } from '~/data/curated/organizaciones';
 import { perfiles, perfilesBySlug, type CharacterProfile } from '~/data/curated/personajes-es';
+import { cronologia } from '~/data/curated/cronologia';
+import { arbolZoldyck, genealogia } from '~/data/curated/genealogia';
 
 import type { Character, DataMeta, EpisodeSet, Series, StaffMember } from './types';
 
@@ -82,6 +84,29 @@ function collectBrokenReferences(): BrokenReference[] {
     }
     checkAll(`perfil:${perfil.slug}`, 'organizationSlugs', perfil.organizationSlugs, orgSlugs);
     checkAll(`perfil:${perfil.slug}`, 'arcSlugs', perfil.arcSlugs, arcSlugs);
+  }
+
+  for (const event of cronologia) {
+    if (event.arcSlug && !arcSlugs.has(event.arcSlug)) {
+      broken.push({ source: `cronologia:${event.title}`, field: 'arcSlug', slug: event.arcSlug });
+    }
+  }
+
+  for (const link of genealogia) {
+    if (!characterSlugs.has(link.from)) {
+      broken.push({ source: `genealogia:${link.from}->${link.to}`, field: 'from', slug: link.from });
+    }
+    if (!characterSlugs.has(link.to)) {
+      broken.push({ source: `genealogia:${link.from}->${link.to}`, field: 'to', slug: link.to });
+    }
+  }
+
+  for (const generacion of arbolZoldyck.generaciones) {
+    for (const miembro of generacion.miembros) {
+      if (!characterSlugs.has(miembro.slug)) {
+        broken.push({ source: `arbolZoldyck:${generacion.titulo}`, field: 'slug', slug: miembro.slug });
+      }
+    }
   }
 
   return broken;

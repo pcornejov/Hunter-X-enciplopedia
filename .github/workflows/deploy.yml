@@ -44,12 +44,46 @@ jobs:
       - name: Validar el sitio construido
         run: npm run validate:build
 
-      # enablement: true activa GitHub Pages con origen "GitHub Actions" desde
-      # el propio workflow, sin tener que tocar los ajustes del repositorio.
+      - name: Instalar Chromium para la prueba de humo
+        run: npx playwright install --with-deps chromium
+
+      # Levanta dist/ y lo recorre con un navegador real: rutas, buscador,
+      # filtros, tema, spoilers y ausencia de desbordamientos en movil.
+      - name: Prueba de humo en navegador
+        run: |
+          npx astro preview --port 4321 &
+          PREVIEW_PID=$!
+          for i in $(seq 1 20); do
+            if curl -sf -o /dev/null http://localhost:4321/Hunter-X-enciplopedia/; then break; fi
+            sleep 1
+          done
+          npm run smoke
+          STATUS=$?
+          kill $PREVIEW_PID 2>/dev/null || true
+          exit $STATUS
+
+      # enablement: true intenta activar Pages desde el propio workflow. Solo
+      # funciona si GITHUB_TOKEN tiene permisos de administracion sobre el
+      # repositorio; si no, hay que activarlo a mano una unica vez.
       - name: Configurar GitHub Pages
+        id: pages
+        continue-on-error: true
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      - name: Explicar como activar Pages
+        if: steps.pages.outcome == 'failure'
+        run: |
+          echo "::error title=GitHub Pages no esta activado::El sitio se construyo y valido correctamente, pero no se pudo publicar."
+          echo ""
+          echo "El token del workflow no tiene permiso para crear el sitio de Pages."
+          echo "Actívalo una sola vez desde la interfaz web:"
+          echo ""
+          echo "  Settings -> Pages -> Build and deployment -> Source: GitHub Actions"
+          echo ""
+          echo "Después vuelve a lanzar este workflow (Actions -> Desplegar en GitHub Pages -> Re-run all jobs)."
+          exit 1
 
       - name: Subir el artefacto
         uses: actions/upload-pages-artifact@v3

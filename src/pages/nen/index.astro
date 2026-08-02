@@ -234,6 +234,13 @@ const polygon = vertices.map((vertex) => `${vertex.x.toFixed(1)},${vertex.y.toFi
     align-items: center;
   }
 
+  /* Sin min-width: 0 los hijos del grid heredan min-width: auto y la tabla
+     de eficiencia, que va con nowrap, empuja el ancho de toda la pagina. */
+  .hex-wrap,
+  .hex-copy {
+    min-width: 0;
+  }
+
   .hex-wrap {
     display: grid;
     place-items: center;
@@ -471,8 +478,11 @@ const polygon = vertices.map((vertex) => `${vertex.x.toFixed(1)},${vertex.y.toFi
 
     .efficiency {
       display: block;
+      width: 100%;
+      max-width: 100%;
       overflow-x: auto;
       white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
     }
   }
 </style>

@@ -66,9 +66,15 @@ Cuatro controles encadenados, todos ejecutados en CI antes de publicar:
 4. **`npm run validate:build`** — recorre `dist/` y verifica enlaces internos rotos, páginas sin
    `<title>`/`meta description`/`<h1>`, imágenes sin `alt` o en hosts no permitidos, y la presencia de
    `404.html`, `sitemap-index.xml`, `robots.txt` y `.nojekyll`.
+5. **`npm run smoke`** — recorre el sitio con un navegador real (Playwright): 15 rutas, el buscador y
+   los tres filtros, el interruptor de tema y su persistencia, los bloques de spoiler, y comprueba que
+   ninguna página desborde horizontalmente a 375 px. Los fallos de red contra el CDN de imágenes se
+   reportan como aviso, no como error, porque las URLs ya se validan en el paso anterior.
 
 ```bash
-npm run verify   # ejecuta los cuatro en orden
+npm run verify                      # datos, tipos, build y sitio construido
+npx astro preview --port 4321 &     # y para la prueba de humo:
+npm run smoke
 ```
 
 ## Desarrollo
@@ -85,7 +91,12 @@ Node 20.3 o superior.
 ## Despliegue
 
 `.github/workflows/deploy.yml` construye, valida y publica en GitHub Pages en cada push a `main`.
-Requiere que **Settings → Pages → Source** esté puesto en **GitHub Actions**.
+
+> **Paso manual, una sola vez:** hay que poner **Settings → Pages → Build and deployment → Source**
+> en **GitHub Actions**. El workflow intenta activarlo solo (`configure-pages` con `enablement: true`),
+> pero el `GITHUB_TOKEN` no siempre tiene permiso para crear el sitio y entonces falla con
+> `Resource not accessible by integration`. Tras activarlo, relanza el workflow desde
+> **Actions → Desplegar en GitHub Pages → Re-run all jobs**.
 
 `.github/workflows/refrescar-datos.yml` vuelve a ejecutar la ingesta cada lunes; si los datos cambian
 y el sitio sigue construyendo y validando, commitea los JSON nuevos en `main`, lo que dispara un

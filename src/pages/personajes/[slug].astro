@@ -7,12 +7,14 @@ import CharacterCard from '~/components/CharacterCard.astro';
 import Spoiler from '~/components/Spoiler.astro';
 import {
   allCharacters,
+  charactersBySlug,
   getArcsForCharacter,
   getCharacters,
   getNenTypeForCharacter,
   getOrganizationsForCharacter,
   getProfile,
 } from '~/lib/data';
+import { relacionesDe } from '~/data/curated/genealogia';
 import { url } from '~/lib/paths';
 
 export const getStaticPaths = (() => {
@@ -45,6 +47,13 @@ const facts: Array<{ label: string; value: string }> = [
   ...(profile?.hatsu ? [{ label: 'Hatsu', value: profile.hatsu }] : []),
   { label: 'Favoritos en AniList', value: character.favourites.toLocaleString('es') },
 ];
+
+/** Vinculos familiares y de tutela, resueltos a personajes reales. */
+const relaciones = relacionesDe(character.slug)
+  .map((link) => ({ link, target: charactersBySlug.get(link.to) }))
+  .filter((entry): entry is { link: (typeof entry)['link']; target: NonNullable<(typeof entry)['target']> } =>
+    Boolean(entry.target),
+  );
 
 /** Personajes relacionados: mismo arco principal, excluyendo al propio. */
 const relatedSlugs = [...new Set(arcs.flatMap((arc) => arc.characterSlugs))].filter((slug) => slug !== character.slug);
@@ -173,6 +182,29 @@ const description = buildDescription();
                 <p><strong>Otros alias:</strong> {character.spoilerAliases.join(' · ')}</p>
               )}
             </Spoiler>
+          )
+        }
+
+        {
+          relaciones.length > 0 && (
+            <section class="block">
+              <h2>Vínculos</h2>
+              <ul class="relations">
+                {relaciones.map(({ link, target }) => (
+                  <li>
+                    <a href={url(`personajes/${target.slug}`)}>
+                      <span class="rel-portrait">
+                        <RemoteImage src={target.image} alt={target.name} ratio="square" />
+                      </span>
+                      <span class="rel-body">
+                        <small class="faint">{link.label}</small>
+                        <strong>{target.name}</strong>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
           )
         }
 
@@ -372,6 +404,61 @@ const description = buildDescription();
 
   .api-text {
     font-size: 0.92rem;
+  }
+
+  .relations {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .relations a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+  }
+
+  .relations a:hover {
+    border-color: var(--accent);
+  }
+
+  .rel-portrait {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .rel-portrait :global(.media) {
+    border-radius: 50%;
+  }
+
+  .rel-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .rel-body small {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .rel-body strong {
+    font-size: 0.88rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .arc-links {
