@@ -21,10 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Preparar Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -44,8 +44,12 @@ jobs:
       - name: Validar el sitio construido
         run: npm run validate:build
 
+      # enablement: true activa GitHub Pages con origen "GitHub Actions" desde
+      # el propio workflow, sin tener que tocar los ajustes del repositorio.
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Subir el artefacto
         uses: actions/upload-pages-artifact@v3
