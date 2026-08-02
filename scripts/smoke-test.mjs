@@ -38,6 +38,7 @@ function isCdn(url) {
 
 const ROUTES = [
   ['/', 'Inicio'],
+  ['/buscar/', 'Buscar'],
   ['/personajes/', 'Personajes'],
   ['/personajes/killua-zoldyck/', 'Ficha Killua'],
   ['/personajes/gon-freecss/', 'Ficha Gon'],
@@ -55,7 +56,7 @@ const ROUTES = [
   ['/creditos/', 'Creditos'],
 ];
 
-const MOBILE_ROUTES = ['/', '/personajes/', '/nen/', '/habilidades/', '/cronologia/', '/episodios/hunter-x-hunter-2011/', '/series/hunter-x-hunter-2011/'];
+const MOBILE_ROUTES = ['/', '/buscar/', '/personajes/', '/nen/', '/habilidades/', '/cronologia/', '/episodios/hunter-x-hunter-2011/', '/series/hunter-x-hunter-2011/'];
 
 async function main() {
   const browser = await chromium.launch(CHROMIUM_PATH ? { executablePath: CHROMIUM_PATH } : {});
@@ -159,6 +160,53 @@ async function main() {
     failures.push('habilidades: la busqueda "bungee" no devuelve exactamente una habilidad');
   } else {
     notes.push('  OK  habilidades    busqueda "bungee" -> 1');
+  }
+
+  // --- Busqueda global ----------------------------------------------------
+  await page.goto(`${BASE}/buscar/`, { waitUntil: 'domcontentloaded' });
+  await page.fill('[data-global-search]', 'bungee');
+  // El indice se descarga la primera vez que se escribe.
+  await page.waitForSelector('.result', { timeout: 15_000 }).catch(() => null);
+  const bungeeHits = await page.locator('.result').count();
+  if (bungeeHits < 1) {
+    failures.push('busqueda global: "bungee" no devuelve resultados');
+  } else {
+    const firstType = await page.locator('.result .result-type').first().textContent();
+    notes.push(`  OK  busqueda global "bungee" -> ${bungeeHits} (1.o: ${firstType?.trim()})`);
+  }
+
+  // La entrada exacta debe salir la primera: es lo que valida la puntuacion.
+  await page.fill('[data-global-search]', 'kurapika');
+  await page.waitForTimeout(400);
+  const firstTitle = (await page.locator('.result strong').first().textContent())?.trim();
+  if (firstTitle !== 'Kurapika') {
+    failures.push(`busqueda global: "kurapika" devuelve "${firstTitle}" en primer lugar`);
+  } else {
+    notes.push('  OK  busqueda global orden por relevancia correcto');
+  }
+
+  // Filtro por tipo.
+  await page.fill('[data-global-search]', 'gon');
+  await page.waitForTimeout(400);
+  const episodeChip = page.locator('.type-chip', { hasText: 'Episodio' }).first();
+  if (await episodeChip.count()) {
+    await episodeChip.click();
+    await page.waitForTimeout(300);
+    const types = await page.locator('.result .result-type').allTextContents();
+    const allEpisodes = types.length > 0 && types.every((t) => t.trim() === 'Episodio');
+    if (!allEpisodes) failures.push('busqueda global: el filtro por tipo no acota los resultados');
+    else notes.push(`  OK  busqueda global filtro Episodio -> ${types.length}`);
+  }
+
+  // Sin resultados.
+  await page.locator('.type-chip').first().click();
+  await page.fill('[data-global-search]', 'qqzzxx');
+  await page.waitForTimeout(400);
+  const statusText = (await page.locator('[data-status]').textContent())?.trim() ?? '';
+  if (!statusText.toLowerCase().includes('sin resultados')) {
+    failures.push(`busqueda global: no informa de busqueda vacia (dice "${statusText}")`);
+  } else {
+    notes.push('  OK  busqueda global mensaje de "sin resultados"');
   }
 
   // --- Interruptor de tema ------------------------------------------------

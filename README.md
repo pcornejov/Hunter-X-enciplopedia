@@ -20,6 +20,7 @@ desplegada de forma estática en GitHub Pages.
 | **Episodios** | 210 episodios de las dos adaptaciones, con título japonés, fecha de emisión, miniatura y sinopsis, agrupados por arco. |
 | **Facciones** | Asociación de Cazadores, Zodiacos, Brigada Fantasma, familia Zoldyck, Hormigas Quimera y clan Kurta. |
 | **Glosario** | Términos clave de la obra con su original en japonés. |
+| **Búsqueda global** | 448 entradas indexadas (personajes, episodios, habilidades, arcos, obras, facciones, glosario) con ranking por relevancia y filtro por tipo. El índice se genera en el build y se descarga bajo demanda. |
 
 ## De dónde salen los datos
 
@@ -68,10 +69,11 @@ Cuatro controles encadenados, todos ejecutados en CI antes de publicar:
 4. **`npm run validate:build`** — recorre `dist/` y verifica enlaces internos rotos, páginas sin
    `<title>`/`meta description`/`<h1>`, imágenes sin `alt` o en hosts no permitidos, y la presencia de
    `404.html`, `sitemap-index.xml`, `robots.txt` y `.nojekyll`.
-5. **`npm run smoke`** — recorre el sitio con un navegador real (Playwright): 16 rutas, el buscador de
-   personajes y sus tres filtros, el catálogo de habilidades y su filtro de condición, el interruptor de
-   tema y su persistencia, los bloques de spoiler, y comprueba que ninguna página desborde
-   horizontalmente a 375 px. Los fallos de red contra el CDN de imágenes se
+5. **`npm run smoke`** — recorre el sitio con un navegador real (Playwright): 17 rutas, el buscador de
+   personajes y sus tres filtros, el catálogo de habilidades y su filtro de condición, la búsqueda
+   global (resultados, orden por relevancia, filtro por tipo y estado vacío), el interruptor de tema y
+   su persistencia, los bloques de spoiler, y comprueba que ninguna página desborde horizontalmente a
+   375 px. Los fallos de red contra el CDN de imágenes se
    reportan como aviso, no como error, porque las URLs ya se validan en el paso anterior.
 
 ```bash

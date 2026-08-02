@@ -1,0 +1,390 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import { arcos } from '~/data/curated/arcos';
+import { glosario } from '~/data/curated/glosario';
+import { habilidades } from '~/data/curated/habilidades';
+import { organizaciones } from '~/data/curated/organizaciones';
+import { nenTypes } from '~/data/curated/nen';
+import { allCharacters, allEpisodeSets, allSeries } from '~/lib/data';
+import { asset, url } from '~/lib/paths';
+
+/**
+ * Busqueda global sobre todo el sitio. El indice se genera en el build
+ * (/indice-busqueda.json) y se descarga la primera vez que el usuario escribe,
+ * asi la pagina sigue siendo ligera para quien solo pasa por aqui.
+ */
+const totals = [
+  { label: 'personajes', value: allCharacters.length, href: url('personajes') },
+  { label: 'episodios', value: allEpisodeSets.reduce((sum, set) => sum + set.total, 0), href: url('episodios') },
+  { label: 'habilidades', value: habilidades.length, href: url('habilidades') },
+  { label: 'arcos', value: arcos.length, href: url('arcos') },
+  { label: 'obras', value: allSeries.length, href: url('series') },
+  { label: 'términos', value: glosario.length, href: url('glosario') },
+  { label: 'facciones', value: organizaciones.length, href: url('organizaciones') },
+  { label: 'categorías de Nen', value: nenTypes.length, href: url('nen') },
+];
+
+const totalEntries = totals.reduce((sum, item) => sum + item.value, 0);
+const indexUrl = asset('indice-busqueda.json');
+---
+
+<Base
+  title="Buscar"
+  description="Busca en toda la enciclopedia de Hunter x Hunter: personajes, episodios, habilidades de Nen, arcos, obras, facciones y términos del glosario."
+>
+  <PageHeader
+    eyebrow="Búsqueda"
+    title="Buscar en toda la enciclopedia"
+    lead={`${totalEntries} entradas indexadas entre personajes, episodios, habilidades, arcos, obras, facciones y glosario. Escribe y filtra sobre la marcha.`}
+    crumbs={[{ label: 'Buscar' }]}
+  />
+
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-3.5-3.5" />
+    </svg>
+    <input
+      type="search"
+      id="busqueda-global"
+      placeholder="Gon, Bungee Gum, Yorknew, Ojos Escarlata, episodio 131…"
+      autocomplete="off"
+      autofocus
+      data-global-search
+    />
+    <label class="visually-hidden" for="busqueda-global">Buscar en toda la enciclopedia</label>
+  </div>
+
+  <div class="types" data-type-filters hidden>
+    <button type="button" class="badge type-chip is-active" data-type="">Todo</button>
+  </div>
+
+  <p class="status muted" data-status aria-live="polite">Escribe al menos dos caracteres para buscar.</p>
+
+  <ul class="results" data-results></ul>
+
+  <noscript>
+    <p class="muted noscript-note">
+      La búsqueda necesita JavaScript. Puedes navegar igualmente por las secciones:
+    </p>
+  </noscript>
+
+  <div class="shortcuts">
+    <p class="eyebrow">O entra directamente</p>
+    <div class="shortcut-grid">
+      {
+        totals.map((item) => (
+          <a class="card shortcut" href={item.href}>
+            <strong>{item.value}</strong>
+            <span class="faint">{item.label}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Base>
+
+<script is:inline define:vars={{ indexUrl }}>
+  (function () {
+    var input = document.querySelector('[data-global-search]');
+    var results = document.querySelector('[data-results]');
+    var status = document.querySelector('[data-status]');
+    var typeBar = document.querySelector('[data-type-filters]');
+    if (!input || !results || !status || !typeBar) return;
+
+    var index = null;
+    var loading = false;
+    var activeType = '';
+    var MAX_RESULTS = 60;
+
+    function normalize(value) {
+      return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function loadIndex() {
+      if (index || loading) return Promise.resolve();
+      loading = true;
+      status.textContent = 'Cargando el índice…';
+      return fetch(indexUrl)
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          index = data;
+          loading = false;
+          buildTypeFilters();
+        })
+        .catch(function (error) {
+          loading = false;
+          status.textContent = 'No se pudo cargar el índice de búsqueda (' + error.message + ').';
+        });
+    }
+
+    function buildTypeFilters() {
+      if (!index) return;
+      var counts = {};
+      for (var i = 0; i < index.length; i += 1) counts[index[i].t] = (counts[index[i].t] || 0) + 1;
+      var types = Object.keys(counts).sort(function (a, b) {
+        return counts[b] - counts[a];
+      });
+      for (var j = 0; j < types.length; j += 1) {
+        var chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'badge type-chip';
+        chip.dataset.type = types[j];
+        chip.textContent = types[j] + ' (' + counts[types[j]] + ')';
+        typeBar.appendChild(chip);
+      }
+      typeBar.hidden = false;
+    }
+
+    /**
+     * Puntuacion sencilla: coincidencia exacta al principio del titulo pesa
+     * mas que una coincidencia en mitad del texto indexado.
+     */
+    function score(item, term) {
+      var name = normalize(item.n);
+      if (name === term) return 100;
+      if (name.indexOf(term) === 0) return 80;
+      if (name.indexOf(term) !== -1) return 60;
+      if (item.q.indexOf(' ' + term) !== -1) return 40;
+      if (item.q.indexOf(term) !== -1) return 20;
+      return 0;
+    }
+
+    function render(term) {
+      results.innerHTML = '';
+      if (!index) return;
+
+      var matches = [];
+      for (var i = 0; i < index.length; i += 1) {
+        var item = index[i];
+        if (activeType && item.t !== activeType) continue;
+        var value = score(item, term);
+        if (value > 0) matches.push({ item: item, score: value });
+      }
+
+      matches.sort(function (a, b) {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.item.n.length - b.item.n.length;
+      });
+
+      if (matches.length === 0) {
+        status.textContent = 'Sin resultados para "' + term + '".';
+        return;
+      }
+
+      var shown = Math.min(matches.length, MAX_RESULTS);
+      status.textContent =
+        matches.length > shown
+          ? 'Mostrando ' + shown + ' de ' + matches.length + ' resultados.'
+          : matches.length + (matches.length === 1 ? ' resultado.' : ' resultados.');
+
+      var fragment = document.createDocumentFragment();
+      for (var k = 0; k < shown; k += 1) {
+        var entry = matches[k].item;
+        var li = document.createElement('li');
+        var link = document.createElement('a');
+        link.className = 'result';
+        link.href = entry.u;
+
+        var type = document.createElement('span');
+        type.className = 'badge result-type';
+        type.textContent = entry.t;
+
+        var body = document.createElement('span');
+        body.className = 'result-body';
+        var title = document.createElement('strong');
+        title.textContent = entry.n;
+        var sub = document.createElement('span');
+        sub.className = 'faint';
+        sub.textContent = entry.s;
+        body.appendChild(title);
+        body.appendChild(sub);
+
+        link.appendChild(type);
+        link.appendChild(body);
+        li.appendChild(link);
+        fragment.appendChild(li);
+      }
+      results.appendChild(fragment);
+    }
+
+    function run() {
+      var term = normalize(input.value.trim());
+      if (term.length < 2) {
+        results.innerHTML = '';
+        status.textContent = 'Escribe al menos dos caracteres para buscar.';
+        return;
+      }
+      loadIndex().then(function () {
+        if (index) render(term);
+      });
+    }
+
+    var timer;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(run, 120);
+    });
+
+    typeBar.addEventListener('click', function (event) {
+      var chip = event.target.closest('.type-chip');
+      if (!chip) return;
+      activeType = chip.dataset.type || '';
+      var chips = typeBar.querySelectorAll('.type-chip');
+      for (var i = 0; i < chips.length; i += 1) chips[i].classList.toggle('is-active', chips[i] === chip);
+      run();
+    });
+
+    // Precargamos el indice en cuanto el usuario enfoca el campo.
+    input.addEventListener('focus', loadIndex, { once: true });
+  })();
+</script>
+
+<style>
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .search-box svg {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-faint);
+    pointer-events: none;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.9rem 1.1rem 0.9rem 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-strong);
+    background: var(--bg-soft);
+    font-size: 1.05rem;
+  }
+
+  .search-box input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .type-chip {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .type-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .type-chip.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .status {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .results {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .result {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+  }
+
+  .result:hover {
+    border-color: var(--accent);
+  }
+
+  .result-type {
+    justify-self: start;
+  }
+
+  .result-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+    min-width: 0;
+  }
+
+  .result-body strong {
+    font-size: 0.94rem;
+  }
+
+  .result-body span {
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .noscript-note {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .shortcuts {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .shortcut {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1rem 1.1rem;
+  }
+
+  .shortcut strong {
+    font-size: 1.5rem;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  .shortcut span {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 560px) {
+    .result {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+  }
+</style>
