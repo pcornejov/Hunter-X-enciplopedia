@@ -19,6 +19,7 @@ import { organizaciones } from '~/data/curated/organizaciones';
 import { perfiles, perfilesBySlug, type CharacterProfile } from '~/data/curated/personajes-es';
 import { cronologia } from '~/data/curated/cronologia';
 import { arbolZoldyck, genealogia } from '~/data/curated/genealogia';
+import { habilidades } from '~/data/curated/habilidades';
 
 import type { Character, DataMeta, EpisodeSet, Series, StaffMember } from './types';
 
@@ -98,6 +99,18 @@ function collectBrokenReferences(): BrokenReference[] {
     }
     if (!characterSlugs.has(link.to)) {
       broken.push({ source: `genealogia:${link.from}->${link.to}`, field: 'to', slug: link.to });
+    }
+  }
+
+  for (const ability of habilidades) {
+    if (!characterSlugs.has(ability.userSlug)) {
+      broken.push({ source: `habilidad:${ability.slug}`, field: 'userSlug', slug: ability.userSlug });
+    }
+    if (!nenSlugs.has(ability.nenType)) {
+      broken.push({ source: `habilidad:${ability.slug}`, field: 'nenType', slug: ability.nenType });
+    }
+    if (!arcSlugs.has(ability.arcSlug)) {
+      broken.push({ source: `habilidad:${ability.slug}`, field: 'arcSlug', slug: ability.arcSlug });
     }
   }
 

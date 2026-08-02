@@ -1,0 +1,358 @@
+---
+import Base from '~/layouts/Base.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import RemoteImage from '~/components/RemoteImage.astro';
+import { habilidades } from '~/data/curated/habilidades';
+import { nenTypesBySlug } from '~/data/curated/nen';
+import { arcosBySlug } from '~/data/curated/arcos';
+import { charactersBySlug } from '~/lib/data';
+import { url } from '~/lib/paths';
+
+const entries = habilidades
+  .map((ability) => ({
+    ability,
+    character: charactersBySlug.get(ability.userSlug)!,
+    nenType: nenTypesBySlug.get(ability.nenType)!,
+    arc: arcosBySlug.get(ability.arcSlug)!,
+  }))
+  .sort((a, b) => a.ability.name.localeCompare(b.ability.name, 'es'));
+
+const withCondition = entries.filter((entry) => entry.ability.condition).length;
+const usedNen = [...new Set(entries.map((entry) => entry.nenType.slug))];
+---
+
+<Base
+  title="Habilidades de Nen"
+  description={`Catálogo de ${habilidades.length} habilidades de Nen de Hunter x Hunter: qué hace cada Hatsu, quién lo usa y qué condición y voto lo refuerzan.`}
+>
+  <PageHeader
+    eyebrow="Hatsu"
+    title="Catálogo de habilidades"
+    lead={`${habilidades.length} habilidades documentadas. Lo interesante no es lo que hacen, sino a cambio de qué: ${withCondition} de ellas tienen una condición y un voto explícitos que las refuerzan.`}
+    crumbs={[{ label: 'Habilidades' }]}
+  />
+
+  <div class="toolbar" data-ability-toolbar>
+    <div class="search">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-3.5-3.5" />
+      </svg>
+      <input type="search" id="buscar-habilidad" placeholder="Buscar: Bungee Gum, Kurapika, cadena…" autocomplete="off" data-search />
+      <label class="visually-hidden" for="buscar-habilidad">Buscar habilidades</label>
+    </div>
+
+    <label class="visually-hidden" for="filtro-nen-hab">Filtrar por categoría de Nen</label>
+    <select id="filtro-nen-hab" data-filter="nen">
+      <option value="">Cualquier categoría</option>
+      {usedNen.map((slug) => <option value={slug}>{nenTypesBySlug.get(slug)!.name}</option>)}
+    </select>
+
+    <label class="condition-toggle">
+      <input type="checkbox" data-filter-condition />
+      <span>Solo con condición y voto</span>
+    </label>
+  </div>
+
+  <p class="result-count muted" data-count aria-live="polite">
+    Mostrando {entries.length} de {entries.length} habilidades
+  </p>
+
+  <div class="abilities" data-ability-grid>
+    {
+      entries.map(({ ability, character, nenType, arc }) => (
+        <article
+          class="card ability"
+          style={`--nen: ${nenType.color}`}
+          data-search={`${ability.name} ${ability.alias ?? ''} ${ability.japanese ?? ''} ${character.name} ${nenType.name} ${ability.description}`.toLowerCase()}
+          data-nen={nenType.slug}
+          data-condition={ability.condition ? 'si' : 'no'}
+        >
+          <header>
+            <div class="names">
+              <h2>{ability.name}</h2>
+              {ability.japanese && <p class="jp faint">{ability.japanese}</p>}
+              {ability.alias && <p class="alias faint">También: {ability.alias}</p>}
+            </div>
+            <span class="badge nen">{nenType.name}</span>
+          </header>
+
+          <a class="user" href={url(`personajes/${character.slug}`)}>
+            <span class="portrait">
+              <RemoteImage src={character.image} alt={character.name} ratio="square" />
+            </span>
+            <span>
+              <small class="faint">Usuario</small>
+              <strong>{character.name}</strong>
+            </span>
+          </a>
+
+          <p class="muted description">{ability.description}</p>
+
+          {ability.condition && (
+            <div class="condition">
+              <p class="eyebrow">Condición y voto</p>
+              <p>{ability.condition}</p>
+            </div>
+          )}
+
+          <footer>
+            <a class="badge" href={url(`arcos/${arc.slug}`)}>{arc.name}</a>
+            {ability.spoiler && <span class="badge spoiler">Contiene spoiler</span>}
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+
+  <p class="empty" data-empty hidden>No hay habilidades que coincidan con esa búsqueda.</p>
+</Base>
+
+<script>
+  const grid = document.querySelector<HTMLElement>('[data-ability-grid]');
+  const toolbar = document.querySelector<HTMLElement>('[data-ability-toolbar]');
+  const countEl = document.querySelector<HTMLElement>('[data-count]');
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+
+  if (grid && toolbar && countEl && emptyEl) {
+    const counter = countEl;
+    const empty = emptyEl;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.ability'));
+    const searchInput = toolbar.querySelector<HTMLInputElement>('[data-search]');
+    const nenSelect = toolbar.querySelector<HTMLSelectElement>('[data-filter="nen"]');
+    const conditionBox = toolbar.querySelector<HTMLInputElement>('[data-filter-condition]');
+    const total = cards.length;
+
+    const normalize = (value: string) =>
+      value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    function apply() {
+      const term = normalize(searchInput?.value.trim() ?? '');
+      const nen = nenSelect?.value ?? '';
+      const onlyWithCondition = conditionBox?.checked ?? false;
+
+      let visible = 0;
+      for (const card of cards) {
+        const matchesTerm = !term || normalize(card.dataset.search ?? '').includes(term);
+        const matchesNen = !nen || card.dataset.nen === nen;
+        const matchesCondition = !onlyWithCondition || card.dataset.condition === 'si';
+        const show = matchesTerm && matchesNen && matchesCondition;
+        card.hidden = !show;
+        if (show) visible += 1;
+      }
+
+      counter.textContent = `Mostrando ${visible} de ${total} habilidades`;
+      empty.hidden = visible !== 0;
+    }
+
+    searchInput?.addEventListener('input', apply);
+    nenSelect?.addEventListener('change', apply);
+    conditionBox?.addEventListener('change', apply);
+    apply();
+  }
+</script>
+
+<style>
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 1 300px;
+  }
+
+  .search svg {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--text-faint);
+    pointer-events: none;
+  }
+
+  .search input {
+    width: 100%;
+    padding: 0.65rem 0.9rem 0.65rem 2.4rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-size: 0.925rem;
+  }
+
+  .search input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  select {
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .condition-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+  }
+
+  .condition-toggle input {
+    accent-color: var(--accent);
+  }
+
+  .result-count {
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .abilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .ability {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.35rem 1.35rem;
+    border-top: 3px solid var(--nen);
+  }
+
+  .ability[hidden] {
+    display: none;
+  }
+
+  .ability header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .ability h2 {
+    font-size: 1.08rem;
+    line-height: 1.25;
+  }
+
+  .jp,
+  .alias {
+    font-size: 0.78rem;
+    margin-top: 0.15rem;
+  }
+
+  .badge.nen {
+    border-color: color-mix(in srgb, var(--nen) 55%, transparent);
+    color: color-mix(in srgb, var(--nen) 80%, var(--text));
+    background: color-mix(in srgb, var(--nen) 12%, transparent);
+    flex-shrink: 0;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.7rem 0.4rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    align-self: flex-start;
+    margin-bottom: 0.9rem;
+  }
+
+  .user:hover {
+    border-color: var(--nen);
+  }
+
+  .portrait {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .portrait :global(.media) {
+    border-radius: 50%;
+  }
+
+  .user span:last-child {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  .user small {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .user strong {
+    font-size: 0.87rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .condition {
+    margin-top: 1rem;
+    padding: 0.85rem 0.95rem;
+    background: var(--bg-inset);
+    border-left: 3px solid var(--warning);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .condition .eyebrow {
+    color: var(--warning);
+    margin-bottom: 0.35rem;
+  }
+
+  .condition p:last-child {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.1rem;
+  }
+
+  footer a.badge:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .badge.spoiler {
+    color: var(--warning);
+    border-color: color-mix(in srgb, var(--warning) 45%, transparent);
+  }
+
+  .empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+  }
+</style>

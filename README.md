@@ -14,6 +14,8 @@ desplegada de forma estática en GitHub Pages.
 | **Personajes** | 159 fichas con retrato, alias, seiyuu, categoría de Nen, facciones y arcos. Buscador y filtros que funcionan sin recargar la página. |
 | **Arcos** | Los 8 arcos narrativos con resumen, momentos clave, reparto y equivalencias entre capítulos del manga y episodios del anime de 2011. |
 | **Nen** | Las 6 categorías con hexágono de afinidad en SVG, tabla de eficiencia, adivinación del agua, los 4 principios básicos y las 7 aplicaciones avanzadas. |
+| **Habilidades** | Catálogo de 32 Hatsu con su categoría, su usuario y —lo importante— la condición y el voto que los refuerzan. Con buscador y filtros. |
+| **Cronología** | Línea temporal interna (año 267 al 289) enlazada a los arcos, cronología de publicación y árbol genealógico Zoldyck por generaciones. |
 | **Obras** | Las 10 obras de la franquicia (manga, dos series de TV, OVAs y películas) con datos, puntuaciones, staff y enlaces oficiales. |
 | **Episodios** | 210 episodios de las dos adaptaciones, con título japonés, fecha de emisión, miniatura y sinopsis, agrupados por arco. |
 | **Facciones** | Asociación de Cazadores, Zodiacos, Brigada Fantasma, familia Zoldyck, Hormigas Quimera y clan Kurta. |
@@ -66,9 +68,10 @@ Cuatro controles encadenados, todos ejecutados en CI antes de publicar:
 4. **`npm run validate:build`** — recorre `dist/` y verifica enlaces internos rotos, páginas sin
    `<title>`/`meta description`/`<h1>`, imágenes sin `alt` o en hosts no permitidos, y la presencia de
    `404.html`, `sitemap-index.xml`, `robots.txt` y `.nojekyll`.
-5. **`npm run smoke`** — recorre el sitio con un navegador real (Playwright): 15 rutas, el buscador y
-   los tres filtros, el interruptor de tema y su persistencia, los bloques de spoiler, y comprueba que
-   ninguna página desborde horizontalmente a 375 px. Los fallos de red contra el CDN de imágenes se
+5. **`npm run smoke`** — recorre el sitio con un navegador real (Playwright): 16 rutas, el buscador de
+   personajes y sus tres filtros, el catálogo de habilidades y su filtro de condición, el interruptor de
+   tema y su persistencia, los bloques de spoiler, y comprueba que ninguna página desborde
+   horizontalmente a 375 px. Los fallos de red contra el CDN de imágenes se
    reportan como aviso, no como error, porque las URLs ya se validan en el paso anterior.
 
 ```bash

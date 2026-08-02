@@ -44,6 +44,7 @@ const ROUTES = [
   ['/arcos/', 'Arcos'],
   ['/arcos/hormigas-quimera/', 'Arco Hormigas'],
   ['/nen/', 'Nen'],
+  ['/habilidades/', 'Habilidades'],
   ['/cronologia/', 'Cronologia'],
   ['/series/', 'Obras'],
   ['/series/hunter-x-hunter-2011/', 'Ficha 2011'],
@@ -54,7 +55,7 @@ const ROUTES = [
   ['/creditos/', 'Creditos'],
 ];
 
-const MOBILE_ROUTES = ['/', '/personajes/', '/nen/', '/cronologia/', '/episodios/hunter-x-hunter-2011/', '/series/hunter-x-hunter-2011/'];
+const MOBILE_ROUTES = ['/', '/personajes/', '/nen/', '/habilidades/', '/cronologia/', '/episodios/hunter-x-hunter-2011/', '/series/hunter-x-hunter-2011/'];
 
 async function main() {
   const browser = await chromium.launch(CHROMIUM_PATH ? { executablePath: CHROMIUM_PATH } : {});
@@ -138,6 +139,26 @@ async function main() {
     failures.push('buscador: no se muestra el mensaje de "sin resultados"');
   } else {
     notes.push('  OK  estado vacio    mensaje visible');
+  }
+
+  // --- Catalogo de habilidades --------------------------------------------
+  await page.goto(`${BASE}/habilidades/`, { waitUntil: 'domcontentloaded' });
+  const abilitiesTotal = await page.locator('.ability').count();
+  await page.check('[data-filter-condition]');
+  await page.waitForTimeout(200);
+  const withVow = await page.locator('.ability:not([hidden])').count();
+  if (withVow < 5 || withVow >= abilitiesTotal) {
+    failures.push(`habilidades: el filtro de condicion devolvio ${withVow} de ${abilitiesTotal}`);
+  } else {
+    notes.push(`  OK  habilidades    con condicion -> ${withVow}/${abilitiesTotal}`);
+  }
+  await page.uncheck('[data-filter-condition]');
+  await page.fill('[data-search]', 'bungee');
+  await page.waitForTimeout(200);
+  if ((await page.locator('.ability:not([hidden])').count()) !== 1) {
+    failures.push('habilidades: la busqueda "bungee" no devuelve exactamente una habilidad');
+  } else {
+    notes.push('  OK  habilidades    busqueda "bungee" -> 1');
   }
 
   // --- Interruptor de tema ------------------------------------------------

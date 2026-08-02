@@ -15,6 +15,7 @@ import {
   getProfile,
 } from '~/lib/data';
 import { relacionesDe } from '~/data/curated/genealogia';
+import { habilidadesDe } from '~/data/curated/habilidades';
 import { url } from '~/lib/paths';
 
 export const getStaticPaths = (() => {
@@ -47,6 +48,8 @@ const facts: Array<{ label: string; value: string }> = [
   ...(profile?.hatsu ? [{ label: 'Hatsu', value: profile.hatsu }] : []),
   { label: 'Favoritos en AniList', value: character.favourites.toLocaleString('es') },
 ];
+
+const abilities = habilidadesDe(character.slug);
 
 /** Vinculos familiares y de tutela, resueltos a personajes reales. */
 const relaciones = relacionesDe(character.slug)
@@ -182,6 +185,31 @@ const description = buildDescription();
                 <p><strong>Otros alias:</strong> {character.spoilerAliases.join(' · ')}</p>
               )}
             </Spoiler>
+          )
+        }
+
+        {
+          abilities.length > 0 && (
+            <section class="block">
+              <h2>Habilidades de Nen</h2>
+              <ul class="abilities">
+                {abilities.map((ability) => (
+                  <li class="ability-item">
+                    <div class="ability-head">
+                      <h3>{ability.name}</h3>
+                      {ability.japanese && <span class="faint jp">{ability.japanese}</span>}
+                    </div>
+                    <p class="muted">{ability.description}</p>
+                    {ability.condition && (
+                      <p class="ability-condition">
+                        <strong>Condición y voto:</strong> {ability.condition}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <a class="button ability-link" href={url('habilidades')}>Ver el catálogo completo</a>
+            </section>
           )
         }
 
@@ -404,6 +432,57 @@ const description = buildDescription();
 
   .api-text {
     font-size: 0.92rem;
+  }
+
+  .abilities {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .ability-item {
+    padding: 1rem 1.15rem 1.1rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    background: var(--bg-soft);
+  }
+
+  .ability-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+  }
+
+  .ability-head h3 {
+    font-size: 1rem;
+  }
+
+  .ability-head .jp {
+    font-size: 0.8rem;
+  }
+
+  .ability-item p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .ability-condition {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--border);
+    color: var(--text-muted);
+  }
+
+  .ability-condition strong {
+    color: var(--warning);
+  }
+
+  .ability-link {
+    margin-top: 1rem;
   }
 
   .relations {
