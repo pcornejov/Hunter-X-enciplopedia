@@ -109,6 +109,16 @@ El workflow tiene dos vías de publicación:
 Con la opción 2 basta con poner **Source: Deploy from a branch → `gh-pages` / (root)**. Sea cual sea
 la que elijas, el contenido publicado es idéntico y ha pasado las cinco validaciones.
 
+> **Si el job `Publicar` falla en un segundo sin ejecutar ningún paso**, no es un fallo de
+> `actions/deploy-pages`: es el entorno `github-pages` rechazando el despliegue en la puerta. La causa
+> habitual es que **la rama por defecto del repositorio no sea `main`**. Al activar Pages con origen
+> "GitHub Actions", GitHub crea ese entorno restringido a la rama por defecto, así que un despliegue
+> desde `main` se rechaza si la rama por defecto es otra.
+>
+> Se arregla de una de estas dos formas:
+> - **Settings → General → Default branch → `main`** (lo correcto: `main` es la rama de trabajo).
+> - **Settings → Environments → `github-pages` → Deployment branches**, añadiendo `main`.
+
 `.github/workflows/refrescar-datos.yml` vuelve a ejecutar la ingesta cada lunes; si los datos cambian
 y el sitio sigue construyendo y validando, commitea los JSON nuevos en `main`, lo que dispara un
 despliegue.
