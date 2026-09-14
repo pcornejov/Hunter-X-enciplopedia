@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-31T11:15:21.212Z",
+  "fetchedAt": "2026-09-14T10:13:17.888Z",
   "sources": [
     {
       "name": "AniList",
@@ -16,8 +16,8 @@
   ],
   "counts": {
     "series": 10,
-    "characters": 160,
-    "charactersWithImage": 159,
+    "characters": 161,
+    "charactersWithImage": 160,
     "staff": 50,
     "episodeSets": 2,
     "episodes": 210
