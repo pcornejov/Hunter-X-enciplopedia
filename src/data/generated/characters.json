@@ -18,7 +18,7 @@
       "month": 7,
       "day": 7
     },
-    "favourites": 34806,
+    "favourites": 34787,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
     "attributes": [
       {
@@ -60,7 +60,7 @@
       "month": 4,
       "day": 4
     },
-    "favourites": 20695,
+    "favourites": 20685,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b28-ivA7UGnfE40a.png",
     "attributes": [
       {
@@ -97,7 +97,7 @@
       "month": 5,
       "day": 5
     },
-    "favourites": 15389,
+    "favourites": 15381,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b30-lyFExKyDhefc.jpg",
     "attributes": [
       {
@@ -138,7 +138,7 @@
       "month": 6,
       "day": 6
     },
-    "favourites": 14147,
+    "favourites": 14133,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b31-FZckOuu7L1un.png",
     "attributes": [
       {
@@ -180,7 +180,7 @@
       "month": 3,
       "day": 3
     },
-    "favourites": 6441,
+    "favourites": 6430,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29-RgzoSeKmDYzl.jpg",
     "attributes": [
       {
@@ -218,7 +218,7 @@
     "age": "26",
     "bloodType": "AB",
     "birthday": null,
-    "favourites": 9557,
+    "favourites": 9550,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b58-USOmsz3nursi.jpg",
     "attributes": [
       {
@@ -328,7 +328,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2762,
+    "favourites": 2761,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b14489-WgGsdlQJka65.jpg",
     "attributes": [
       {
@@ -358,6 +358,42 @@
     "siteUrl": "https://anilist.co/character/14489"
   },
   {
+    "anilistId": 12300,
+    "slug": "neferpitou",
+    "name": "Neferpitou",
+    "nativeName": "ネフェルピトウ",
+    "aliases": [
+      "Pitou"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Non-binary",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 2632,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12300-kYzopQUTLa9A.png",
+    "attributes": [
+      {
+        "label": "Tipo de Nen",
+        "value": "Specialization"
+      }
+    ],
+    "description": "A cat-humanoid Chimera Ant and the firstborn of the Chimera Ant King's three Royal Guards.\n\nNeferpitou is very loyal to the King, just like the rest of the Royal Guards that would sacrifice themselves for him. Neferpitou gets distracted easily, loves to play a lot and that makes them the most curious of the three Royal Guards. Hence their cat-like appearance, Pitou is a cat Chimera Ant who loves to play with their opponents like a cat would with their prey. Despite their cheerful and playful manner, Pitou has a sadistic and terrifying personality as well.\n\nUnlike Menthuthuyoupi and Shaiapouf, Neferpitou does not seem to mind much in regards to Meruem's later newfound interests with Komugi. Thus, among the three Royal Guards, Neferpitou is the only one that greatly prioritizes Komugi's safety as opposed to how Menthuthuyoupi and Shaiapouf hate Komugi, which causes tension among the guards.",
+    "summary": "A cat-humanoid Chimera Ant and the firstborn of the Chimera Ant King's three Royal Guards. Neferpitou is very loyal to the King, just like the rest of the Royal Guards that would sacrifice themselves…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95247,
+        "name": "Ayumi Fujimura",
+        "nativeName": "藤村歩",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95247-3jzUQFPN8clW.png",
+        "url": "https://anilist.co/staff/95247"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/12300"
+  },
+  {
     "anilistId": 5833,
     "slug": "shizuku-murasaki",
     "name": "Shizuku Murasaki",
@@ -369,7 +405,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2629,
+    "favourites": 2627,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/5833.jpg",
     "attributes": [],
     "description": "Shizuku is member number 8 of the Phantom Troupe. She has been described as being a natural airhead, seeing as how some of her actions do not point towards her being very bright. Shizuku is quite forgetful; once she forgets something, she won't remember it. Her opponents are often fooled by her unassuming and blurred appearance—but this has often proved to be fatal for them once she enters in combat. Shizuku is also left-handed.\n\nNen Ability:\nDeme-chan (Blinky): Shizuku uses her nen to create a self-styled \"living\" vacuum cleaner she names \"Deme-chan\" that is able to consume any inanimate matter under her command. This has proven very useful in many occasions for cleaning up evidence that the members leave behind, especially blood and dead corpses. She also uses the razor-sharp teeth on the \"mouth\" as a weapon when in combat. Anything sucked up into her vacuum cleaner cannot be retrieved, except for the last material that was sucked in.",
@@ -387,44 +423,6 @@
     "siteUrl": "https://anilist.co/character/5833"
   },
   {
-    "anilistId": 12300,
-    "slug": "neferpitou",
-    "name": "Neferpitou",
-    "nativeName": "ネフェルピトウ",
-    "aliases": [
-      "Pitou"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Non-binary",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 2628,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12300-kYzopQUTLa9A.png",
-    "attributes": [
-      {
-        "label": "Tipo de Nen",
-        "value": "Specialization"
-      }
-    ],
-    "description": "A cat-humanoid Chimera Ant and the firstborn of the Chimera Ant King's three Royal Guards.\n\nNeferpitou is very loyal to the King, just like the rest of the Royal Guards that would sacrifice themselves for him. Neferpitou gets distracted easily, loves to play a lot and that makes them the most curious of the three Royal Guards. Hence their cat-like appearance, Pitou is a cat Chimera Ant who loves to play with their opponents like a cat would with their prey. Despite their cheerful and playful manner, Pitou has a sadistic and terrifying personality as well.\n\nUnlike Menthuthuyoupi and Shaiapouf, Neferpitou does not seem to mind much in regards to Meruem's later newfound interests with Komugi. Thus, among the three Royal Guards, Neferpitou is the only one that greatly prioritizes Komugi's safety as opposed to how Menthuthuyoupi and Shaiapouf hate Komugi, which causes tension among the guards.",
-    "summary": "A cat-humanoid Chimera Ant and the firstborn of the Chimera Ant King's three Royal Guards. Neferpitou is very loyal to the King, just like the rest of the Royal Guards that would sacrifice themselves…",
-    "spoilers": [
-      "When the day of the selection finally occurs, the Extermination Team attacks the palace and causes massive damage. The King's consort, Komugi, is mortally wounded and under the King's orders, Neferpitou heals her; Neferpitou noticeably begins to sheds tears, understanding the King's sorrow and the importance of the order.\n\nThough a promise was made to go with Gon to Peijin to restore Kite, once they've reached the area, Neferpitou affirms that it is impossible and subsequently prepares to kill Gon. Gon then forcibly ages his body by sacrificing nearly all of his aura and kills Neferpitou in battle."
-    ],
-    "voiceActors": [
-      {
-        "anilistId": 95247,
-        "name": "Ayumi Fujimura",
-        "nativeName": "藤村歩",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95247-3jzUQFPN8clW.png",
-        "url": "https://anilist.co/staff/95247"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/12300"
-  },
-  {
     "anilistId": 57,
     "slug": "illumi-zoldyck",
     "name": "Illumi Zoldyck",
@@ -436,7 +434,7 @@
     "age": "24",
     "bloodType": "A",
     "birthday": null,
-    "favourites": 2512,
+    "favourites": 2508,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b57-pTFguojSOQZW.png",
     "attributes": [
       {
@@ -519,7 +517,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2230,
+    "favourites": 2229,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b36309-6KM0riV4lqfN.jpg",
     "attributes": [],
     "description": "This character page is set to represent and list all narrators, which haven't been given a visual representation of themselves in their respective work.\n\nPlease add other narrator characters, which were given a visual representation of themselves, separately from this narrator page.",
@@ -571,35 +569,6 @@
     "siteUrl": "https://anilist.co/character/13898"
   },
   {
-    "anilistId": 14313,
-    "slug": "komugi",
-    "name": "Komugi",
-    "nativeName": "コムギ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Female",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 1566,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/14313-J4CtnaAZidUe.jpg",
-    "attributes": [],
-    "description": "Komugi is a blind girl who is a genius at Gung-gi, a fictional board game of Hunter x Hunter. She is introduced during the Chimera Ant arc and frequently plays Meruem, the Chimera Ant King, in Gung-Gi games. Meruem seems to be developing some feelings towards her, despite her being a human.",
-    "summary": "Komugi is a blind girl who is a genius at Gung-gi, a fictional board game of Hunter x Hunter. She is introduced during the Chimera Ant arc and frequently plays Meruem, the Chimera Ant King, in…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95054,
-        "name": "Aya Endou",
-        "nativeName": "遠藤綾",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95054-8VgnlGK5QX2A.png",
-        "url": "https://anilist.co/staff/95054"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/14313"
-  },
-  {
     "anilistId": 52425,
     "slug": "alluka-zoldyck",
     "name": "Alluka Zoldyck",
@@ -613,7 +582,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1566,
+    "favourites": 1569,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b52425-0doIaKgpDbds.jpg",
     "attributes": [],
     "description": "Alluka Zoldyck is the second youngest sibling of the Zoldyck Family. She is said to be a dark, uncontrollable child. Her younger brother Kalluto is envious of her, perhaps because of her closeness to Killua.",
@@ -633,6 +602,35 @@
     "siteUrl": "https://anilist.co/character/52425"
   },
   {
+    "anilistId": 14313,
+    "slug": "komugi",
+    "name": "Komugi",
+    "nativeName": "コムギ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Female",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 1568,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/14313-J4CtnaAZidUe.jpg",
+    "attributes": [],
+    "description": "Komugi is a blind girl who is a genius at Gung-gi, a fictional board game of Hunter x Hunter. She is introduced during the Chimera Ant arc and frequently plays Meruem, the Chimera Ant King, in Gung-Gi games. Meruem seems to be developing some feelings towards her, despite her being a human.",
+    "summary": "Komugi is a blind girl who is a genius at Gung-gi, a fictional board game of Hunter x Hunter. She is introduced during the Chimera Ant arc and frequently plays Meruem, the Chimera Ant King, in…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95054,
+        "name": "Aya Endou",
+        "nativeName": "遠藤綾",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95054-8VgnlGK5QX2A.png",
+        "url": "https://anilist.co/staff/95054"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/14313"
+  },
+  {
     "anilistId": 5830,
     "slug": "machi-komacine",
     "name": "Machi Komacine",
@@ -644,7 +642,7 @@
     "age": "24",
     "bloodType": null,
     "birthday": null,
-    "favourites": 1501,
+    "favourites": 1505,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5830-IEl8BCasHZvG.png",
     "attributes": [
       {
@@ -683,7 +681,7 @@
     "age": "31-",
     "bloodType": null,
     "birthday": null,
-    "favourites": 1482,
+    "favourites": 1480,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/26-VpZXIwOdcz8p.jpg",
     "attributes": [
       {
@@ -720,7 +718,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1337,
+    "favourites": 1338,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29809-wAoam5TkZilJ.png",
     "attributes": [
       {
@@ -728,11 +726,9 @@
         "value": "Conjuration"
       }
     ],
-    "description": "Knuckle Bine is an Unidentified Beast Hunter and Morel's apprentice. Despite appearing to be an aggressive man, Knuckle is very compassionate and easily moved to tears. Knuckle also gets along well with animals, having the habit of taking care of abandoned pets.\n\nKnuckle's Abilities:",
+    "description": "Knuckle Bine is an Unidentified Beast Hunter and Morel's apprentice. Despite appearing to be an aggressive man, Knuckle is very compassionate and easily moved to tears. Knuckle also gets along well with animals, having the habit of taking care of abandoned pets.",
     "summary": "Knuckle Bine is an Unidentified Beast Hunter and Morel's apprentice. Despite appearing to be an aggressive man, Knuckle is very compassionate and easily moved to tears. Knuckle also gets along well…",
-    "spoilers": [
-      "Hakoware (天上不知唯我独損)\nType: Emission and Manipulation\nHakoware involves Knuckle emitting an indestructible mascot called the \"Amortizing Power Redirector (A.P.R.)\" (\"Potclean\"; ポットクリン, Pottokurin, in Japanese) onto the opponent after being dealt a blow from Knuckle. A.P.R. constantly lends Knuckle's aura to whomever it is attached to, displayed by a rising counter on its forehead. When adding interest, A.P.R. announces \"It's time, adding interest\" (「時間です。利息が付きます」, Jikan desu, risoku ga tsukimasu). As long as A.P.R. is attached, any attacks done to Knuckle by his opponent return aura to him, lowering the counter. Until all of the aura lent by Knuckle is returned to him, he cannot be physically damaged by his opponent. The reverse is also true: each of Knuckle's blows only lends more aura to his opponent, causing no damage. The stronger the attack, the more aura is lent or returned. In both cases, the person suffering the blow can still be knocked back by it, despite suffering no damage.\n\nThe interest rate on A.P.R. is 10% of the borrowed aura, accrued every 10 seconds while the victim is within 50 meters of Knuckle. As the amount of borrowed aura (including interest) accumulates, A.P.R. also grows in size. When the aura borrowed from Knuckle exceeds his opponent's total remaining aura (specifically P.O.P), the opponent \"goes bankrupt\". Thus, it is in Knuckle's interest that his opponent spends/wastes as much aura as possible, as quickly as possible (so long as said aura is not spent on Knuckle himself). The result is that the opponent's \"aura balance\" falls that much quicker until it is below the amount they owe Knuckle (displayed by A.P.R), at which point they can no longer possibly repay their debt and bankruptcy sets in.\n\nBankruptcy causes A.P.R. to transform into the \"Individual Ren Suppressor (I.R.S.)\" (トリタテン, \"Toritaten\"), a demon-like mascot that follows the debtor for 30 days and forces them into a continuous state of Zetsu. It is worth noting that when Knuckle struck Shaiapouf's copy, A.P.R. was attached to the latter's real body rather than to his clone. Furthermore, Knuckle can use Hakoware on multiple targets at once, as well as track their general location at all times, regardless of the distance. The ability can be removed by an Exorcist, but it takes a great deal out of the Nen remover. It is also cancelled if Knuckle is rendered unconscious.\n\nIt is unclear what Nen types are involved in the ability; A.P.R. (and later Toritaten) might be conjured and rendered invisible to non-users, which would increase the aura cost, or emitted and possibly transmuted. Regardless, Manipulation would likely be required to endow the construct with sentience (and possibly to enforce Zetsu on the target), while Emission might be involved in the process of lending aura to the opponent."
-    ],
+    "spoilers": [],
     "voiceActors": [
       {
         "anilistId": 95133,
@@ -759,7 +755,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1021,
+    "favourites": 1019,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5835-cbomgYG3LWrP.jpg",
     "attributes": [],
     "description": "Pakunoda exudes an air of self-confidence that can be intimidating to others. She is fully loyal to Chrollo. She is one of the original Phantom Troupe from Meteor City. Her physical strength is 11th in the Troupe.\n\nShe has the ability to read the conscious thoughts of any person she is in physical contact with and can extract memories by asking specific questions. Attempting to create false information is impossible, since she can extract her target's purest memories. The information she collects is highly useful in exposing weaknesses and secrets, especially in finding out the opponent's nen ability or in situations requiring some form of extortion or blackmail. Her ability can also be used to see the recent past of an object.\n\nShe also has the ability to share her memories by shooting them into another person's head using a revolver and conjured nen bullets called \"Memory Bombs\". This is not a combat ability, and does no damage. If she shoots a Memory Bomb into the person from whom the memories were read, those memories are erased permanently.",
@@ -792,7 +788,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 993,
+    "favourites": 997,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n41135-tTO36i1YAA5L.jpg",
     "attributes": [],
     "description": "Butterfly-humanoid Chimera Ant and one of Meruem's Royal Guards.",
@@ -821,7 +817,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 706,
+    "favourites": 709,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29805-YicEgIbxmSkv.jpg",
     "attributes": [
       {
@@ -857,7 +853,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 629,
+    "favourites": 635,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29806-49vvaQbvx7Ag.jpg",
     "attributes": [
       {
@@ -960,7 +956,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 482,
+    "favourites": 486,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b22521-lW31xQRGKQm8.jpg",
     "attributes": [],
     "description": "Wing is a Nen trainer whose main student is Zushi. He meets Gon and Killua at the Celestial Tower. Although in the beginning he refuses to train Gon and Killua, and even lies to them about Nen's purpose, he changes his mind when they reach the 200th floor, as he realizes they could die or be badly injured from nen \"initiation\". For the next several months he teaches them the basics of Nen, after which he announces they have passed the secret final requirement for being a Hunter. His teacher was Biscuit Kruger.",
@@ -989,7 +985,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 464,
+    "favourites": 465,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n59-6mnrlhnGe2mw.png",
     "attributes": [],
     "description": "Zeno Zoldyck is Killua's grandfather and Silva's father.\n\nA witty old man, his advancing age has not dampened his quick thinking and speed in battle. Zeno wears alternating signs on his garb that say either \"A Kill A Day\" or \"Never Retire.\" He appears to be on good terms with the Hunter Committee's Chairman, Netero, who hired Zeno to assault Ming Jol-ik's palace in East Gorteau in order to catch the chimera ant King off guard.\n\nZeno favors Killua more than his other grandchildren, most likely because Killua is the heir of the family.",
@@ -1021,7 +1017,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 457,
+    "favourites": 458,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b55071-rUsNSPYGF7Y5.png",
     "attributes": [],
     "description": "Pariston Hill is a Triple-Star Hunter and both the former 13th Chairman and 12th Vice Chairman of the Hunter Association. He is also a former member of the Zodiacs with the codename Rat. According to Ging Freecss, Pariston's personality is similar to Netero's and his own in that he likes to play around and enjoy himself, uninterested in winning or losing, which makes him very unpredictable. He always appears cheerful with a bright smile, making it quite impossible to read his thoughts and calculate his motives. This alone infuriates the Zodiacs, mostly Cheadle, Kanzai, and Cluck. He is extremely sly and gets pleasure from destroying what he loves most. Simultaneously, he is infuriated by and enjoys a rivalry with Ging; Pariston has rarely hated anyone, though he does awful things to them and is curious to see what he would do to someone he hates, with Ging currently occupying that position. He has a preference for harsh punishments for anyone who does him wrong. He tends to treat serious situations as mere games, such as the elections for the 13th chairman. When he wins the chairman position, he casually hands it to Cheadle and resigns. He has also 5,000 cocooned Chimera Ants for his private playground.\n\nDue to his extreme unpredictability, slyness, shadiness and the tendency to test anyone's patience and temper, he is disliked by all of the Zodiacs and many Hunters in the Association, even more than Ging. Even Morel states that he would rather die than vote for a slew rat-like Pariston. It is also shown that Netero also cannot stand him and often gets into a lot of arguments with him, but he tolerates Pariston's presence because he believes that a yes-man second-in-command is too boring for him. Pariston became a Hunter in preparation for Beyond's expedition to the Dark Continent. Three years before Netero's demise, Pariston was appointed Vice Chairman of the Hunter Association, partly because Netero enjoyed how Pariston challenged him, and made him a member of the Zodiacs. During his time as Vice Chairman, Pariston handled the business side of the Hunter Association. During those three years, 18 Hunters went missing, an average of six per year, in contrast to an average of 0.6 Hunters per year prior to Pariston's term, which also included Ging. Pariston declared that if he became Chairman, that number would go down, implying he played a part in the mysterious disappearances, although he may have done so only to irritate Mizaistom,[1] who suspects that Pariston has ties to the underworld. Other shady dealings include a scandal in which funds from the Temp Agency established by Pariston were found in his account, which he claims was all a misunderstanding, as the money was supposedly a reserve fund to strengthen the Hunter Association. Through his Temp Agency and position as Vice Chairman, Pariston succeeded in acquiring a firm grasp over the organization, obtaining the power to control the Review Board from the shadows and thus give jobs only to his supporters.",
@@ -1079,7 +1075,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 362,
+    "favourites": 363,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/60.jpg",
     "attributes": [],
     "description": "Silva is Killua's father. He is a silent, pensive figure, and Killua seems to rarely interact with him, although Killua does look up to him. He allows Killua to go along with Gon on their journey, but this is only so Killua would gain more experience when thrown out into the real world on his own. In fact, Silva was confident that Killua would eventually return home on his own, as an assassin.",
@@ -1110,7 +1106,7 @@
     "age": null,
     "bloodType": "B",
     "birthday": null,
-    "favourites": 343,
+    "favourites": 342,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/5836.jpg",
     "attributes": [
       {
@@ -1134,6 +1130,38 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/5836"
+  },
+  {
+    "anilistId": 5831,
+    "slug": "nobunaga-hazama",
+    "name": "Nobunaga Hazama",
+    "nativeName": "ノブナガ＝ハザマ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": "B",
+    "birthday": {
+      "month": 9,
+      "day": 8
+    },
+    "favourites": 325,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5831-COYqtVagw99J.png",
+    "attributes": [],
+    "description": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the sword in executing enemies. Franklin has described him as the \"King of Carelessness.\" His best friend is Uvogin, and the two bring out the best in each other during combat. Seeing some of Uvogin's personality in Gon, he expressed interest in having Gon join the Troupe, though Gon adamantly refused. He is one of the Phantom Troupe that originated from Meteor City.\n\nNobunaga's En: Supplementing his swordfighting skills is the use of En in creating a circular boundary that can detect the slightest of movements of his opponents. Once the opponent steps into this boundary, an immediate retaliation can be expected from Nobunaga.",
+    "summary": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95338,
+        "name": "Naoya Uchida",
+        "nativeName": "内田直哉",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95338-hoqbedi0LHZf.png",
+        "url": "https://anilist.co/staff/95338"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/5831"
   },
   {
     "anilistId": 6088,
@@ -1165,38 +1193,6 @@
     "siteUrl": "https://anilist.co/character/6088"
   },
   {
-    "anilistId": 5831,
-    "slug": "nobunaga-hazama",
-    "name": "Nobunaga Hazama",
-    "nativeName": "ノブナガ＝ハザマ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": "B",
-    "birthday": {
-      "month": 9,
-      "day": 8
-    },
-    "favourites": 322,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5831-COYqtVagw99J.png",
-    "attributes": [],
-    "description": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the sword in executing enemies. Franklin has described him as the \"King of Carelessness.\" His best friend is Uvogin, and the two bring out the best in each other during combat. Seeing some of Uvogin's personality in Gon, he expressed interest in having Gon join the Troupe, though Gon adamantly refused. He is one of the Phantom Troupe that originated from Meteor City.\n\nNobunaga's En: Supplementing his swordfighting skills is the use of En in creating a circular boundary that can detect the slightest of movements of his opponents. Once the opponent steps into this boundary, an immediate retaliation can be expected from Nobunaga.",
-    "summary": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95338,
-        "name": "Naoya Uchida",
-        "nativeName": "内田直哉",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95338-hoqbedi0LHZf.png",
-        "url": "https://anilist.co/staff/95338"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/5831"
-  },
-  {
     "anilistId": 29808,
     "slug": "meleoron",
     "name": "Meleoron",
@@ -1210,7 +1206,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 311,
+    "favourites": 313,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29808.jpg",
     "attributes": [],
     "description": "A chameleon-like ant, Meleoron is an eccentric among chimera ants, as he dislikes fighting or killing. Even though Meleoron has the rank of a squadron leader, he himself admits his actual fighting strength is only on par with a common soldier ant. Meleoron dresses in a hooded sweatshirt with sweatpants, and is often seen smoking. His original name, before the chimera ant queen died, was Jail.",
@@ -1241,7 +1237,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 279,
+    "favourites": 280,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/82925.jpg",
     "attributes": [],
     "description": "Knov is a Hunter who participated in the Chimera Ant Extermination Mission.",
@@ -1270,7 +1266,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 274,
+    "favourites": 275,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b24279-wCttqcLJ3W2b.jpg",
     "attributes": [],
     "description": "Examinee #246 during the Hunter Exam. Ponzu is the only prominent female who managed to enter the last few stages of the Hunter exam. Her secret weapon lies in the big round hat she wears, which carries powerful bees under the surface that emerge and attack people that threaten her. Although Ponzu is a relatively minor character in the series, her cute and girlish charm has won her some fans who voted for her in an early Hunter popularity poll.",
@@ -1302,7 +1298,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 267,
+    "favourites": 265,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b34054-QJaRVZMUmZNs.png",
     "attributes": [],
     "description": "Palm Siberia is Knov's apprentice. She only appears in the manga and develops a crush on Gon at one stage. She, on most occasions, has scruffy hair and too much make-up, not to mention a frightening aura caused by stress. However, sometimes she will do herself up and looks stunning.",
@@ -1362,7 +1358,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 213,
+    "favourites": 216,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5834-s3A4bR8IX01p.png",
     "attributes": [],
     "description": "Phinks is a genius when it comes to unarmed combat. Phinks uses his hands in battle, which have been shown to be extremely powerful. He is rather brash and has a tendency to get into conflicts with other people. Phinks is one of the members of the Phantom Troupe that originated from Meteor City. He first appears in Egyptian Suit but later changed into jogging suit. He seems to get along with Feitan. Phinks also displays a level of compassion for Zazan's minions after they are released from her control. When they beg him to kill them he refuses to simply execute them on their knees, instead urging them to fight back and die in battle honorably.\n\nNen Ability:\nRipper Cyclotron: Phinks's nen ability involves how many times he rotates his arm. The more rotations that he does with the arm, the stronger his blow will become.",
@@ -1393,7 +1389,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 213,
+    "favourites": 212,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12515-Jgj0kBXgBmhf.jpg",
     "attributes": [],
     "description": "Senritsu, known as Melody in the Viz Media translation, is a Music Hunter, named for her skill with instruments. Senritsu is a Music Hunter and is the kind and understanding member of Neon's bodyguards. She is always ready to listen to anyone's confessions and has the gift to make people open up to her. As Leorio notes, she is one of the very few characters who has made Kurapika open up to her.\n\n(Source: Wikipedia)",
@@ -1422,7 +1418,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 175,
+    "favourites": 177,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29807.jpg",
     "attributes": [],
     "description": "Shoot McMahon (シュート＝マクマホン, Shūto Makumahon?) is an Unidentified Beast Hunter, Knuckle's partner, and the second disciple of Morel. He has a timid personality and is often afraid of taking advantage of opportune times to attack his enemy. When the fight begins with Youpi, he becomes inspired by Gon and is able to fully unleash his power, overcoming his timidness and injuries.",
@@ -1559,6 +1555,37 @@
     "siteUrl": "https://anilist.co/character/17564"
   },
   {
+    "anilistId": 43953,
+    "slug": "menthuthuyoupi",
+    "name": "Menthuthuyoupi",
+    "nativeName": "モントゥトゥユピー",
+    "aliases": [
+      "Youpi"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 125,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/43953.jpg",
+    "attributes": [],
+    "description": "Mentsutsuyupi, nicknamed Yupi, is the third of the chimera ant king's Royal Guard. Mentsutsuyupi is the largest of the Royal Guards and the only non-human hybrid among them, mixed with the genes of a magical beast instead. He is the most straightforward of the royal guards and possesses a strength that comes from complete selflessness and devotion to the King. Youpi's ability allows for both bodily metamorphosis and the transformation of his own anger into pure destructive power. His Hatsu allows for him to billow large quantities of his aura into his body through En, subsequently resulting in an explosion. Youpi can use his explosive ability in conjunction with his shape-shifting ability, physically manifesting the blast's power into his own body. (Source: Wikipedia)",
+    "summary": "Mentsutsuyupi, nicknamed Yupi, is the third of the chimera ant king's Royal Guard. Mentsutsuyupi is the largest of the Royal Guards and the only non-human hybrid among them, mixed with the genes of a…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95284,
+        "name": "Fumihiko Tachiki",
+        "nativeName": "立木文彦",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95284-k97k9dULn4vr.png",
+        "url": "https://anilist.co/staff/95284"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/43953"
+  },
+  {
     "anilistId": 83199,
     "slug": "colt",
     "name": "Colt",
@@ -1590,37 +1617,6 @@
     "siteUrl": "https://anilist.co/character/83199"
   },
   {
-    "anilistId": 43953,
-    "slug": "menthuthuyoupi",
-    "name": "Menthuthuyoupi",
-    "nativeName": "モントゥトゥユピー",
-    "aliases": [
-      "Youpi"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 124,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/43953.jpg",
-    "attributes": [],
-    "description": "Mentsutsuyupi, nicknamed Yupi, is the third of the chimera ant king's Royal Guard. Mentsutsuyupi is the largest of the Royal Guards and the only non-human hybrid among them, mixed with the genes of a magical beast instead. He is the most straightforward of the royal guards and possesses a strength that comes from complete selflessness and devotion to the King. Youpi's ability allows for both bodily metamorphosis and the transformation of his own anger into pure destructive power. His Hatsu allows for him to billow large quantities of his aura into his body through En, subsequently resulting in an explosion. Youpi can use his explosive ability in conjunction with his shape-shifting ability, physically manifesting the blast's power into his own body. (Source: Wikipedia)",
-    "summary": "Mentsutsuyupi, nicknamed Yupi, is the third of the chimera ant king's Royal Guard. Mentsutsuyupi is the largest of the Royal Guards and the only non-human hybrid among them, mixed with the genes of a…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95284,
-        "name": "Fumihiko Tachiki",
-        "nativeName": "立木文彦",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95284-k97k9dULn4vr.png",
-        "url": "https://anilist.co/staff/95284"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/43953"
-  },
-  {
     "anilistId": 53271,
     "slug": "beans",
     "name": "Beans",
@@ -1634,7 +1630,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 122,
+    "favourites": 121,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/53271.jpg",
     "attributes": [],
     "description": "Beans (Maamen in the Nippon Animation adaptation) is Netero's personal secretary and helps to organize a lot of things during Hunter Exam. Beans gives examinees their number badges prior to the Hunter Exam and gives a presentation on the uses of the Hunter License to the successful candidates of the Exam.",
@@ -1819,7 +1815,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 87,
+    "favourites": 88,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b20677-I7bchq2Ema7S.jpg",
     "attributes": [],
     "description": "An 18-year-old jounin ninja from the Cloud Hidden Village whom has trained in the art of ninjutsu from the moment he could stand. He decided to become a Hunter in order to find the elusive Hermit's Scroll.",
@@ -1871,35 +1867,6 @@
     "siteUrl": "https://anilist.co/character/33376"
   },
   {
-    "anilistId": 33378,
-    "slug": "baise",
-    "name": "Baise",
-    "nativeName": "ヴェーゼ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 82,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33378-CCUuuCbPk9qy.png",
-    "attributes": [],
-    "description": "One of the bodyguards hired to protect Neon. She is from the Manipulation group. Her hatsu, Instant Love, makes every man she kisses her slave. Her slaves enjoy being hurt by her, which she videotapes. She uses this to make men tell the truth.",
-    "summary": "One of the bodyguards hired to protect Neon. She is from the Manipulation group. Her hatsu, Instant Love, makes every man she kisses her slave. Her slaves enjoy being hurt by her, which she…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95209,
-        "name": "Miki Nagasawa",
-        "nativeName": "長沢美樹",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95209-9RHgLGkMrska.png",
-        "url": "https://anilist.co/staff/95209"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33378"
-  },
-  {
     "anilistId": 36817,
     "slug": "cheetu",
     "name": "Cheetu",
@@ -1913,7 +1880,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 82,
+    "favourites": 83,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/36817.jpg",
     "attributes": [],
     "description": "Cheetu (ヂートゥ, Jītu) is fastest of all the chimera ants. Cheetu is first introduced along with the other recurring squadron leaders early in the Chimera Ant story arc (Source: Hunterpedia)",
@@ -1929,6 +1896,35 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/36817"
+  },
+  {
+    "anilistId": 33378,
+    "slug": "baise",
+    "name": "Baise",
+    "nativeName": "ヴェーゼ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 81,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33378-CCUuuCbPk9qy.png",
+    "attributes": [],
+    "description": "One of the bodyguards hired to protect Neon. She is from the Manipulation group. Her hatsu, Instant Love, makes every man she kisses her slave. Her slaves enjoy being hurt by her, which she videotapes. She uses this to make men tell the truth.",
+    "summary": "One of the bodyguards hired to protect Neon. She is from the Manipulation group. Her hatsu, Instant Love, makes every man she kisses her slave. Her slaves enjoy being hurt by her, which she…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95209,
+        "name": "Miki Nagasawa",
+        "nativeName": "長沢美樹",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95209-9RHgLGkMrska.png",
+        "url": "https://anilist.co/staff/95209"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33378"
   },
   {
     "anilistId": 83203,
@@ -1975,7 +1971,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 66,
+    "favourites": 65,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b22522-a0LOc6iIj2LU.jpg",
     "attributes": [],
     "description": "Examinee #16 during the Hunter exam. Tonpa is nicknamed the \"Rookie Crusher\" by other candidates with more experience taking the exam. Tonpa has taken the exam for 35 consecutive terms (given that the Hunter exam can only be taken by someone who is at least 12, it means that Tonpa either was lying, sneaked in the first two times, or that the age limit is a new rule), but has somehow never managed to pass. He often brags of his experience to those taking the Hunter Exam for the first time and then offers them a helping hand. Of course, this is merely subterfuge as he takes a perverse pleasure in sabotaging their attempts to get the license.",
@@ -2029,7 +2025,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 55,
+    "favourites": 56,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/85139.jpg",
     "attributes": [],
     "description": "Hina is usually seen accompanying Leol and Flutter.",
@@ -2076,6 +2072,35 @@
     "siteUrl": "https://anilist.co/character/84077"
   },
   {
+    "anilistId": 83201,
+    "slug": "zazan",
+    "name": "Zazan",
+    "nativeName": "ザザン",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 51,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83201.jpg",
+    "attributes": [],
+    "description": "Zazan is a scorpion-like Chimera Ant Squadron Leader.",
+    "summary": "Zazan is a scorpion-like Chimera Ant Squadron Leader.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95944,
+        "name": "Azusa Nakao",
+        "nativeName": "あづさ 仲尾",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/944.jpg",
+        "url": "https://anilist.co/staff/95944"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/83201"
+  },
+  {
     "anilistId": 33353,
     "slug": "list",
     "name": "List",
@@ -2103,35 +2128,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33353"
-  },
-  {
-    "anilistId": 83201,
-    "slug": "zazan",
-    "name": "Zazan",
-    "nativeName": "ザザン",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 50,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83201.jpg",
-    "attributes": [],
-    "description": "Zazan is a scorpion-like Chimera Ant Squadron Leader.",
-    "summary": "Zazan is a scorpion-like Chimera Ant Squadron Leader.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95944,
-        "name": "Azusa Nakao",
-        "nativeName": "あづさ 仲尾",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/944.jpg",
-        "url": "https://anilist.co/staff/95944"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/83201"
   },
   {
     "anilistId": 33352,
@@ -2281,6 +2277,37 @@
     "siteUrl": "https://anilist.co/character/33351"
   },
   {
+    "anilistId": 55077,
+    "slug": "piyon",
+    "name": "Piyon",
+    "nativeName": "ピヨン",
+    "aliases": [
+      "Rabbit"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 41,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55077-RWlOUdlR4Ty6.png",
+    "attributes": [],
+    "description": "Piyon is a Paleograph Hunter and member of the Zodiacs with the codename \"Rabbit\". Piyon is one of the few characters in the series to be left handed.",
+    "summary": "Piyon is a Paleograph Hunter and member of the Zodiacs with the codename \"Rabbit\". Piyon is one of the few characters in the series to be left handed.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 119223,
+        "name": "Tomoka Kiriyama",
+        "nativeName": "桐山智花",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119223-mqSTmzyv2iVr.jpg",
+        "url": "https://anilist.co/staff/119223"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/55077"
+  },
+  {
     "anilistId": 66135,
     "slug": "cocco",
     "name": "Cocco",
@@ -2292,7 +2319,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 42,
+    "favourites": 41,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b66135-osaTSFrkgK2A.png",
     "attributes": [],
     "description": "The live announcer at the arena.",
@@ -2339,37 +2366,6 @@
     "siteUrl": "https://anilist.co/character/5828"
   },
   {
-    "anilistId": 55077,
-    "slug": "piyon",
-    "name": "Piyon",
-    "nativeName": "ピヨン",
-    "aliases": [
-      "Rabbit"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 40,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55077-RWlOUdlR4Ty6.png",
-    "attributes": [],
-    "description": "Piyon is a Paleograph Hunter and member of the Zodiacs with the codename \"Rabbit\". Piyon is one of the few characters in the series to be left handed.",
-    "summary": "Piyon is a Paleograph Hunter and member of the Zodiacs with the codename \"Rabbit\". Piyon is one of the few characters in the series to be left handed.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 119223,
-        "name": "Tomoka Kiriyama",
-        "nativeName": "桐山智花",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119223-mqSTmzyv2iVr.jpg",
-        "url": "https://anilist.co/staff/119223"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/55077"
-  },
-  {
     "anilistId": 61955,
     "slug": "kiriko",
     "name": "Kiriko",
@@ -2412,7 +2408,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 33,
+    "favourites": 34,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b224021-Csy2wkLSWR8o.jpg",
     "attributes": [],
     "description": "A Chimera Ant and former Peon from Leol's Squad\n\nAlthough initially believed to be unable to talk due to her being a lower ant, this is actually due to Shidore being a very young child. She always obeys her orders silently and seems loyal to Hina",
@@ -2503,7 +2499,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 25,
+    "favourites": 26,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n33380-8sbAnMeufQkH.png",
     "attributes": [],
     "description": "Basho is one of Neon Nostrade's new bodyguards, hired along with Kurapika. When he was first introduced he was quick to underestimate Kurapika, but after Kurapika's display of his 'Dowsing Chain', he grew respect for him. His nen ability is called \"Great Haiku: The Wandering Haiku Poet,\" wherein Basho writes a haiku describing a condition on a piece of paper, which then comes true. -Wikipedia",
@@ -2858,6 +2854,37 @@
     "siteUrl": "https://anilist.co/character/59457"
   },
   {
+    "anilistId": 55075,
+    "slug": "kanzai",
+    "name": "Kanzai",
+    "nativeName": "カンザイ",
+    "aliases": [
+      "Tiger"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 17,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55075-KKQXFAG8pzkL.jpg",
+    "attributes": [],
+    "description": "Kanzai is a Treasure Hunter and member of the Zodiacs under the codename \"Tiger\" (寅). He is part of the Defense Team, created in preparation for the voyage to the Dark Continent.",
+    "summary": "Kanzai is a Treasure Hunter and member of the Zodiacs under the codename \"Tiger\" (寅). He is part of the Defense Team, created in preparation for the voyage to the Dark Continent.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 110743,
+        "name": "Ryouta Oosaka",
+        "nativeName": "逢坂良太",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n110743-k2SgQwU0JD33.png",
+        "url": "https://anilist.co/staff/110743"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/55075"
+  },
+  {
     "anilistId": 67203,
     "slug": "eliza",
     "name": "Eliza",
@@ -2869,7 +2896,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 18,
+    "favourites": 17,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b67203-Cne1pPDwxmxd.jpg",
     "attributes": [],
     "description": "One of Neon Nostrade's personal attendants. She is always seen wearing a kimono and following Neon.",
@@ -2889,37 +2916,6 @@
     "siteUrl": "https://anilist.co/character/67203"
   },
   {
-    "anilistId": 55075,
-    "slug": "kanzai",
-    "name": "Kanzai",
-    "nativeName": "カンザイ",
-    "aliases": [
-      "Tiger"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 16,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55075-KKQXFAG8pzkL.jpg",
-    "attributes": [],
-    "description": "Kanzai is a Treasure Hunter and member of the Zodiacs under the codename \"Tiger\" (寅). He is part of the Defense Team, created in preparation for the voyage to the Dark Continent.",
-    "summary": "Kanzai is a Treasure Hunter and member of the Zodiacs under the codename \"Tiger\" (寅). He is part of the Defense Team, created in preparation for the voyage to the Dark Continent.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 110743,
-        "name": "Ryouta Oosaka",
-        "nativeName": "逢坂良太",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n110743-k2SgQwU0JD33.png",
-        "url": "https://anilist.co/staff/110743"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/55075"
-  },
-  {
     "anilistId": 83375,
     "slug": "bloster",
     "name": "Bloster",
@@ -2931,7 +2927,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 16,
+    "favourites": 17,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/83375.jpg",
     "attributes": [],
     "description": "Bloster is a lobster-based Chimera Ant and former Squadron Leader.",
@@ -2960,7 +2956,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 15,
+    "favourites": 16,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33379-w79Z4LElSXNo.jpg",
     "attributes": [],
     "description": "Squala is one of Neon Nostrade's bodyguards. During the job interview for new hires, he was one of the two moles planted alongside the applicants in order to test their strength. Although Squala has been one of Neon's bodyguards for many years, he does not have a Hunters License. He is also in a romantic relationship with Eliza, one of Neon's female attendants. Squala uses his nen to control dogs. (Source: Wikipedia)",
@@ -3098,6 +3094,37 @@
     "siteUrl": "https://anilist.co/character/66481"
   },
   {
+    "anilistId": 83213,
+    "slug": "leol",
+    "name": "Leol",
+    "nativeName": "レオル",
+    "aliases": [
+      "Hagya"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 13,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83213.jpg",
+    "attributes": [],
+    "description": "Leol is a Chimera Ant resembles an anthropomorphic lion.",
+    "summary": "Leol is a Chimera Ant resembles an anthropomorphic lion.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 102914,
+        "name": "Jirou Saitou",
+        "nativeName": "斉藤次郎",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n102914-7ygW5ZSwODbF.jpg",
+        "url": "https://anilist.co/staff/102914"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/83213"
+  },
+  {
     "anilistId": 53277,
     "slug": "sedokan",
     "name": "Sedokan",
@@ -3125,37 +3152,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/53277"
-  },
-  {
-    "anilistId": 83213,
-    "slug": "leol",
-    "name": "Leol",
-    "nativeName": "レオル",
-    "aliases": [
-      "Hagya"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 12,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83213.jpg",
-    "attributes": [],
-    "description": "Leol (レオル, Reoru) was a Chimera Ant resembles an anthropomorphic lion. Before the death of the Chimera Ant Queen, he was known as Hagya (ハギャ, Hagya), and was one of the particularly disloyal squadron leaders. Leol's memories of his previous life are not that of a human's, but those of a lion. During Morel and Knov’s primary infiltration of the King's palace in East Gorteau, Leol faces Morel in combat. He assumes he is victorious after submerging Morel in an underground church using a stolen ability, but dies by asphyxiation due to a cunning strategy put into action by Morel.",
-    "summary": "Leol (レオル, Reoru) was a Chimera Ant resembles an anthropomorphic lion. Before the death of the Chimera Ant Queen, he was known as Hagya (ハギャ, Hagya), and was one of the particularly disloyal squadron…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 102914,
-        "name": "Jirou Saitou",
-        "nativeName": "斉藤次郎",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n102914-7ygW5ZSwODbF.jpg",
-        "url": "https://anilist.co/staff/102914"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/83213"
   },
   {
     "anilistId": 33347,
