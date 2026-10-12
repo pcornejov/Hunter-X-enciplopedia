@@ -18,7 +18,7 @@
       "month": 7,
       "day": 7
     },
-    "favourites": 34718,
+    "favourites": 35170,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
     "attributes": [
       {
@@ -60,7 +60,7 @@
       "month": 4,
       "day": 4
     },
-    "favourites": 20638,
+    "favourites": 20853,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b28-ivA7UGnfE40a.png",
     "attributes": [
       {
@@ -97,7 +97,7 @@
       "month": 5,
       "day": 5
     },
-    "favourites": 15347,
+    "favourites": 15547,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b30-lyFExKyDhefc.jpg",
     "attributes": [
       {
@@ -138,7 +138,7 @@
       "month": 6,
       "day": 6
     },
-    "favourites": 14093,
+    "favourites": 14392,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b31-FZckOuu7L1un.png",
     "attributes": [
       {
@@ -180,7 +180,7 @@
       "month": 3,
       "day": 3
     },
-    "favourites": 6415,
+    "favourites": 6499,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29-RgzoSeKmDYzl.jpg",
     "attributes": [
       {
@@ -218,7 +218,7 @@
     "age": "26",
     "bloodType": "AB",
     "birthday": null,
-    "favourites": 9522,
+    "favourites": 9703,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b58-USOmsz3nursi.jpg",
     "attributes": [
       {
@@ -263,7 +263,7 @@
     "age": "40 Days",
     "bloodType": null,
     "birthday": null,
-    "favourites": 9346,
+    "favourites": 9389,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b23277-EYmIxzL64Mji.png",
     "attributes": [],
     "description": "He was the most powerful offspring of the Chimera Ant Queen. He was known as the King of the Chimera Ants, and served as the main antagonist of the Chimera Ant arc.",
@@ -299,7 +299,7 @@
       "month": 12,
       "day": 17
     },
-    "favourites": 4488,
+    "favourites": 4603,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/3195.jpg",
     "attributes": [],
     "description": "A mysterious member of the Phantom Troupe, Feitan is attired in what one would expect from a bandit - dark clothes with a skullhead scarf that covers his mouth. Feitan seldom speaks, but when he does, there's usually a word missing. Feitan's first language most likely isn't Japanese, but he has shown to be rather proficient in the Chinese language. He is one of the original members hailing from Meteor City.",
@@ -328,7 +328,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2759,
+    "favourites": 2769,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b14489-WgGsdlQJka65.jpg",
     "attributes": [
       {
@@ -358,6 +358,35 @@
     "siteUrl": "https://anilist.co/character/14489"
   },
   {
+    "anilistId": 5833,
+    "slug": "shizuku-murasaki",
+    "name": "Shizuku Murasaki",
+    "nativeName": "シズク",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Female",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 2658,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/5833.jpg",
+    "attributes": [],
+    "description": "Shizuku is member number 8 of the Phantom Troupe. She has been described as being a natural airhead, seeing as how some of her actions do not point towards her being very bright. Shizuku is quite forgetful; once she forgets something, she won't remember it. Her opponents are often fooled by her unassuming and blurred appearance—but this has often proved to be fatal for them once she enters in combat. Shizuku is also left-handed.\n\nNen Ability:\nDeme-chan (Blinky): Shizuku uses her nen to create a self-styled \"living\" vacuum cleaner she names \"Deme-chan\" that is able to consume any inanimate matter under her command. This has proven very useful in many occasions for cleaning up evidence that the members leave behind, especially blood and dead corpses. She also uses the razor-sharp teeth on the \"mouth\" as a weapon when in combat. Anything sucked up into her vacuum cleaner cannot be retrieved, except for the last material that was sucked in.",
+    "summary": "Shizuku is member number 8 of the Phantom Troupe. She has been described as being a natural airhead, seeing as how some of her actions do not point towards her being very bright. Shizuku is quite…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 107554,
+        "name": "Miho Arakawa",
+        "nativeName": "荒川美穂",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n107554-gxfVm7R8pFJ6.png",
+        "url": "https://anilist.co/staff/107554"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/5833"
+  },
+  {
     "anilistId": 12300,
     "slug": "neferpitou",
     "name": "Neferpitou",
@@ -371,7 +400,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2629,
+    "favourites": 2636,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12300-kYzopQUTLa9A.png",
     "attributes": [
       {
@@ -394,35 +423,6 @@
     "siteUrl": "https://anilist.co/character/12300"
   },
   {
-    "anilistId": 5833,
-    "slug": "shizuku-murasaki",
-    "name": "Shizuku Murasaki",
-    "nativeName": "シズク",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Female",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 2624,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/5833.jpg",
-    "attributes": [],
-    "description": "Shizuku is member number 8 of the Phantom Troupe. She has been described as being a natural airhead, seeing as how some of her actions do not point towards her being very bright. Shizuku is quite forgetful; once she forgets something, she won't remember it. Her opponents are often fooled by her unassuming and blurred appearance—but this has often proved to be fatal for them once she enters in combat. Shizuku is also left-handed.\n\nNen Ability:\nDeme-chan (Blinky): Shizuku uses her nen to create a self-styled \"living\" vacuum cleaner she names \"Deme-chan\" that is able to consume any inanimate matter under her command. This has proven very useful in many occasions for cleaning up evidence that the members leave behind, especially blood and dead corpses. She also uses the razor-sharp teeth on the \"mouth\" as a weapon when in combat. Anything sucked up into her vacuum cleaner cannot be retrieved, except for the last material that was sucked in.",
-    "summary": "Shizuku is member number 8 of the Phantom Troupe. She has been described as being a natural airhead, seeing as how some of her actions do not point towards her being very bright. Shizuku is quite…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 107554,
-        "name": "Miho Arakawa",
-        "nativeName": "荒川美穂",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n107554-gxfVm7R8pFJ6.png",
-        "url": "https://anilist.co/staff/107554"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/5833"
-  },
-  {
     "anilistId": 57,
     "slug": "illumi-zoldyck",
     "name": "Illumi Zoldyck",
@@ -434,7 +434,7 @@
     "age": "24",
     "bloodType": "A",
     "birthday": null,
-    "favourites": 2504,
+    "favourites": 2567,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b57-pTFguojSOQZW.png",
     "attributes": [
       {
@@ -474,7 +474,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2276,
+    "favourites": 2309,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b20594-QQJBR3LYobbv.jpg",
     "attributes": [
       {
@@ -517,7 +517,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 2217,
+    "favourites": 2220,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b36309-6KM0riV4lqfN.jpg",
     "attributes": [],
     "description": "This character page is set to represent and list all narrators, which haven't been given a visual representation of themselves in their respective work.\n\nPlease add other narrator characters, which were given a visual representation of themselves, separately from this narrator page.",
@@ -549,7 +549,7 @@
     "age": "57",
     "bloodType": null,
     "birthday": null,
-    "favourites": 1628,
+    "favourites": 1644,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13898-nHq3fRmp9uPD.png",
     "attributes": [],
     "description": "Biscuit is a master and experienced teacher of Nen. She continues the Nen training Wing gave to Gon and Killua during the Greed Island arc. As a Treasure Hunter, Biscuit loves collecting rare jewels (and gets very excited about them; she has a habit of naming them) and getting money. Biscuit has a devious personality. She initially uses her cutesy appearance and demeanor to her advantage whether it's for information gathering, getting what she wants, or even in combat by acting innocent and helpless so most people will usually put their guards down around her. However, as a teacher of Nen, she has a stern and serious attitude towards her students.",
@@ -582,7 +582,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1570,
+    "favourites": 1582,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b52425-0doIaKgpDbds.jpg",
     "attributes": [],
     "description": "Alluka Zoldyck is the second youngest sibling of the Zoldyck Family. She is said to be a dark, uncontrollable child. Her younger brother Kalluto is envious of her, perhaps because of her closeness to Killua.",
@@ -613,7 +613,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1564,
+    "favourites": 1571,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/14313-J4CtnaAZidUe.jpg",
     "attributes": [],
     "description": "Komugi is a blind girl who is a genius at Gung-gi, a fictional board game of Hunter x Hunter. She is introduced during the Chimera Ant arc and frequently plays Meruem, the Chimera Ant King, in Gung-Gi games. Meruem seems to be developing some feelings towards her, despite her being a human.",
@@ -624,7 +624,7 @@
         "anilistId": 95054,
         "name": "Aya Endou",
         "nativeName": "遠藤綾",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95054-8VgnlGK5QX2A.png",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95054-USmUajnl3bnT.jpg",
         "url": "https://anilist.co/staff/95054"
       }
     ],
@@ -642,7 +642,7 @@
     "age": "24",
     "bloodType": null,
     "birthday": null,
-    "favourites": 1499,
+    "favourites": 1510,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5830-IEl8BCasHZvG.png",
     "attributes": [
       {
@@ -681,7 +681,7 @@
     "age": "31-",
     "bloodType": null,
     "birthday": null,
-    "favourites": 1472,
+    "favourites": 1498,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/26-VpZXIwOdcz8p.jpg",
     "attributes": [
       {
@@ -718,7 +718,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1336,
+    "favourites": 1353,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29809-wAoam5TkZilJ.png",
     "attributes": [
       {
@@ -755,7 +755,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 1014,
+    "favourites": 1037,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5835-cbomgYG3LWrP.jpg",
     "attributes": [],
     "description": "Pakunoda exudes an air of self-confidence that can be intimidating to others. She is fully loyal to Chrollo. She is one of the original Phantom Troupe from Meteor City. Her physical strength is 11th in the Troupe.\n\nShe has the ability to read the conscious thoughts of any person she is in physical contact with and can extract memories by asking specific questions. Attempting to create false information is impossible, since she can extract her target's purest memories. The information she collects is highly useful in exposing weaknesses and secrets, especially in finding out the opponent's nen ability or in situations requiring some form of extortion or blackmail. Her ability can also be used to see the recent past of an object.\n\nShe also has the ability to share her memories by shooting them into another person's head using a revolver and conjured nen bullets called \"Memory Bombs\". This is not a combat ability, and does no damage. If she shoots a Memory Bomb into the person from whom the memories were read, those memories are erased permanently.",
@@ -788,7 +788,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 985,
+    "favourites": 996,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n41135-tTO36i1YAA5L.jpg",
     "attributes": [],
     "description": "Butterfly-humanoid Chimera Ant and one of Meruem's Royal Guards.",
@@ -817,7 +817,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 707,
+    "favourites": 711,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29805-YicEgIbxmSkv.jpg",
     "attributes": [
       {
@@ -853,7 +853,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 635,
+    "favourites": 634,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b29806-49vvaQbvx7Ag.jpg",
     "attributes": [
       {
@@ -891,7 +891,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 567,
+    "favourites": 579,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/5832.jpg",
     "attributes": [],
     "description": "From his appearance, Shalnark seems to be a guileless and normal boy. However, see him in action with the rest of the Phantom Troupe and that thought is dispelled.\n\nShalnark is one of the most intelligent and quick-thinking members in the group —being adept at using technology for information gathering, providing the brains behind the brawn. Shalnark is also a Hunter, so he has the ability to gain access to certain information that could be potentially useful for the Phantom Troupe He is member number 9 of the Troupe.\n\nNen Abilities:\nBlack Voice - Mobile Fate Detector: Shalnark is able to control the physical movements of any person he has targeted, as long as he has a special antenna on them and that person is not already being controlled. This is done via a cellphone interface in which he remotely controls other people from a distance while pointing the antenna at the person he's controlling.\nAuto Mode: When Shalnark places an antenna on himself, he temporarily gains immense strength. However, he can only control himself through giving himself instructions and cannot withdraw from Auto Mode until he has accomplished the task. After going out of Auto Mode, Shalnark cannot move for two days. He also doesn't retain any memory from what happened in that state.",
@@ -922,7 +922,7 @@
     "age": "13-16",
     "bloodType": "AB",
     "birthday": null,
-    "favourites": 545,
+    "favourites": 562,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b35894-pIxaSDFr0oGe.png",
     "attributes": [
       {
@@ -956,7 +956,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 482,
+    "favourites": 492,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b22521-lW31xQRGKQm8.jpg",
     "attributes": [],
     "description": "Wing is a Nen trainer whose main student is Zushi. He meets Gon and Killua at the Celestial Tower. Although in the beginning he refuses to train Gon and Killua, and even lies to them about Nen's purpose, he changes his mind when they reach the 200th floor, as he realizes they could die or be badly injured from nen \"initiation\". For the next several months he teaches them the basics of Nen, after which he announces they have passed the secret final requirement for being a Hunter. His teacher was Biscuit Kruger.",
@@ -985,7 +985,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 467,
+    "favourites": 463,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n59-6mnrlhnGe2mw.png",
     "attributes": [],
     "description": "Zeno Zoldyck is Killua's grandfather and Silva's father.\n\nA witty old man, his advancing age has not dampened his quick thinking and speed in battle. Zeno wears alternating signs on his garb that say either \"A Kill A Day\" or \"Never Retire.\" He appears to be on good terms with the Hunter Committee's Chairman, Netero, who hired Zeno to assault Ming Jol-ik's palace in East Gorteau in order to catch the chimera ant King off guard.\n\nZeno favors Killua more than his other grandchildren, most likely because Killua is the heir of the family.",
@@ -1017,7 +1017,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 450,
+    "favourites": 451,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b55071-rUsNSPYGF7Y5.png",
     "attributes": [],
     "description": "Pariston Hill is a Triple-Star Hunter and both the former 13th Chairman and 12th Vice Chairman of the Hunter Association. He is also a former member of the Zodiacs with the codename Rat. According to Ging Freecss, Pariston's personality is similar to Netero's and his own in that he likes to play around and enjoy himself, uninterested in winning or losing, which makes him very unpredictable. He always appears cheerful with a bright smile, making it quite impossible to read his thoughts and calculate his motives. This alone infuriates the Zodiacs, mostly Cheadle, Kanzai, and Cluck. He is extremely sly and gets pleasure from destroying what he loves most. Simultaneously, he is infuriated by and enjoys a rivalry with Ging; Pariston has rarely hated anyone, though he does awful things to them and is curious to see what he would do to someone he hates, with Ging currently occupying that position. He has a preference for harsh punishments for anyone who does him wrong. He tends to treat serious situations as mere games, such as the elections for the 13th chairman. When he wins the chairman position, he casually hands it to Cheadle and resigns. He has also 5,000 cocooned Chimera Ants for his private playground.\n\nDue to his extreme unpredictability, slyness, shadiness and the tendency to test anyone's patience and temper, he is disliked by all of the Zodiacs and many Hunters in the Association, even more than Ging. Even Morel states that he would rather die than vote for a slew rat-like Pariston. It is also shown that Netero also cannot stand him and often gets into a lot of arguments with him, but he tolerates Pariston's presence because he believes that a yes-man second-in-command is too boring for him. Pariston became a Hunter in preparation for Beyond's expedition to the Dark Continent. Three years before Netero's demise, Pariston was appointed Vice Chairman of the Hunter Association, partly because Netero enjoyed how Pariston challenged him, and made him a member of the Zodiacs. During his time as Vice Chairman, Pariston handled the business side of the Hunter Association. During those three years, 18 Hunters went missing, an average of six per year, in contrast to an average of 0.6 Hunters per year prior to Pariston's term, which also included Ging. Pariston declared that if he became Chairman, that number would go down, implying he played a part in the mysterious disappearances, although he may have done so only to irritate Mizaistom,[1] who suspects that Pariston has ties to the underworld. Other shady dealings include a scandal in which funds from the Temp Agency established by Pariston were found in his account, which he claims was all a misunderstanding, as the money was supposedly a reserve fund to strengthen the Hunter Association. Through his Temp Agency and position as Vice Chairman, Pariston succeeded in acquiring a firm grasp over the organization, obtaining the power to control the Review Board from the shadows and thus give jobs only to his supporters.",
@@ -1046,7 +1046,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 405,
+    "favourites": 417,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n6089-ro8HdSKvlycB.jpg",
     "attributes": [],
     "description": "Kalluto Zoldyck is the younger brother of Killua. He was initially introduced accompanying his mother during Gon's retrieval of Killua from his home on Kukuroo Mountain. Kalluto appears again during the Yorknew City arc, assisting his older brother Illumi with the assassination of the ten mafia dons that placed bounties on the Phantom Troupe's heads. After the Phantom Troupe's entrance into Greed Island, Kalluto joins as Hisoka's replacement. During the Phantom Troupe's assault on Zazan's palace in Meteor City, he reveals he joined the Spiders with the intention of bringing Killua back home.",
@@ -1075,7 +1075,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 364,
+    "favourites": 365,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/60.jpg",
     "attributes": [],
     "description": "Silva is Killua's father. He is a silent, pensive figure, and Killua seems to rarely interact with him, although Killua does look up to him. He allows Killua to go along with Gon on their journey, but this is only so Killua would gain more experience when thrown out into the real world on his own. In fact, Silva was confident that Killua would eventually return home on his own, as an assassin.",
@@ -1132,38 +1132,6 @@
     "siteUrl": "https://anilist.co/character/5836"
   },
   {
-    "anilistId": 5831,
-    "slug": "nobunaga-hazama",
-    "name": "Nobunaga Hazama",
-    "nativeName": "ノブナガ＝ハザマ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": "B",
-    "birthday": {
-      "month": 9,
-      "day": 8
-    },
-    "favourites": 324,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5831-COYqtVagw99J.png",
-    "attributes": [],
-    "description": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the sword in executing enemies. Franklin has described him as the \"King of Carelessness.\" His best friend is Uvogin, and the two bring out the best in each other during combat. Seeing some of Uvogin's personality in Gon, he expressed interest in having Gon join the Troupe, though Gon adamantly refused. He is one of the Phantom Troupe that originated from Meteor City.\n\nNobunaga's En: Supplementing his swordfighting skills is the use of En in creating a circular boundary that can detect the slightest of movements of his opponents. Once the opponent steps into this boundary, an immediate retaliation can be expected from Nobunaga.",
-    "summary": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95338,
-        "name": "Naoya Uchida",
-        "nativeName": "内田直哉",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95338-hoqbedi0LHZf.png",
-        "url": "https://anilist.co/staff/95338"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/5831"
-  },
-  {
     "anilistId": 6088,
     "slug": "menchi",
     "name": "Menchi",
@@ -1175,7 +1143,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 323,
+    "favourites": 331,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b6088-Bih7EhJL1QE6.jpg",
     "attributes": [],
     "description": "One of the two examiners that presided over the second stage of the Exam. Her exam topic was to prepare a piece of sushi for her to taste. If it met up to her stringent expectations, the candidate would pass.",
@@ -1193,6 +1161,38 @@
     "siteUrl": "https://anilist.co/character/6088"
   },
   {
+    "anilistId": 5831,
+    "slug": "nobunaga-hazama",
+    "name": "Nobunaga Hazama",
+    "nativeName": "ノブナガ＝ハザマ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": "B",
+    "birthday": {
+      "month": 9,
+      "day": 8
+    },
+    "favourites": 321,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5831-COYqtVagw99J.png",
+    "attributes": [],
+    "description": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the sword in executing enemies. Franklin has described him as the \"King of Carelessness.\" His best friend is Uvogin, and the two bring out the best in each other during combat. Seeing some of Uvogin's personality in Gon, he expressed interest in having Gon join the Troupe, though Gon adamantly refused. He is one of the Phantom Troupe that originated from Meteor City.\n\nNobunaga's En: Supplementing his swordfighting skills is the use of En in creating a circular boundary that can detect the slightest of movements of his opponents. Once the opponent steps into this boundary, an immediate retaliation can be expected from Nobunaga.",
+    "summary": "Like one of the ronin warriors in Edo period Japan, Nobunaga comes complete with a long Japanese sword that he uses with great finesse and skill. Nobunaga's speciality is the unparalleled use of the…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95338,
+        "name": "Naoya Uchida",
+        "nativeName": "内田直哉",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95338-hoqbedi0LHZf.png",
+        "url": "https://anilist.co/staff/95338"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/5831"
+  },
+  {
     "anilistId": 29808,
     "slug": "meleoron",
     "name": "Meleoron",
@@ -1206,7 +1206,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 312,
+    "favourites": 318,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29808.jpg",
     "attributes": [],
     "description": "A chameleon-like ant, Meleoron is an eccentric among chimera ants, as he dislikes fighting or killing. Even though Meleoron has the rank of a squadron leader, he himself admits his actual fighting strength is only on par with a common soldier ant. Meleoron dresses in a hooded sweatshirt with sweatpants, and is often seen smoking. His original name, before the chimera ant queen died, was Jail.",
@@ -1237,7 +1237,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 278,
+    "favourites": 284,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/82925.jpg",
     "attributes": [],
     "description": "Knov is a Hunter who participated in the Chimera Ant Extermination Mission.",
@@ -1266,7 +1266,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 274,
+    "favourites": 278,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b24279-wCttqcLJ3W2b.jpg",
     "attributes": [],
     "description": "Examinee #246 during the Hunter Exam. Ponzu is the only prominent female who managed to enter the last few stages of the Hunter exam. Her secret weapon lies in the big round hat she wears, which carries powerful bees under the surface that emerge and attack people that threaten her. Although Ponzu is a relatively minor character in the series, her cute and girlish charm has won her some fans who voted for her in an early Hunter popularity poll.",
@@ -1298,7 +1298,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 265,
+    "favourites": 264,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b34054-QJaRVZMUmZNs.png",
     "attributes": [],
     "description": "Palm Siberia is Knov's apprentice. She only appears in the manga and develops a crush on Gon at one stage. She, on most occasions, has scruffy hair and too much make-up, not to mention a frightening aura caused by stress. However, sometimes she will do herself up and looks stunning.",
@@ -1329,7 +1329,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 252,
+    "favourites": 251,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b209939-sxORvCfWDPHi.png",
     "attributes": [],
     "description": "Nanika is a mysterious Dark Continent creature who came to possess Alluka Zoldyck under unknown circumstances. The two currently coexist inside Alluka's body.",
@@ -1347,35 +1347,6 @@
     "siteUrl": "https://anilist.co/character/209939"
   },
   {
-    "anilistId": 5834,
-    "slug": "phinks-magcub",
-    "name": "Phinks Magcub",
-    "nativeName": "フィンクス",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 214,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5834-s3A4bR8IX01p.png",
-    "attributes": [],
-    "description": "Phinks is a genius when it comes to unarmed combat. Phinks uses his hands in battle, which have been shown to be extremely powerful. He is rather brash and has a tendency to get into conflicts with other people. Phinks is one of the members of the Phantom Troupe that originated from Meteor City. He first appears in Egyptian Suit but later changed into jogging suit. He seems to get along with Feitan. Phinks also displays a level of compassion for Zazan's minions after they are released from her control. When they beg him to kill them he refuses to simply execute them on their knees, instead urging them to fight back and die in battle honorably.\n\nNen Ability:\nRipper Cyclotron: Phinks's nen ability involves how many times he rotates his arm. The more rotations that he does with the arm, the stronger his blow will become.",
-    "summary": "Phinks is a genius when it comes to unarmed combat. Phinks uses his hands in battle, which have been shown to be extremely powerful. He is rather brash and has a tendency to get into conflicts with…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95857,
-        "name": "KENN",
-        "nativeName": "KENN",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95857-oHOhHwEDyAlL.png",
-        "url": "https://anilist.co/staff/95857"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/5834"
-  },
-  {
     "anilistId": 12515,
     "slug": "senritsu",
     "name": "Senritsu",
@@ -1389,7 +1360,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 211,
+    "favourites": 216,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12515-Jgj0kBXgBmhf.jpg",
     "attributes": [],
     "description": "Senritsu, known as Melody in the Viz Media translation, is a Music Hunter, named for her skill with instruments. Senritsu is a Music Hunter and is the kind and understanding member of Neon's bodyguards. She is always ready to listen to anyone's confessions and has the gift to make people open up to her. As Leorio notes, she is one of the very few characters who has made Kurapika open up to her.",
@@ -1407,6 +1378,35 @@
     "siteUrl": "https://anilist.co/character/12515"
   },
   {
+    "anilistId": 5834,
+    "slug": "phinks-magcub",
+    "name": "Phinks Magcub",
+    "nativeName": "フィンクス",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 212,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5834-s3A4bR8IX01p.png",
+    "attributes": [],
+    "description": "Phinks is a genius when it comes to unarmed combat. Phinks uses his hands in battle, which have been shown to be extremely powerful. He is rather brash and has a tendency to get into conflicts with other people. Phinks is one of the members of the Phantom Troupe that originated from Meteor City. He first appears in Egyptian Suit but later changed into jogging suit. He seems to get along with Feitan. Phinks also displays a level of compassion for Zazan's minions after they are released from her control. When they beg him to kill them he refuses to simply execute them on their knees, instead urging them to fight back and die in battle honorably.\n\nNen Ability:\nRipper Cyclotron: Phinks's nen ability involves how many times he rotates his arm. The more rotations that he does with the arm, the stronger his blow will become.",
+    "summary": "Phinks is a genius when it comes to unarmed combat. Phinks uses his hands in battle, which have been shown to be extremely powerful. He is rather brash and has a tendency to get into conflicts with…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95857,
+        "name": "KENN",
+        "nativeName": "KENN",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95857-oHOhHwEDyAlL.png",
+        "url": "https://anilist.co/staff/95857"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/5834"
+  },
+  {
     "anilistId": 29807,
     "slug": "shoot-mcmahon",
     "name": "Shoot McMahon",
@@ -1418,7 +1418,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 175,
+    "favourites": 174,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/29807.jpg",
     "attributes": [],
     "description": "Shoot McMahon (シュート＝マクマホン, Shūto Makumahon?) is an Unidentified Beast Hunter, Knuckle's partner, and the second disciple of Morel. He has a timid personality and is often afraid of taking advantage of opportune times to attack his enemy. When the fight begins with Youpi, he becomes inspired by Gon and is able to fully unleash his power, overcoming his timidness and injuries.",
@@ -1434,6 +1434,35 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/29807"
+  },
+  {
+    "anilistId": 43931,
+    "slug": "zushi",
+    "name": "Zushi",
+    "nativeName": "ズシ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 153,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b43931-7ork3ZzLbGe6.jpg",
+    "attributes": [],
+    "description": "A young boy who studies Shingen-Ryu Kung fu and Nen under the tutelage of Wing, whom Gon and Killua meet in the Heavens Arena. He is a formidable fighter and a prodigy in his own right, said to have skills only 1 out of 100,000 people have. However, he is quickly surpassed by Gon and Killua, who are said to have skills only 1 out of 10,000,000 people have. According to the results of his water divination, Zushi is a Manipulator.\n\n(Source: Wikipedia)",
+    "summary": "A young boy who studies Shingen-Ryu Kung fu and Nen under the tutelage of Wing, whom Gon and Killua meet in the Heavens Arena. He is a formidable fighter and a prodigy in his own right, said to have…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95671,
+        "name": "Yuka Terasaki",
+        "nativeName": "寺崎裕香",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95671-iXGq2oxE1DlW.png",
+        "url": "https://anilist.co/staff/95671"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/43931"
   },
   {
     "anilistId": 20678,
@@ -1468,35 +1497,6 @@
     "siteUrl": "https://anilist.co/character/20678"
   },
   {
-    "anilistId": 43931,
-    "slug": "zushi",
-    "name": "Zushi",
-    "nativeName": "ズシ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 150,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b43931-7ork3ZzLbGe6.jpg",
-    "attributes": [],
-    "description": "A young boy who studies Shingen-Ryu Kung fu and Nen under the tutelage of Wing, whom Gon and Killua meet in the Heavens Arena. He is a formidable fighter and a prodigy in his own right, said to have skills only 1 out of 100,000 people have. However, he is quickly surpassed by Gon and Killua, who are said to have skills only 1 out of 10,000,000 people have. According to the results of his water divination, Zushi is a Manipulator.\n\n(Source: Wikipedia)",
-    "summary": "A young boy who studies Shingen-Ryu Kung fu and Nen under the tutelage of Wing, whom Gon and Killua meet in the Heavens Arena. He is a formidable fighter and a prodigy in his own right, said to have…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95671,
-        "name": "Yuka Terasaki",
-        "nativeName": "寺崎裕香",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95671-iXGq2oxE1DlW.png",
-        "url": "https://anilist.co/staff/95671"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/43931"
-  },
-  {
     "anilistId": 22519,
     "slug": "satotz",
     "name": "Satotz",
@@ -1508,7 +1508,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 146,
+    "favourites": 145,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b22519-8eXaBryPSRL5.jpg",
     "attributes": [],
     "description": "A seemingly mouthless man, the appointed examiner for the first part of the Hunter Exam. He tests the examinees&#039; stamina by leading them on an marathon of initially unknown length through an underground tunnel. Though he seems only to move his legs at a fast walking pace, the examinees are forced to run faster and faster to keep up with his speed. After they emerge from the tunnel, Satotz then leads the examinees through the Numere Marsh, nicknamed the \"The Swindler's Nest\", a swamp filled with deadly man-eating animals, before leaving them at the site of the second exam. As an Archaeological Hunter in his normal profession, he was also inspired by Ging in taking up the Hunter license. He initially simply felt a strong civic duty to carry out his role as a judge, he progressively takes a liking to Gon and wishes to help him.",
@@ -1537,7 +1537,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 136,
+    "favourites": 138,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17564-tJHe64LxFqm1.jpg",
     "attributes": [],
     "description": "Neon is the daughter of the boss of the Nostrade family, who are part of the Mafia. She is a hyper but spoiled young girl, who enjoys collecting body parts (whether they are legal or not) as her hobby. She is constantly protected by many bodyguards by the order of her father.\n\nNeon possesses a prophetic ability, which she calls \"Lovely Ghost Writer\". While she herself does not realize this, it is a form of specialization nen. Her prophecies are 100% accurate and written in the form of a poem. Neon cannot predict her own future, and is able to write a prophecy using only a small amount of information from her client. The prophecy is a automatic process, so what is written on the paper must be asked by the person in question. Neon's father was able to rise up in rank in the Mafia because of her ability. This made her father more interested in her ability then her life. This also made her father overly protected over her, assigning her many bodyguards. Kurapika is one of Neon's bodyguards.\n\n(Source: AnimeNfo.com)",
@@ -1599,7 +1599,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 122,
+    "favourites": 123,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/83199.jpg",
     "attributes": [],
     "description": "Colt (コルト, Koruto) is a Chimera Ant squadron leader. His name from when he was human is Kurt.",
@@ -1661,7 +1661,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 104,
+    "favourites": 101,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b60009-e0TWRv9Mwvtd.jpg",
     "attributes": [],
     "description": "The Zoldyck family manager. All contacts with the family members must go through him. An enigmatic and intimidating character, Killua once expressed to Gon his recurring nightmares of Gotou chasing him with a knife. He is also superb at the \"where is the coin\" trick. He cares for Killua as if he was his own son.",
@@ -1690,7 +1690,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 102,
+    "favourites": 100,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b22518-uoFnMXlU3kAo.jpg",
     "attributes": [],
     "description": "Razor is one of the Gamemasters and a creator of Greed Island. Razor was entrusted by Gon's father that he was not to hold back against his son should he ever comes to Greed Island. Razor is a tall and well built man by appearance and perhaps likes to play sports (especially ball games) as a pastime.Razor is a key person in getting one of the hardest designated card of the game. To get the card, the challengers must confront Razor and his 14 devils. It was learned that the 14 devils were not the pirates that follows him but his ability to emit 14 nen creatures at will. He can also emit nen into a ball (or create a ball from nen) and throw it at his opponent, which is extremely strong and could critically injure or kill his opponent on a direct hit. He was defeated in a deadly dodgeball game by Gon's allied party (consisting of Gon, Killua, Biscuit, Hisoka, and several other hunter/players hired by Battera).Razor later revealed to Gon that he was a former convict along the same as the pirates here whom were exiled to Greed Island. Razor is also the warden of these convicts. He became one of Ging's best friends and entrusted to look after the island as one of the Gamemasters.",
@@ -1737,6 +1737,38 @@
     "siteUrl": "https://anilist.co/character/10535"
   },
   {
+    "anilistId": 6013,
+    "slug": "baka-ki-el-dogra",
+    "name": "Baka Ki El Dogra",
+    "nativeName": "バカキエル・ドグラ",
+    "aliases": [
+      "Prince",
+      "Baka-ouji"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 94,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b6013-KlW2B29yaxwP.png",
+    "attributes": [],
+    "description": "The first prince of the planet Dogura. He has an exceptionally high IQ and has little interest other than using it to torment those around him for his own amusement. His real name is Baka Ki El Dogra, but everybody refers to him solely as Prince or Prince Baka (a play with words since baka-ouji can mean both \"Prince Baka\" and \"stupid prince\"). He also appears for a few minutes in episode 36 of Hunter x Hunter (2011), commenting on an arena match. His voice actor was unlisted, however.",
+    "summary": "The first prince of the planet Dogura. He has an exceptionally high IQ and has little interest other than using it to torment those around him for his own amusement. His real name is Baka Ki El…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 101981,
+        "name": "Takuma Suzuki",
+        "nativeName": "鈴木琢磨",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n101981-M1QHNfoBLovs.png",
+        "url": "https://anilist.co/staff/101981"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/6013"
+  },
+  {
     "anilistId": 55069,
     "slug": "cheadle-yorkshire",
     "name": "Cheadle Yorkshire",
@@ -1770,38 +1802,6 @@
     "siteUrl": "https://anilist.co/character/55069"
   },
   {
-    "anilistId": 6013,
-    "slug": "baka-ki-el-dogra",
-    "name": "Baka Ki El Dogra",
-    "nativeName": "バカキエル・ドグラ",
-    "aliases": [
-      "Prince",
-      "Baka-ouji"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 92,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b6013-KlW2B29yaxwP.png",
-    "attributes": [],
-    "description": "The first prince of the planet Dogura. He has an exceptionally high IQ and has little interest other than using it to torment those around him for his own amusement. His real name is Baka Ki El Dogra, but everybody refers to him solely as Prince or Prince Baka (a play with words since baka-ouji can mean both \"Prince Baka\" and \"stupid prince\"). He also appears for a few minutes in episode 36 of Hunter x Hunter (2011), commenting on an arena match. His voice actor was unlisted, however.",
-    "summary": "The first prince of the planet Dogura. He has an exceptionally high IQ and has little interest other than using it to torment those around him for his own amusement. His real name is Baka Ki El…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 101981,
-        "name": "Takuma Suzuki",
-        "nativeName": "鈴木琢磨",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n101981-M1QHNfoBLovs.png",
-        "url": "https://anilist.co/staff/101981"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/6013"
-  },
-  {
     "anilistId": 20677,
     "slug": "hanzou",
     "name": "Hanzou",
@@ -1815,7 +1815,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 88,
+    "favourites": 86,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b20677-I7bchq2Ema7S.jpg",
     "attributes": [],
     "description": "An 18-year-old jounin ninja from the Cloud Hidden Village whom has trained in the art of ninjutsu from the moment he could stand. He decided to become a Hunter in order to find the elusive Hermit's Scroll.",
@@ -1844,7 +1844,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 86,
+    "favourites": 83,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33376-5IQ7MSCuXOb1.png",
     "attributes": [
       {
@@ -2000,7 +2000,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 62,
+    "favourites": 59,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b163022-twD7SzGXCoYO.png",
     "attributes": [],
     "description": "Gyro is the founder and the former king of NGL. As a human, he suffered an abusive childhood at the hands of his alcoholic father. His ambition is to spread evil throughout the world.",
@@ -2054,7 +2054,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 53,
+    "favourites": 52,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/84077.jpg",
     "attributes": [],
     "description": "Koala was a soldier under Meleoron's command, but disapproved of Meleoron's pacifist attitude. He generally does not take part in the war between the Hunters and Chimera Ants. After Meleoron has gone individual, he is presumably free from any duty.",
@@ -2070,6 +2070,35 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/84077"
+  },
+  {
+    "anilistId": 33353,
+    "slug": "list",
+    "name": "List",
+    "nativeName": "リスト",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 50,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33353-hKq5OAI4v4h9.jpg",
+    "attributes": [],
+    "description": "List is one of the eleven people responsible for creating Greed Island. The \"L\" in \"Island\" is the first letter of his name. List lives in the castle along with Dwun. He appears to be Dwun's counterpart; he is neat and well mannered as opposed to the messy and rude Dwun.",
+    "summary": "List is one of the eleven people responsible for creating Greed Island. The \"L\" in \"Island\" is the first letter of his name. List lives in the castle along with Dwun. He appears to be Dwun's…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 106030,
+        "name": "Chika Anzai",
+        "nativeName": "安済知佳",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n106030-oz4RUJZ3D9v9.png",
+        "url": "https://anilist.co/staff/106030"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33353"
   },
   {
     "anilistId": 83201,
@@ -2101,35 +2130,6 @@
     "siteUrl": "https://anilist.co/character/83201"
   },
   {
-    "anilistId": 33353,
-    "slug": "list",
-    "name": "List",
-    "nativeName": "リスト",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 49,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33353-hKq5OAI4v4h9.jpg",
-    "attributes": [],
-    "description": "List is one of the eleven people responsible for creating Greed Island. The \"L\" in \"Island\" is the first letter of his name. List lives in the castle along with Dwun. He appears to be Dwun's counterpart; he is neat and well mannered as opposed to the messy and rude Dwun.",
-    "summary": "List is one of the eleven people responsible for creating Greed Island. The \"L\" in \"Island\" is the first letter of his name. List lives in the castle along with Dwun. He appears to be Dwun's…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 106030,
-        "name": "Chika Anzai",
-        "nativeName": "安済知佳",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n106030-oz4RUJZ3D9v9.png",
-        "url": "https://anilist.co/staff/106030"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33353"
-  },
-  {
     "anilistId": 33352,
     "slug": "eeta",
     "name": "Eeta",
@@ -2141,7 +2141,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 47,
+    "favourites": 48,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33352-SoU0ScSSvUNP.jpg",
     "attributes": [],
     "description": "Eeta is, like her twin sister Elena, one of the eleven who helped make Greed Island. One of the E's in \"Greed\" comes from her name. She is in charge of moving people from the real world to Greed Island. She plays the tape for Gon, left behind by his father.",
@@ -2157,35 +2157,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33352"
-  },
-  {
-    "anilistId": 5827,
-    "slug": "bonolenov-ndongo",
-    "name": "Bonolenov Ndongo",
-    "nativeName": "ボノレノフ゠ンドンゴ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 44,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/5827.jpg",
-    "attributes": [],
-    "description": "Bonolenov is member number 13 of the Phantom Troupe. He dresses partially in rags and looks like a mummy. During the Yorknew City arc, his appearance was insignificant. During the Chimera Ant arc, he was seen fighting with the rest of the Phantom Troupe against the Chimera ants. Very little is known about his personality and reasons for joining the Troupe, but in the fight with the Chimera ants he displays a mocking and confident attitude.",
-    "summary": "Bonolenov is member number 13 of the Phantom Troupe. He dresses partially in rags and looks like a mummy. During the Yorknew City arc, his appearance was insignificant. During the Chimera Ant arc, he…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95898,
-        "name": "Choo",
-        "nativeName": "チョー ",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95898-XHSESV65G8Jv.png",
-        "url": "https://anilist.co/staff/95898"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/5827"
   },
   {
     "anilistId": 82861,
@@ -2230,7 +2201,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 43,
+    "favourites": 44,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b172921-rgObppgA4trX.png",
     "attributes": [],
     "description": "Amane is a female servant of the Zoldyck Family.",
@@ -2248,6 +2219,35 @@
     "siteUrl": "https://anilist.co/character/172921"
   },
   {
+    "anilistId": 5827,
+    "slug": "bonolenov-ndongo",
+    "name": "Bonolenov Ndongo",
+    "nativeName": "ボノレノフ゠ンドンゴ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 43,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/5827.jpg",
+    "attributes": [],
+    "description": "Bonolenov is member number 13 of the Phantom Troupe. He dresses partially in rags and looks like a mummy. During the Yorknew City arc, his appearance was insignificant. During the Chimera Ant arc, he was seen fighting with the rest of the Phantom Troupe against the Chimera ants. Very little is known about his personality and reasons for joining the Troupe, but in the fight with the Chimera ants he displays a mocking and confident attitude.",
+    "summary": "Bonolenov is member number 13 of the Phantom Troupe. He dresses partially in rags and looks like a mummy. During the Yorknew City arc, his appearance was insignificant. During the Chimera Ant arc, he…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95898,
+        "name": "Choo",
+        "nativeName": "チョー ",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95898-XHSESV65G8Jv.png",
+        "url": "https://anilist.co/staff/95898"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/5827"
+  },
+  {
     "anilistId": 33351,
     "slug": "elena",
     "name": "Elena",
@@ -2259,7 +2259,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 42,
+    "favourites": 43,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33351-zLsDLpkrgGwd.jpg",
     "attributes": [],
     "description": "Elena is, like her twin sister Eeta, one of the eleven who helped make Greed Island. One of the e's in \"Greed\" comes from her name. She is in charge of moving people from Greed Island to the real world, and is happy when Gon remembered her name.",
@@ -2408,7 +2408,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 33,
+    "favourites": 31,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b224021-Csy2wkLSWR8o.jpg",
     "attributes": [],
     "description": "A Chimera Ant and former Peon from Leol's Squad\n\nAlthough initially believed to be unable to talk due to her being a lower ant, this is actually due to Shidore being a very young child. She always obeys her orders silently and seems loyal to Hina",
@@ -2441,7 +2441,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 31,
+    "favourites": 30,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/n5829-ubGjeYxlPnxL.png",
     "attributes": [],
     "description": "As one of the members of the Phantom Troupe, the most distinctive thing about Kortopi is his haggard appearance. A thick and messy mane of hair flops down his face, obscuring everything except for an occasional glimpse of his eyeball.\n\nNen Ability:\nGallery Fake - Divine Left Hand, Demonic Right Hand: When Koltopi touches an object with his left hand, his nen ability allows him to make an exact replica of that object with his right hand. He cannot replicate living things except as inanimate objects (as he created the fake corpses of his fellow members), and Koltopi is also unable to replicate another user's nen. The replicas that he creates vanish after 24 hours, regardless of their size. However, before their disappearance, Koltopi is able to track the movements of each and every copied object (providing that he can touch the originals).",
@@ -2457,6 +2457,37 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/5829"
+  },
+  {
+    "anilistId": 49757,
+    "slug": "senchou",
+    "name": "Senchou",
+    "nativeName": "船長",
+    "aliases": [
+      "Captain"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 27,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b49757-z0flD3pwd5Bq.jpg",
+    "attributes": [],
+    "description": "",
+    "summary": "",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95138,
+        "name": "Kenji Utsumi",
+        "nativeName": "内海賢二",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95138-0iK7jnkuJb6o.png",
+        "url": "https://anilist.co/staff/95138"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/49757"
   },
   {
     "anilistId": 70621,
@@ -2515,37 +2546,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33380"
-  },
-  {
-    "anilistId": 49757,
-    "slug": "senchou",
-    "name": "Senchou",
-    "nativeName": "船長",
-    "aliases": [
-      "Captain"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 24,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b49757-z0flD3pwd5Bq.jpg",
-    "attributes": [],
-    "description": "",
-    "summary": "",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95138,
-        "name": "Kenji Utsumi",
-        "nativeName": "内海賢二",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95138-0iK7jnkuJb6o.png",
-        "url": "https://anilist.co/staff/95138"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/49757"
   },
   {
     "anilistId": 63099,
@@ -2623,7 +2623,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 21,
+    "favourites": 20,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/33300.jpg",
     "attributes": [],
     "description": "Genthru is a Greed Island player. At first he works together with a big group of players, monopolizing defense spell cards so they can steal people's cards using offense spell cards.",
@@ -2641,37 +2641,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33300"
-  },
-  {
-    "anilistId": 55725,
-    "slug": "mizaistom-nana",
-    "name": "Mizaistom Nana",
-    "nativeName": "ミザイストム=ナナ",
-    "aliases": [
-      "Ox"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 21,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55725-b4ogWPLuBA77.jpg",
-    "attributes": [],
-    "description": "",
-    "summary": "",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95146,
-        "name": "Akio Ootsuka",
-        "nativeName": "大塚明夫",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95146-T6IEmqXW3xUN.jpg",
-        "url": "https://anilist.co/staff/95146"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/55725"
   },
   {
     "anilistId": 33375,
@@ -2703,6 +2672,37 @@
     "siteUrl": "https://anilist.co/character/33375"
   },
   {
+    "anilistId": 55725,
+    "slug": "mizaistom-nana",
+    "name": "Mizaistom Nana",
+    "nativeName": "ミザイストム=ナナ",
+    "aliases": [
+      "Ox"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 20,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/55725-b4ogWPLuBA77.jpg",
+    "attributes": [],
+    "description": "",
+    "summary": "",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95146,
+        "name": "Akio Ootsuka",
+        "nativeName": "大塚明夫",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95146-T6IEmqXW3xUN.jpg",
+        "url": "https://anilist.co/staff/95146"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/55725"
+  },
+  {
     "anilistId": 83207,
     "slug": "reina",
     "name": "Reina",
@@ -2732,6 +2732,35 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/83207"
+  },
+  {
+    "anilistId": 59457,
+    "slug": "kikyo-zoldyck",
+    "name": "Kikyo Zoldyck",
+    "nativeName": "キキョウ＝ゾルディック ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 18,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b59457-r6WAzVNE0zUH.jpg",
+    "attributes": [],
+    "description": "Killua's mother, who was injured while attempting to prevent him from running away from home (although Illumi states that she is proud of Killua for doing so). She dresses in Victorian style clothing and has a visor covering her eyes. She is the maternal figure of the Zoldyck family and is herself an assassin too. She seems to be slightly paranoid and is cautious of Killua's friends Gon, Kurapika and Leorio. Kikyo is eagerly awaiting for Killua to excel in assassination and to continue the family business.",
+    "summary": "Killua's mother, who was injured while attempting to prevent him from running away from home (although Illumi states that she is proud of Killua for doing so). She dresses in Victorian style clothing…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95289,
+        "name": "Junko Iwao",
+        "nativeName": "岩男潤子",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95289-B5RApCeWP4xk.png",
+        "url": "https://anilist.co/staff/95289"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/59457"
   },
   {
     "anilistId": 33285,
@@ -2825,35 +2854,6 @@
     "siteUrl": "https://anilist.co/character/55087"
   },
   {
-    "anilistId": 59457,
-    "slug": "kikyo-zoldyck",
-    "name": "Kikyo Zoldyck",
-    "nativeName": "キキョウ＝ゾルディック ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 17,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b59457-r6WAzVNE0zUH.jpg",
-    "attributes": [],
-    "description": "Killua's mother, who was injured while attempting to prevent him from running away from home (although Illumi states that she is proud of Killua for doing so). She dresses in Victorian style clothing and has a visor covering her eyes. She is the maternal figure of the Zoldyck family and is herself an assassin too. She seems to be slightly paranoid and is cautious of Killua's friends Gon, Kurapika and Leorio. Kikyo is eagerly awaiting for Killua to excel in assassination and to continue the family business.",
-    "summary": "Killua's mother, who was injured while attempting to prevent him from running away from home (although Illumi states that she is proud of Killua for doing so). She dresses in Victorian style clothing…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95289,
-        "name": "Junko Iwao",
-        "nativeName": "岩男潤子",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95289-B5RApCeWP4xk.png",
-        "url": "https://anilist.co/staff/95289"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/59457"
-  },
-  {
     "anilistId": 67203,
     "slug": "eliza",
     "name": "Eliza",
@@ -2883,35 +2883,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/67203"
-  },
-  {
-    "anilistId": 83375,
-    "slug": "bloster",
-    "name": "Bloster",
-    "nativeName": "ブロヴーダ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 17,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83375.jpg",
-    "attributes": [],
-    "description": "Bloster is a lobster-based Chimera Ant and former Squadron Leader.",
-    "summary": "Bloster is a lobster-based Chimera Ant and former Squadron Leader.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 112787,
-        "name": "Yuuya Murakami",
-        "nativeName": "村上裕哉",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n112787-Emc8j9Wl0zkC.png",
-        "url": "https://anilist.co/staff/112787"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/83375"
   },
   {
     "anilistId": 55075,
@@ -2945,6 +2916,35 @@
     "siteUrl": "https://anilist.co/character/55075"
   },
   {
+    "anilistId": 83375,
+    "slug": "bloster",
+    "name": "Bloster",
+    "nativeName": "ブロヴーダ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 15,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83375.jpg",
+    "attributes": [],
+    "description": "Bloster is a lobster-based Chimera Ant and former Squadron Leader.",
+    "summary": "Bloster is a lobster-based Chimera Ant and former Squadron Leader.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 112787,
+        "name": "Yuuya Murakami",
+        "nativeName": "村上裕哉",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n112787-Emc8j9Wl0zkC.png",
+        "url": "https://anilist.co/staff/112787"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/83375"
+  },
+  {
     "anilistId": 33379,
     "slug": "squala",
     "name": "Squala",
@@ -2956,7 +2956,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 15,
+    "favourites": 14,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33379-w79Z4LElSXNo.jpg",
     "attributes": [],
     "description": "Squala is one of Neon Nostrade's bodyguards. During the job interview for new hires, he was one of the two moles planted alongside the applicants in order to test their strength. Although Squala has been one of Neon's bodyguards for many years, he does not have a Hunters License. He is also in a romantic relationship with Eliza, one of Neon's female attendants. Squala uses his nen to control dogs. (Source: Wikipedia)",
@@ -2974,35 +2974,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33379"
-  },
-  {
-    "anilistId": 33299,
-    "slug": "goreinu",
-    "name": "Goreinu",
-    "nativeName": "ゴレイヌ",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 13,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/33299.jpg",
-    "attributes": [],
-    "description": "A Greed Island player, he battles Razor along with Gon, Bisuke en Killua both times. He ends up giving Gon the cards he needs to win the game. His nen ability is the power to summon two gorillas made of nen. His white gorilla, White Goreinu, is able to change places with Goreinu. His black gorilla, Black Goreinu, is able to switch places with other people.",
-    "summary": "A Greed Island player, he battles Razor along with Gon, Bisuke en Killua both times. He ends up giving Gon the cards he needs to win the game. His nen ability is the power to summon two gorillas made…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 115987,
-        "name": "Hidetaka Tenjin",
-        "nativeName": "天神英貴",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n115987-4t7CGgsuXSjL.png",
-        "url": "https://anilist.co/staff/115987"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33299"
   },
   {
     "anilistId": 33308,
@@ -3094,6 +3065,35 @@
     "siteUrl": "https://anilist.co/character/66481"
   },
   {
+    "anilistId": 33299,
+    "slug": "goreinu",
+    "name": "Goreinu",
+    "nativeName": "ゴレイヌ",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 12,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/33299.jpg",
+    "attributes": [],
+    "description": "A Greed Island player, he battles Razor along with Gon, Bisuke en Killua both times. He ends up giving Gon the cards he needs to win the game. His nen ability is the power to summon two gorillas made of nen. His white gorilla, White Goreinu, is able to change places with Goreinu. His black gorilla, Black Goreinu, is able to switch places with other people.",
+    "summary": "A Greed Island player, he battles Razor along with Gon, Bisuke en Killua both times. He ends up giving Gon the cards he needs to win the game. His nen ability is the power to summon two gorillas made…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 115987,
+        "name": "Hidetaka Tenjin",
+        "nativeName": "天神英貴",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n115987-4t7CGgsuXSjL.png",
+        "url": "https://anilist.co/staff/115987"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33299"
+  },
+  {
     "anilistId": 83213,
     "slug": "leol",
     "name": "Leol",
@@ -3123,42 +3123,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/83213"
-  },
-  {
-    "anilistId": 33347,
-    "slug": "binolt",
-    "name": "Binolt",
-    "nativeName": "ビノールト",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 10,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/33347.jpg",
-    "attributes": [],
-    "description": "A skilled Blacklist Hunter who's also on the wanted list himself, he has the ability to learn every bit of information from someone after chewing on someones hair that's been cut using his favorite scissors. He preys on Bisuke but does not back down after learning about her true form, requesting a match without Nen. Being beaten by Bisuke, he's being forced to practice with Gon and Killua.",
-    "summary": "A skilled Blacklist Hunter who's also on the wanted list himself, he has the ability to learn every bit of information from someone after chewing on someones hair that's been cut using his favorite…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95583,
-        "name": "Akio Suyama",
-        "nativeName": "章央陶山",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95583-pcq7rkDjxRTl.jpg",
-        "url": "https://anilist.co/staff/95583"
-      },
-      {
-        "anilistId": 100721,
-        "name": "Miho Miyagawa",
-        "nativeName": "宮川美保",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n100721-uRUu4DMce3Dd.jpg",
-        "url": "https://anilist.co/staff/100721"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33347"
   },
   {
     "anilistId": 53277,
@@ -3279,35 +3243,6 @@
     "siteUrl": "https://anilist.co/character/83205"
   },
   {
-    "anilistId": 83211,
-    "slug": "rammot",
-    "name": "Rammot",
-    "nativeName": "ラモット",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 9,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83211.jpg",
-    "attributes": [],
-    "description": "Rammot is a Chimera Ant and an officer in Colt's squad. He attacked Gon and Killua.",
-    "summary": "Rammot is a Chimera Ant and an officer in Colt's squad. He attacked Gon and Killua.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 103809,
-        "name": "Shinya Hamazoe",
-        "nativeName": "浜添伸也",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n103809-pPQeMwbINnUV.png",
-        "url": "https://anilist.co/staff/103809"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/83211"
-  },
-  {
     "anilistId": 130567,
     "slug": "jispa",
     "name": "Jispa",
@@ -3366,6 +3301,42 @@
     "siteUrl": "https://anilist.co/character/166050"
   },
   {
+    "anilistId": 33347,
+    "slug": "binolt",
+    "name": "Binolt",
+    "nativeName": "ビノールト",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 8,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/33347.jpg",
+    "attributes": [],
+    "description": "A skilled Blacklist Hunter who's also on the wanted list himself, he has the ability to learn every bit of information from someone after chewing on someones hair that's been cut using his favorite scissors. He preys on Bisuke but does not back down after learning about her true form, requesting a match without Nen. Being beaten by Bisuke, he's being forced to practice with Gon and Killua.",
+    "summary": "A skilled Blacklist Hunter who's also on the wanted list himself, he has the ability to learn every bit of information from someone after chewing on someones hair that's been cut using his favorite…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95583,
+        "name": "Akio Suyama",
+        "nativeName": "章央陶山",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95583-pcq7rkDjxRTl.jpg",
+        "url": "https://anilist.co/staff/95583"
+      },
+      {
+        "anilistId": 100721,
+        "name": "Miho Miyagawa",
+        "nativeName": "宮川美保",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n100721-uRUu4DMce3Dd.jpg",
+        "url": "https://anilist.co/staff/100721"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33347"
+  },
+  {
     "anilistId": 52497,
     "slug": "majitani",
     "name": "Majitani",
@@ -3393,6 +3364,35 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/52497"
+  },
+  {
+    "anilistId": 83211,
+    "slug": "rammot",
+    "name": "Rammot",
+    "nativeName": "ラモット",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": "Male",
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 8,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83211.jpg",
+    "attributes": [],
+    "description": "Rammot is a Chimera Ant and an officer in Colt's squad. He attacked Gon and Killua.",
+    "summary": "Rammot is a Chimera Ant and an officer in Colt's squad. He attacked Gon and Killua.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 103809,
+        "name": "Shinya Hamazoe",
+        "nativeName": "浜添伸也",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n103809-pPQeMwbINnUV.png",
+        "url": "https://anilist.co/staff/103809"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/83211"
   },
   {
     "anilistId": 50243,
@@ -3660,37 +3660,6 @@
     "siteUrl": "https://anilist.co/character/55073"
   },
   {
-    "anilistId": 82869,
-    "slug": "monta-yuras",
-    "name": "Monta Yuras",
-    "nativeName": "モンタ＝ユーラス",
-    "aliases": [
-      "Mon (モン)"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": "Male",
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 5,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/82869.jpg",
-    "attributes": [],
-    "description": "Monta Yuras is a large man with a koala-like face who surveys the country of Kakin for new species with Kite. He seems to be in charge with the luggage. Kite has stated that he and his fellow amateur Hunters in the Kakin Exploration Team have excellent potential to be pro-hunters.",
-    "summary": "Monta Yuras is a large man with a koala-like face who surveys the country of Kakin for new species with Kite. He seems to be in charge with the luggage. Kite has stated that he and his fellow amateur…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 104816,
-        "name": "Nobuaki Kanemitsu",
-        "nativeName": "金光宣明",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n104816-0kU8ww2ogISO.jpg",
-        "url": "https://anilist.co/staff/104816"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/82869"
-  },
-  {
     "anilistId": 49569,
     "slug": "katzo",
     "name": "Katzo",
@@ -3749,35 +3718,35 @@
     "siteUrl": "https://anilist.co/character/50847"
   },
   {
-    "anilistId": 83183,
-    "slug": "chimera-ant-no-joou",
-    "name": "Chimera Ant no Joou",
-    "nativeName": "キメラアントの女王",
+    "anilistId": 82869,
+    "slug": "monta-yuras",
+    "name": "Monta Yuras",
+    "nativeName": "モンタ＝ユーラス",
     "aliases": [
-      "Chimera Ant Queen"
+      "Mon (モン)"
     ],
     "spoilerAliases": [],
     "role": "SUPPORTING",
-    "gender": null,
+    "gender": "Male",
     "age": null,
     "bloodType": null,
     "birthday": null,
     "favourites": 4,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83183.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/82869.jpg",
     "attributes": [],
-    "description": "Gives birth to all the Chimera Ants seen in the story, including the Chimera Ant King Meruem.",
-    "summary": "Gives birth to all the Chimera Ants seen in the story, including the Chimera Ant King Meruem.",
+    "description": "Monta Yuras is a large man with a koala-like face who surveys the country of Kakin for new species with Kite. He seems to be in charge with the luggage. Kite has stated that he and his fellow amateur Hunters in the Kakin Exploration Team have excellent potential to be pro-hunters.",
+    "summary": "Monta Yuras is a large man with a koala-like face who surveys the country of Kakin for new species with Kite. He seems to be in charge with the luggage. Kite has stated that he and his fellow amateur…",
     "spoilers": [],
     "voiceActors": [
       {
-        "anilistId": 96149,
-        "name": "Masako Ikeda",
-        "nativeName": "池田昌子",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n96149-oZnf7Y3W77bl.png",
-        "url": "https://anilist.co/staff/96149"
+        "anilistId": 104816,
+        "name": "Nobuaki Kanemitsu",
+        "nativeName": "金光宣明",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n104816-0kU8ww2ogISO.jpg",
+        "url": "https://anilist.co/staff/104816"
       }
     ],
-    "siteUrl": "https://anilist.co/character/83183"
+    "siteUrl": "https://anilist.co/character/82869"
   },
   {
     "anilistId": 33348,
@@ -4052,6 +4021,37 @@
     "siteUrl": "https://anilist.co/character/64513"
   },
   {
+    "anilistId": 83183,
+    "slug": "chimera-ant-no-joou",
+    "name": "Chimera Ant no Joou",
+    "nativeName": "キメラアントの女王",
+    "aliases": [
+      "Chimera Ant Queen"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 3,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/83183.jpg",
+    "attributes": [],
+    "description": "Gives birth to all the Chimera Ants seen in the story, including the Chimera Ant King Meruem.",
+    "summary": "Gives birth to all the Chimera Ants seen in the story, including the Chimera Ant King Meruem.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 96149,
+        "name": "Masako Ikeda",
+        "nativeName": "池田昌子",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n96149-oZnf7Y3W77bl.png",
+        "url": "https://anilist.co/staff/96149"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/83183"
+  },
+  {
     "anilistId": 237341,
     "slug": "86-ban",
     "name": "86-ban",
@@ -4110,73 +4110,6 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33303"
-  },
-  {
-    "anilistId": 33350,
-    "slug": "puhat",
-    "name": "Puhat",
-    "nativeName": "プーハット",
-    "aliases": [],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 2,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33350-EMRaTHkCTJqe.jpg",
-    "attributes": [],
-    "description": "Puhat is in the same exam as Killua, Biscuit, and Gon and gets hired along with them and others. Unlike the trio, he and Abengane accept Genthru's offer to form an alliance.",
-    "summary": "Puhat is in the same exam as Killua, Biscuit, and Gon and gets hired along with them and others. Unlike the trio, he and Abengane accept Genthru's offer to form an alliance.",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 95629,
-        "name": "Issei Futamata",
-        "nativeName": "二又一成",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95629-WgKFV9c2Wxpu.png",
-        "url": "https://anilist.co/staff/95629"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33350"
-  },
-  {
-    "anilistId": 33354,
-    "slug": "no-0",
-    "name": "No. 0",
-    "nativeName": null,
-    "aliases": [
-      "Zero"
-    ],
-    "spoilerAliases": [],
-    "role": "SUPPORTING",
-    "gender": null,
-    "age": null,
-    "bloodType": null,
-    "birthday": null,
-    "favourites": 2,
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33354-qZtrIlwiE0IP.jpg",
-    "attributes": [],
-    "description": "The unofficial member of Razor's \"Thirteen Devils\", no. 0 is a summon not used for battles but rather to act as a referee. Despite being a creation of Razor's nen, he appears to be fair in judging and to even have a mind of his own.",
-    "summary": "The unofficial member of Razor's \"Thirteen Devils\", no. 0 is a summon not used for battles but rather to act as a referee. Despite being a creation of Razor's nen, he appears to be fair in judging…",
-    "spoilers": [],
-    "voiceActors": [
-      {
-        "anilistId": 100539,
-        "name": "Satoshi Tsuruoka",
-        "nativeName": "鶴岡聡",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n100539-6vHCO7o7EtmV.jpg",
-        "url": "https://anilist.co/staff/100539"
-      },
-      {
-        "anilistId": 106635,
-        "name": "Tomoya Kawai",
-        "nativeName": "河相智哉",
-        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/11635.jpg",
-        "url": "https://anilist.co/staff/106635"
-      }
-    ],
-    "siteUrl": "https://anilist.co/character/33354"
   },
   {
     "anilistId": 53561,
@@ -4357,6 +4290,73 @@
       }
     ],
     "siteUrl": "https://anilist.co/character/33304"
+  },
+  {
+    "anilistId": 33350,
+    "slug": "puhat",
+    "name": "Puhat",
+    "nativeName": "プーハット",
+    "aliases": [],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 1,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33350-EMRaTHkCTJqe.jpg",
+    "attributes": [],
+    "description": "Puhat is in the same exam as Killua, Biscuit, and Gon and gets hired along with them and others. Unlike the trio, he and Abengane accept Genthru's offer to form an alliance.",
+    "summary": "Puhat is in the same exam as Killua, Biscuit, and Gon and gets hired along with them and others. Unlike the trio, he and Abengane accept Genthru's offer to form an alliance.",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 95629,
+        "name": "Issei Futamata",
+        "nativeName": "二又一成",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95629-WgKFV9c2Wxpu.png",
+        "url": "https://anilist.co/staff/95629"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33350"
+  },
+  {
+    "anilistId": 33354,
+    "slug": "no-0",
+    "name": "No. 0",
+    "nativeName": null,
+    "aliases": [
+      "Zero"
+    ],
+    "spoilerAliases": [],
+    "role": "SUPPORTING",
+    "gender": null,
+    "age": null,
+    "bloodType": null,
+    "birthday": null,
+    "favourites": 1,
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b33354-qZtrIlwiE0IP.jpg",
+    "attributes": [],
+    "description": "The unofficial member of Razor's \"Thirteen Devils\", no. 0 is a summon not used for battles but rather to act as a referee. Despite being a creation of Razor's nen, he appears to be fair in judging and to even have a mind of his own.",
+    "summary": "The unofficial member of Razor's \"Thirteen Devils\", no. 0 is a summon not used for battles but rather to act as a referee. Despite being a creation of Razor's nen, he appears to be fair in judging…",
+    "spoilers": [],
+    "voiceActors": [
+      {
+        "anilistId": 100539,
+        "name": "Satoshi Tsuruoka",
+        "nativeName": "鶴岡聡",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n100539-6vHCO7o7EtmV.jpg",
+        "url": "https://anilist.co/staff/100539"
+      },
+      {
+        "anilistId": 106635,
+        "name": "Tomoya Kawai",
+        "nativeName": "河相智哉",
+        "image": "https://s4.anilist.co/file/anilistcdn/staff/large/11635.jpg",
+        "url": "https://anilist.co/staff/106635"
+      }
+    ],
+    "siteUrl": "https://anilist.co/character/33354"
   },
   {
     "anilistId": 52399,
@@ -4933,7 +4933,7 @@
     "age": null,
     "bloodType": null,
     "birthday": null,
-    "favourites": 17,
+    "favourites": 20,
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/73493.jpg",
     "attributes": [],
     "description": "A member of the Kurta tribe and Kurapika's childhood friend. His name was revealed for the first time for the Phantom Rouge movie.",
